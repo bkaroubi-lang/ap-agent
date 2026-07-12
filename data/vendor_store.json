@@ -1,0 +1,422 @@
+[
+  {
+    "vendor_name": "Acme Cloud Services",
+    "invoice_id": "INV-00001",
+    "invoice_date": "2025-01-01",
+    "total": "857.56",
+    "po_reference": null
+  },
+  {
+    "vendor_name": "Acme Cloud Services",
+    "invoice_id": "INV-00002",
+    "invoice_date": "2025-01-26",
+    "total": "829.31",
+    "po_reference": null
+  },
+  {
+    "vendor_name": "Acme Cloud Services",
+    "invoice_id": "INV-00003",
+    "invoice_date": "2025-02-24",
+    "total": "887.91",
+    "po_reference": null
+  },
+  {
+    "vendor_name": "Acme Cloud Services",
+    "invoice_id": "INV-00004",
+    "invoice_date": "2025-04-03",
+    "total": "739.80",
+    "po_reference": null
+  },
+  {
+    "vendor_name": "Acme Cloud Services",
+    "invoice_id": "INV-00005",
+    "invoice_date": "2025-05-04",
+    "total": "816.69",
+    "po_reference": null
+  },
+  {
+    "vendor_name": "Blue Ridge Logistics",
+    "invoice_id": "INV-00006",
+    "invoice_date": "2025-01-07",
+    "total": "1633.95",
+    "po_reference": null
+  },
+  {
+    "vendor_name": "Blue Ridge Logistics",
+    "invoice_id": "INV-00007",
+    "invoice_date": "2025-01-17",
+    "total": "1711.38",
+    "po_reference": "PO-16006"
+  },
+  {
+    "vendor_name": "Blue Ridge Logistics",
+    "invoice_id": "INV-00008",
+    "invoice_date": "2025-01-30",
+    "total": "1477.17",
+    "po_reference": "PO-46434"
+  },
+  {
+    "vendor_name": "Blue Ridge Logistics",
+    "invoice_id": "INV-00009",
+    "invoice_date": "2025-02-04",
+    "total": "1425.81",
+    "po_reference": "PO-89840"
+  },
+  {
+    "vendor_name": "Blue Ridge Logistics",
+    "invoice_id": "INV-00010",
+    "invoice_date": "2025-02-16",
+    "total": "979.65",
+    "po_reference": "PO-17331"
+  },
+  {
+    "vendor_name": "Corner Coffee Co.",
+    "invoice_id": "INV-00011",
+    "invoice_date": "2025-01-01",
+    "total": "184.68",
+    "po_reference": "PO-94259"
+  },
+  {
+    "vendor_name": "Corner Coffee Co.",
+    "invoice_id": "INV-00012",
+    "invoice_date": "2025-01-08",
+    "total": "192.10",
+    "po_reference": "PO-38746"
+  },
+  {
+    "vendor_name": "Corner Coffee Co.",
+    "invoice_id": "INV-00013",
+    "invoice_date": "2025-01-16",
+    "total": "218.80",
+    "po_reference": "PO-30033"
+  },
+  {
+    "vendor_name": "Corner Coffee Co.",
+    "invoice_id": "INV-00014",
+    "invoice_date": "2025-01-24",
+    "total": "203.26",
+    "po_reference": "PO-60019"
+  },
+  {
+    "vendor_name": "Corner Coffee Co.",
+    "invoice_id": "INV-00015",
+    "invoice_date": "2025-01-29",
+    "total": "170.24",
+    "po_reference": "PO-99353"
+  },
+  {
+    "vendor_name": "Delta Print Shop",
+    "invoice_id": "INV-00016",
+    "invoice_date": "2025-01-09",
+    "total": "388.30",
+    "po_reference": null
+  },
+  {
+    "vendor_name": "Delta Print Shop",
+    "invoice_id": "INV-00017",
+    "invoice_date": "2025-01-26",
+    "total": "533.52",
+    "po_reference": null
+  },
+  {
+    "vendor_name": "Delta Print Shop",
+    "invoice_id": "INV-00018",
+    "invoice_date": "2025-02-16",
+    "total": "441.03",
+    "po_reference": null
+  },
+  {
+    "vendor_name": "Delta Print Shop",
+    "invoice_id": "INV-00019",
+    "invoice_date": "2025-03-04",
+    "total": "387.50",
+    "po_reference": null
+  },
+  {
+    "vendor_name": "Delta Print Shop",
+    "invoice_id": "INV-00020",
+    "invoice_date": "2025-03-19",
+    "total": "330.78",
+    "po_reference": null
+  },
+  {
+    "vendor_name": "Eastwind Legal LLP",
+    "invoice_id": "INV-00021",
+    "invoice_date": "2025-01-19",
+    "total": "6143.84",
+    "po_reference": "PO-26828"
+  },
+  {
+    "vendor_name": "Eastwind Legal LLP",
+    "invoice_id": "INV-00022",
+    "invoice_date": "2025-02-21",
+    "total": "5595.61",
+    "po_reference": "PO-98039"
+  },
+  {
+    "vendor_name": "Eastwind Legal LLP",
+    "invoice_id": "INV-00023",
+    "invoice_date": "2025-03-21",
+    "total": "3412.04",
+    "po_reference": "PO-39451"
+  },
+  {
+    "vendor_name": "Eastwind Legal LLP",
+    "invoice_id": "INV-00024",
+    "invoice_date": "2025-04-22",
+    "total": "6492.38",
+    "po_reference": null
+  },
+  {
+    "vendor_name": "Eastwind Legal LLP",
+    "invoice_id": "INV-00025",
+    "invoice_date": "2025-05-23",
+    "total": "5311.40",
+    "po_reference": "PO-19287"
+  },
+  {
+    "vendor_name": "Foxtrot Facilities",
+    "invoice_id": "INV-00026",
+    "invoice_date": "2025-01-05",
+    "total": "1038.83",
+    "po_reference": "PO-22363"
+  },
+  {
+    "vendor_name": "Foxtrot Facilities",
+    "invoice_id": "INV-00027",
+    "invoice_date": "2025-01-20",
+    "total": "923.10",
+    "po_reference": null
+  },
+  {
+    "vendor_name": "Foxtrot Facilities",
+    "invoice_id": "INV-00028",
+    "invoice_date": "2025-02-04",
+    "total": "1042.24",
+    "po_reference": "PO-28373"
+  },
+  {
+    "vendor_name": "Foxtrot Facilities",
+    "invoice_id": "INV-00029",
+    "invoice_date": "2025-02-16",
+    "total": "1011.40",
+    "po_reference": "PO-82132"
+  },
+  {
+    "vendor_name": "Foxtrot Facilities",
+    "invoice_id": "INV-00030",
+    "invoice_date": "2025-03-04",
+    "total": "948.30",
+    "po_reference": null
+  },
+  {
+    "vendor_name": "Grove Web Studio",
+    "invoice_id": "INV-00031",
+    "invoice_date": "2025-01-28",
+    "total": "2423.16",
+    "po_reference": null
+  },
+  {
+    "vendor_name": "Grove Web Studio",
+    "invoice_id": "INV-00032",
+    "invoice_date": "2025-03-05",
+    "total": "1239.26",
+    "po_reference": null
+  },
+  {
+    "vendor_name": "Grove Web Studio",
+    "invoice_id": "INV-00033",
+    "invoice_date": "2025-04-16",
+    "total": "2088.02",
+    "po_reference": null
+  },
+  {
+    "vendor_name": "Grove Web Studio",
+    "invoice_id": "INV-00034",
+    "invoice_date": "2025-05-06",
+    "total": "3072.78",
+    "po_reference": null
+  },
+  {
+    "vendor_name": "Grove Web Studio",
+    "invoice_id": "INV-00035",
+    "invoice_date": "2025-06-03",
+    "total": "3045.73",
+    "po_reference": null
+  },
+  {
+    "vendor_name": "Harbor Insurance Brokers",
+    "invoice_id": "INV-00036",
+    "invoice_date": "2025-01-03",
+    "total": "1676.10",
+    "po_reference": null
+  },
+  {
+    "vendor_name": "Harbor Insurance Brokers",
+    "invoice_id": "INV-00037",
+    "invoice_date": "2025-01-27",
+    "total": "2205.82",
+    "po_reference": null
+  },
+  {
+    "vendor_name": "Harbor Insurance Brokers",
+    "invoice_id": "INV-00038",
+    "invoice_date": "2025-02-23",
+    "total": "1694.09",
+    "po_reference": null
+  },
+  {
+    "vendor_name": "Harbor Insurance Brokers",
+    "invoice_id": "INV-00039",
+    "invoice_date": "2025-03-28",
+    "total": "1959.39",
+    "po_reference": null
+  },
+  {
+    "vendor_name": "Harbor Insurance Brokers",
+    "invoice_id": "INV-00040",
+    "invoice_date": "2025-05-03",
+    "total": "2244.43",
+    "po_reference": null
+  },
+  {
+    "vendor_name": "Ivy Analytics",
+    "invoice_id": "INV-00041",
+    "invoice_date": "2025-01-17",
+    "total": "5083.82",
+    "po_reference": "PO-30676"
+  },
+  {
+    "vendor_name": "Ivy Analytics",
+    "invoice_id": "INV-00042",
+    "invoice_date": "2025-02-10",
+    "total": "2749.46",
+    "po_reference": "PO-96951"
+  },
+  {
+    "vendor_name": "Ivy Analytics",
+    "invoice_id": "INV-00043",
+    "invoice_date": "2025-03-10",
+    "total": "3944.16",
+    "po_reference": "PO-45697"
+  },
+  {
+    "vendor_name": "Ivy Analytics",
+    "invoice_id": "INV-00044",
+    "invoice_date": "2025-04-05",
+    "total": "3649.88",
+    "po_reference": "PO-22097"
+  },
+  {
+    "vendor_name": "Ivy Analytics",
+    "invoice_id": "INV-00045",
+    "invoice_date": "2025-05-10",
+    "total": "3580.07",
+    "po_reference": "PO-67912"
+  },
+  {
+    "vendor_name": "Juniper Office Supplies",
+    "invoice_id": "INV-00046",
+    "invoice_date": "2025-01-07",
+    "total": "356.71",
+    "po_reference": "PO-86350"
+  },
+  {
+    "vendor_name": "Juniper Office Supplies",
+    "invoice_id": "INV-00047",
+    "invoice_date": "2025-01-25",
+    "total": "220.46",
+    "po_reference": "PO-99399"
+  },
+  {
+    "vendor_name": "Juniper Office Supplies",
+    "invoice_id": "INV-00048",
+    "invoice_date": "2025-02-08",
+    "total": "327.63",
+    "po_reference": "PO-64040"
+  },
+  {
+    "vendor_name": "Juniper Office Supplies",
+    "invoice_id": "INV-00049",
+    "invoice_date": "2025-02-24",
+    "total": "232.66",
+    "po_reference": null
+  },
+  {
+    "vendor_name": "Juniper Office Supplies",
+    "invoice_id": "INV-00050",
+    "invoice_date": "2025-03-07",
+    "total": "308.52",
+    "po_reference": "PO-50001"
+  },
+  {
+    "vendor_name": "Kestrel HR Partners",
+    "invoice_id": "INV-00051",
+    "invoice_date": "2025-01-28",
+    "total": "2605.29",
+    "po_reference": null
+  },
+  {
+    "vendor_name": "Kestrel HR Partners",
+    "invoice_id": "INV-00052",
+    "invoice_date": "2025-02-28",
+    "total": "2562.69",
+    "po_reference": null
+  },
+  {
+    "vendor_name": "Kestrel HR Partners",
+    "invoice_id": "INV-00053",
+    "invoice_date": "2025-04-01",
+    "total": "2790.49",
+    "po_reference": null
+  },
+  {
+    "vendor_name": "Kestrel HR Partners",
+    "invoice_id": "INV-00054",
+    "invoice_date": "2025-04-29",
+    "total": "2950.35",
+    "po_reference": null
+  },
+  {
+    "vendor_name": "Kestrel HR Partners",
+    "invoice_id": "INV-00055",
+    "invoice_date": "2025-06-02",
+    "total": "2818.41",
+    "po_reference": null
+  },
+  {
+    "vendor_name": "Larkspur Design",
+    "invoice_id": "INV-00056",
+    "invoice_date": "2025-01-18",
+    "total": "2549.16",
+    "po_reference": "PO-19171"
+  },
+  {
+    "vendor_name": "Larkspur Design",
+    "invoice_id": "INV-00057",
+    "invoice_date": "2025-02-05",
+    "total": "2390.86",
+    "po_reference": "PO-76469"
+  },
+  {
+    "vendor_name": "Larkspur Design",
+    "invoice_id": "INV-00058",
+    "invoice_date": "2025-02-23",
+    "total": "1268.35",
+    "po_reference": "PO-97153"
+  },
+  {
+    "vendor_name": "Larkspur Design",
+    "invoice_id": "INV-00059",
+    "invoice_date": "2025-03-18",
+    "total": "1213.84",
+    "po_reference": "PO-47606"
+  },
+  {
+    "vendor_name": "Larkspur Design",
+    "invoice_id": "INV-00060",
+    "invoice_date": "2025-03-30",
+    "total": "1892.29",
+    "po_reference": "PO-98555"
+  }
+]

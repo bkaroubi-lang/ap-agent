@@ -1,0 +1,11 @@
+INVOICE INV-00002
+From: Acme Cloud Services
+Invoice date: 2025-01-26
+Due date: 2025-02-25
+
+Line items:
+  SaaS subscription #2-1 x2 @ 383.94 = 767.88
+
+Subtotal: 767.88
+Tax:      61.43
+TOTAL:    829.31 USD

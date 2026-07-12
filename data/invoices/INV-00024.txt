@@ -1,0 +1,12 @@
+INVOICE INV-00024
+From: Eastwind Legal LLP
+Invoice date: 2025-04-22
+Due date: 2025-05-22
+
+Line items:
+  Legal services #24-1 x1 @ 3,005.73 = 3,005.73
+  Legal services #24-2 x1 @ 3,005.73 = 3,005.73
+
+Subtotal: 6,011.46
+Tax:      480.92
+TOTAL:    6,492.38 USD

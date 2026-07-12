@@ -1,0 +1,13 @@
+INVOICE INV-00041
+From: Ivy Analytics
+Invoice date: 2025-01-17
+Due date: 2025-02-16
+PO: PO-30676
+
+Line items:
+  Data consulting #41-1 x3 @ 784.54 = 2,353.62
+  Data consulting #41-2 x3 @ 784.54 = 2,353.62
+
+Subtotal: 4,707.24
+Tax:      376.58
+TOTAL:    5,083.82 USD

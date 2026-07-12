@@ -1,0 +1,36 @@
+agent:
+  model: "groq:llama-3.3-70b-versatile"
+  max_retries: 2
+  temperature: 0.0
+
+generation:
+  n_vendors: 12
+  n_invoices_per_vendor: 5
+  anomaly_rate: 0.15         # fraction of invoices to inject anomalies into
+  seed: 42
+
+anomaly_rules:
+  duplicate_days_window: 30
+  amount_zscore_threshold: 3.0
+  off_cadence_multiplier: 2.5  # inter-invoice gap > mean * multiplier flags off-cadence
+
+eval:
+  max_invoices: 50
+  # Sleep between LLM requests to stay under free-tier rate limits
+  # (Groq llama-3.3-70b free tier: ~6K TPM). At ~2.5K tok/invoice a 3s
+  # delay yields ~50K TPM effective — well under the limit.
+  rate_limit_delay_s: 3.0
+  judge:
+    models:
+      - "groq:llama-3.3-70b-versatile"
+      - "groq:openai/gpt-oss-20b"
+    max_items: 50
+    protocol: "pairwise"       # or "single"
+    swap_ab_for_position_test: true
+    n_position_swaps: 20
+  bootstrap:
+    n_boot: 500
+    alpha: 0.05
+    seed: 0
+  calibration:
+    n_bins: 10

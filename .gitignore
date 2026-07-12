@@ -1,0 +1,16 @@
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.env
+.venv/
+env/
+venv/
+.vscode/
+.idea/
+
+# Regenerable via scripts/generate_invoices.py, but small enough to ship
+# so the eval is one-command reproducible. (Anyone who prefers can rm data/
+# and regenerate.)
+
+mlruns/
+*.log

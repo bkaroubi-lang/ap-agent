@@ -1,0 +1,11 @@
+INVOICE INV-00040
+From: Harbor Insurance Brokers
+Invoice date: 2025-05-03
+Due date: 2025-06-02
+
+Line items:
+  Business insurance #40-1 x1 @ 2,078.18 = 2,078.18
+
+Subtotal: 2,078.18
+Tax:      166.25
+TOTAL:    2,244.43 USD

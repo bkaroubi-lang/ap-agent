@@ -1,0 +1,13 @@
+INVOICE INV-00056
+From: Larkspur Design
+Invoice date: 2025-01-18
+Due date: 2025-02-17
+PO: PO-19171
+
+Line items:
+  Design services #56-1 x3 @ 393.39 = 1,180.17
+  Design services #56-2 x4 @ 295.04 = 1,180.16
+
+Subtotal: 2,360.33
+Tax:      188.83
+TOTAL:    2,549.16 USD

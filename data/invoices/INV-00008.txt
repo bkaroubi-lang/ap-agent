@@ -1,0 +1,13 @@
+INVOICE INV-00008
+From: Blue Ridge Logistics
+Invoice date: 2025-01-30
+Due date: 2025-03-01
+PO: PO-46434
+
+Line items:
+  Freight and delivery #8-1 x1 @ 683.87 = 683.87
+  Freight and delivery #8-2 x4 @ 170.97 = 683.88
+
+Subtotal: 1,367.75
+Tax:      109.42
+TOTAL:    1,477.17 USD

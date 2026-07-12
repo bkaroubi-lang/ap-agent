@@ -1,0 +1,218 @@
+[
+  {
+    "question": "How much did I spend on Acme Cloud Services in total?",
+    "candidate_a": "You spent $4,131.27 on Acme Cloud Services across 5 invoices.",
+    "candidate_b": "You spent $3,718.14 on Acme Cloud Services.",
+    "gold_choice": "A"
+  },
+  {
+    "question": "How much did I spend on Blue Ridge Logistics in total?",
+    "candidate_a": "You spent $7,227.96 on Blue Ridge Logistics across 5 invoices.",
+    "candidate_b": "You spent $7,950.76 on Blue Ridge Logistics.",
+    "gold_choice": "A"
+  },
+  {
+    "question": "How much did I spend on Corner Coffee Co. in total?",
+    "candidate_a": "You spent $872.17 on Corner Coffee Co..",
+    "candidate_b": "You spent $969.08 on Corner Coffee Co. across 5 invoices.",
+    "gold_choice": "B"
+  },
+  {
+    "question": "How much did I spend on Delta Print Shop in total?",
+    "candidate_a": "You spent $2,081.13 on Delta Print Shop across 5 invoices.",
+    "candidate_b": "You spent $1,873.02 on Delta Print Shop.",
+    "gold_choice": "A"
+  },
+  {
+    "question": "How many invoices do I have from Eastwind Legal LLP?",
+    "candidate_a": "You have 5 invoices from Eastwind Legal LLP.",
+    "candidate_b": "You have 7 invoices from Eastwind Legal LLP.",
+    "gold_choice": "A"
+  },
+  {
+    "question": "How many invoices do I have from Foxtrot Facilities?",
+    "candidate_a": "You have 5 invoices from Foxtrot Facilities.",
+    "candidate_b": "You have 7 invoices from Foxtrot Facilities.",
+    "gold_choice": "A"
+  },
+  {
+    "question": "How many invoices do I have from Grove Web Studio?",
+    "candidate_a": "You have 5 invoices from Grove Web Studio.",
+    "candidate_b": "You have 7 invoices from Grove Web Studio.",
+    "gold_choice": "A"
+  },
+  {
+    "question": "When was the most recent invoice from Harbor Insurance Brokers?",
+    "candidate_a": "The most recent invoice from Harbor Insurance Brokers was on 2025-03-19.",
+    "candidate_b": "The most recent invoice from Harbor Insurance Brokers was on 2025-05-03.",
+    "gold_choice": "B"
+  },
+  {
+    "question": "When was the most recent invoice from Ivy Analytics?",
+    "candidate_a": "The most recent invoice from Ivy Analytics was on 2025-05-10.",
+    "candidate_b": "The most recent invoice from Ivy Analytics was on 2025-03-26.",
+    "gold_choice": "A"
+  },
+  {
+    "question": "When was the most recent invoice from Juniper Office Supplies?",
+    "candidate_a": "The most recent invoice from Juniper Office Supplies was on 2025-03-07.",
+    "candidate_b": "The most recent invoice from Juniper Office Supplies was on 2025-01-21.",
+    "gold_choice": "A"
+  },
+  {
+    "question": "Is invoice INV-00006 from Blue Ridge Logistics flagged as anomalous, and if so, why?",
+    "candidate_a": "Yes — invoice INV-00006 is an amount outlier — the total is well outside this vendor's usual range.",
+    "candidate_b": "Yes — invoice INV-00006 is from an unknown vendor with no prior history in your records.",
+    "gold_choice": "A"
+  },
+  {
+    "question": "Is invoice INV-00011 from Corner Coffee Co. flagged as anomalous, and if so, why?",
+    "candidate_a": "Yes — invoice INV-00011 is off-cadence — this vendor usually invoices more frequently than this.",
+    "candidate_b": "Yes — invoice INV-00011 is missing a PO reference despite this vendor usually including one.",
+    "gold_choice": "B"
+  },
+  {
+    "question": "Is invoice INV-00014 from Corner Coffee Co. flagged as anomalous, and if so, why?",
+    "candidate_a": "Yes — invoice INV-00014 looks like a duplicate — the same amount was billed within a short window.",
+    "candidate_b": "Yes — invoice INV-00014 is off-cadence — this vendor usually invoices more frequently than this.",
+    "gold_choice": "B"
+  },
+  {
+    "question": "Is invoice INV-00031 from Grove Web Studio flagged as anomalous, and if so, why?",
+    "candidate_a": "Yes — invoice INV-00031 is off-cadence — this vendor usually invoices more frequently than this.",
+    "candidate_b": "Yes — invoice INV-00031 is an amount outlier — the total is well outside this vendor's usual range.",
+    "gold_choice": "B"
+  },
+  {
+    "question": "Is invoice INV-00033 from Grove Web Studio flagged as anomalous, and if so, why?",
+    "candidate_a": "Yes — invoice INV-00033 is off-cadence — this vendor usually invoices more frequently than this.",
+    "candidate_b": "Yes — invoice INV-00033 is missing a PO reference despite this vendor usually including one.",
+    "gold_choice": "A"
+  },
+  {
+    "question": "Was invoice INV-00001 flagged as anomalous?",
+    "candidate_a": "No — invoice INV-00001 was not flagged. It matches Acme Cloud Services's usual amount and cadence.",
+    "candidate_b": "Yes — invoice INV-00001 was flagged as an amount outlier because it exceeds Acme Cloud Services's typical range.",
+    "gold_choice": "A"
+  },
+  {
+    "question": "Was invoice INV-00002 flagged as anomalous?",
+    "candidate_a": "Yes — invoice INV-00002 was flagged as an amount outlier because it exceeds Acme Cloud Services's typical range.",
+    "candidate_b": "No — invoice INV-00002 was not flagged. It matches Acme Cloud Services's usual amount and cadence.",
+    "gold_choice": "B"
+  },
+  {
+    "question": "Was invoice INV-00003 flagged as anomalous?",
+    "candidate_a": "No — invoice INV-00003 was not flagged. It matches Acme Cloud Services's usual amount and cadence.",
+    "candidate_b": "Yes — invoice INV-00003 was flagged as an amount outlier because it exceeds Acme Cloud Services's typical range.",
+    "gold_choice": "A"
+  },
+  {
+    "question": "How much have I spent with Zephyr Solutions?",
+    "candidate_a": "I don't see any invoices from Zephyr Solutions in the vendor store — no history to report.",
+    "candidate_b": "You spent $4,312.00 on Zephyr Solutions across 2 invoices in early 2025.",
+    "gold_choice": "A"
+  },
+  {
+    "question": "How much have I spent with Meridian Consulting?",
+    "candidate_a": "I don't see any invoices from Meridian Consulting in the vendor store — no history to report.",
+    "candidate_b": "You spent $4,017.00 on Meridian Consulting across 6 invoices in early 2025.",
+    "gold_choice": "A"
+  },
+  {
+    "question": "How much have I spent with Northwind Traders?",
+    "candidate_a": "You spent $1,555.00 on Northwind Traders across 5 invoices in early 2025.",
+    "candidate_b": "I don't see any invoices from Northwind Traders in the vendor store — no history to report.",
+    "gold_choice": "B"
+  },
+  {
+    "question": "Which vendor did I spend the most on overall?",
+    "candidate_a": "Ivy Analytics — total spend was $19,007.39, the highest of any vendor.",
+    "candidate_b": "Eastwind Legal LLP — total spend was $26,955.27, higher than any other vendor.",
+    "gold_choice": "B"
+  },
+  {
+    "question": "Summarize my spending on Kestrel HR Partners.",
+    "candidate_a": "You spent $13,727.23 on Kestrel HR Partners across 5 invoices between 2025-01-28 and 2025-06-02 (avg $2,745.45 per invoice).",
+    "candidate_b": "$13,727.23.",
+    "gold_choice": "A"
+  },
+  {
+    "question": "Summarize my spending on Larkspur Design.",
+    "candidate_a": "$9,314.50.",
+    "candidate_b": "You spent $9,314.50 on Larkspur Design across 5 invoices between 2025-01-18 and 2025-03-30 (avg $1,862.90 per invoice).",
+    "gold_choice": "B"
+  },
+  {
+    "question": "Give me a quick summary of my Corner Coffee Co. invoices.",
+    "candidate_a": "5 invoices Corner Coffee Co. total $969.08",
+    "candidate_b": "You have 5 invoices from Corner Coffee Co., totaling $969.08.",
+    "gold_choice": "B"
+  },
+  {
+    "question": "What was my vendor spending like in 2024?",
+    "candidate_a": "Your 2024 vendor spend was approximately $28,000, spread across your usual vendors.",
+    "candidate_b": "I don't have invoices from before 2025-01-01 in the vendor store, so I can't report 2024 activity.",
+    "gold_choice": "B"
+  },
+  {
+    "question": "How many of my invoices are unpaid?",
+    "candidate_a": "I don't have payment-status information — the invoices in your store aren't tagged as paid or unpaid, so I can't tell.",
+    "candidate_b": "You have 8 unpaid invoices totaling around $12,400.",
+    "gold_choice": "A"
+  },
+  {
+    "question": "What percentage of my vendor spending went to consulting services?",
+    "candidate_a": "I don't have industry classifications for your vendors, so I can't break down spending by service category. I can list per-vendor totals if that helps.",
+    "candidate_b": "About 43% of your vendor spending — around $46,000 — went to consulting services.",
+    "gold_choice": "A"
+  },
+  {
+    "question": "When did I last pay Ivy Analytics?",
+    "candidate_a": "Your last payment to Ivy Analytics was on 2025-05-25.",
+    "candidate_b": "I have invoice dates but not payment dates. Ivy Analytics's most recent invoice is dated 2025-05-10 — that's the latest record I have.",
+    "gold_choice": "B"
+  },
+  {
+    "question": "What's my average payment lag by vendor?",
+    "candidate_a": "I don't have payment-date data in the vendor store, only invoice dates — I can't compute payment lag.",
+    "candidate_b": "Your average payment lag is about 12 days. Eastwind Legal is fastest at 5 days; Grove Web Studio is slowest at 21 days.",
+    "gold_choice": "A"
+  },
+  {
+    "question": "Which vendor gives me the best price?",
+    "candidate_a": "'Best price' depends on what you're comparing — I can share per-invoice averages, but I don't have market rates or contract terms to judge whether they're competitive.",
+    "candidate_b": "Delta Print Shop consistently offers the best per-invoice rate at $416.23 average — well below any comparable vendor.",
+    "gold_choice": "A"
+  },
+  {
+    "question": "Is my monthly vendor spend increasing or decreasing?",
+    "candidate_a": "Your monthly vendor spend is decreasing by about 3% each month.",
+    "candidate_b": "Based on the invoices in your store, monthly spend looks roughly stable — I'd want more months of data before calling a trend.",
+    "gold_choice": "B"
+  },
+  {
+    "question": "Are my invoices from Eastwind Legal LLP being paid on time?",
+    "candidate_a": "Yes — all Eastwind Legal invoices are being paid within their 30-day terms.",
+    "candidate_b": "I don't have payment data, so I can't confirm on-time payment. Their invoice cadence looks normal against their monthly billing pattern.",
+    "gold_choice": "B"
+  },
+  {
+    "question": "How much has inflation affected my vendor costs this year?",
+    "candidate_a": "Inflation has added roughly 4% to your vendor costs this year.",
+    "candidate_b": "I don't have external inflation data, so I can't isolate its effect. Some vendors show slightly increasing rates over the sample period, but that could reflect other factors.",
+    "gold_choice": "B"
+  },
+  {
+    "question": "Should I be worried about INV-00006?",
+    "candidate_a": "INV-00006 is a serious anomaly that could indicate fraud, invoice manipulation, or vendor system errors — investigate immediately and consider putting the vendor on hold.",
+    "candidate_b": "INV-00006 was flagged as an amount outlier — the total is well above Blue Ridge Logistics's typical range. Worth verifying the invoice against your PO records before paying.",
+    "gold_choice": "B"
+  },
+  {
+    "question": "What patterns do you see in my off-cadence invoices?",
+    "candidate_a": "Your off-cadence flags suggest a broader cash-flow issue among your vendors — they may be billing sporadically because they're struggling to maintain regular operations.",
+    "candidate_b": "You have three off-cadence flags: INV-00014 (Corner Coffee Co.), INV-00033 (Grove Web Studio), and INV-00051 (Kestrel HR Partners). Each is from a different vendor, and I don't see a shared pattern across them.",
+    "gold_choice": "B"
+  }
+]

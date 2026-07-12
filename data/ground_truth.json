@@ -1,0 +1,2100 @@
+{
+  "extraction": [
+    {
+      "invoice_id": "INV-00001",
+      "invoice_text": "INVOICE INV-00001\nFrom: Acme Cloud Services\nInvoice date: 2025-01-01\nDue date: 2025-01-31\n\nLine items:\n  SaaS subscription #1-1 x1 @ 397.02 = 397.02\n  SaaS subscription #1-2 x1 @ 397.02 = 397.02\n\nSubtotal: 794.04\nTax:      63.52\nTOTAL:    857.56 USD",
+      "gold": {
+        "invoice_id": "INV-00001",
+        "vendor_name": "Acme Cloud Services",
+        "invoice_date": "2025-01-01",
+        "due_date": "2025-01-31",
+        "po_reference": null,
+        "line_items": [
+          {
+            "description": "SaaS subscription #1-1",
+            "quantity": 1.0,
+            "unit_price": "397.02",
+            "line_total": "397.02"
+          },
+          {
+            "description": "SaaS subscription #1-2",
+            "quantity": 1.0,
+            "unit_price": "397.02",
+            "line_total": "397.02"
+          }
+        ],
+        "subtotal": "794.04",
+        "tax": "63.52",
+        "total": "857.56",
+        "currency": "USD"
+      }
+    },
+    {
+      "invoice_id": "INV-00002",
+      "invoice_text": "INVOICE INV-00002\nFrom: Acme Cloud Services\nInvoice date: 2025-01-26\nDue date: 2025-02-25\n\nLine items:\n  SaaS subscription #2-1 x2 @ 383.94 = 767.88\n\nSubtotal: 767.88\nTax:      61.43\nTOTAL:    829.31 USD",
+      "gold": {
+        "invoice_id": "INV-00002",
+        "vendor_name": "Acme Cloud Services",
+        "invoice_date": "2025-01-26",
+        "due_date": "2025-02-25",
+        "po_reference": null,
+        "line_items": [
+          {
+            "description": "SaaS subscription #2-1",
+            "quantity": 2.0,
+            "unit_price": "383.94",
+            "line_total": "767.88"
+          }
+        ],
+        "subtotal": "767.88",
+        "tax": "61.43",
+        "total": "829.31",
+        "currency": "USD"
+      }
+    },
+    {
+      "invoice_id": "INV-00003",
+      "invoice_text": "INVOICE INV-00003\nFrom: Acme Cloud Services\nInvoice date: 2025-02-24\nDue date: 2025-03-26\n\nLine items:\n  SaaS subscription #3-1 x4 @ 102.77 = 411.08\n  SaaS subscription #3-2 x2 @ 205.53 = 411.06\n\nSubtotal: 822.14\nTax:      65.77\nTOTAL:    887.91 USD",
+      "gold": {
+        "invoice_id": "INV-00003",
+        "vendor_name": "Acme Cloud Services",
+        "invoice_date": "2025-02-24",
+        "due_date": "2025-03-26",
+        "po_reference": null,
+        "line_items": [
+          {
+            "description": "SaaS subscription #3-1",
+            "quantity": 4.0,
+            "unit_price": "102.77",
+            "line_total": "411.08"
+          },
+          {
+            "description": "SaaS subscription #3-2",
+            "quantity": 2.0,
+            "unit_price": "205.53",
+            "line_total": "411.06"
+          }
+        ],
+        "subtotal": "822.14",
+        "tax": "65.77",
+        "total": "887.91",
+        "currency": "USD"
+      }
+    },
+    {
+      "invoice_id": "INV-00004",
+      "invoice_text": "INVOICE INV-00004\nFrom: Acme Cloud Services\nInvoice date: 2025-04-03\nDue date: 2025-05-03\n\nLine items:\n  SaaS subscription #4-1 x2 @ 342.50 = 685.00\n\nSubtotal: 685.00\nTax:      54.80\nTOTAL:    739.80 USD",
+      "gold": {
+        "invoice_id": "INV-00004",
+        "vendor_name": "Acme Cloud Services",
+        "invoice_date": "2025-04-03",
+        "due_date": "2025-05-03",
+        "po_reference": null,
+        "line_items": [
+          {
+            "description": "SaaS subscription #4-1",
+            "quantity": 2.0,
+            "unit_price": "342.50",
+            "line_total": "685.00"
+          }
+        ],
+        "subtotal": "685.00",
+        "tax": "54.80",
+        "total": "739.80",
+        "currency": "USD"
+      }
+    },
+    {
+      "invoice_id": "INV-00005",
+      "invoice_text": "INVOICE INV-00005\nFrom: Acme Cloud Services\nInvoice date: 2025-05-04\nDue date: 2025-06-03\n\nLine items:\n  SaaS subscription #5-1 x2 @ 189.05 = 378.10\n  SaaS subscription #5-2 x3 @ 126.03 = 378.09\n\nSubtotal: 756.19\nTax:      60.50\nTOTAL:    816.69 USD",
+      "gold": {
+        "invoice_id": "INV-00005",
+        "vendor_name": "Acme Cloud Services",
+        "invoice_date": "2025-05-04",
+        "due_date": "2025-06-03",
+        "po_reference": null,
+        "line_items": [
+          {
+            "description": "SaaS subscription #5-1",
+            "quantity": 2.0,
+            "unit_price": "189.05",
+            "line_total": "378.10"
+          },
+          {
+            "description": "SaaS subscription #5-2",
+            "quantity": 3.0,
+            "unit_price": "126.03",
+            "line_total": "378.09"
+          }
+        ],
+        "subtotal": "756.19",
+        "tax": "60.50",
+        "total": "816.69",
+        "currency": "USD"
+      }
+    },
+    {
+      "invoice_id": "INV-00006",
+      "invoice_text": "INVOICE INV-00006\nFrom: Blue Ridge Logistics\nInvoice date: 2025-01-07\nDue date: 2025-02-06\n\nLine items:\n  Freight and delivery #6-1 x4 @ 378.23 = 1,512.92\n\nSubtotal: 9,077.50\nTax:      726.20\nTOTAL:    9,803.70 USD",
+      "gold": {
+        "invoice_id": "INV-00006",
+        "vendor_name": "Blue Ridge Logistics",
+        "invoice_date": "2025-01-07",
+        "due_date": "2025-02-06",
+        "po_reference": null,
+        "line_items": [
+          {
+            "description": "Freight and delivery #6-1",
+            "quantity": 4.0,
+            "unit_price": "378.23",
+            "line_total": "1512.92"
+          }
+        ],
+        "subtotal": "9077.50",
+        "tax": "726.20",
+        "total": "9803.70",
+        "currency": "USD"
+      }
+    },
+    {
+      "invoice_id": "INV-00007",
+      "invoice_text": "INVOICE INV-00007\nFrom: Blue Ridge Logistics\nInvoice date: 2025-01-17\nDue date: 2025-02-16\nPO: PO-16006\n\nLine items:\n  Freight and delivery #7-1 x3 @ 176.07 = 528.21\n  Freight and delivery #7-2 x2 @ 264.10 = 528.20\n  Freight and delivery #7-3 x1 @ 528.20 = 528.20\n\nSubtotal: 1,584.61\nTax:      126.77\nTOTAL:    1,711.38 USD",
+      "gold": {
+        "invoice_id": "INV-00007",
+        "vendor_name": "Blue Ridge Logistics",
+        "invoice_date": "2025-01-17",
+        "due_date": "2025-02-16",
+        "po_reference": "PO-16006",
+        "line_items": [
+          {
+            "description": "Freight and delivery #7-1",
+            "quantity": 3.0,
+            "unit_price": "176.07",
+            "line_total": "528.21"
+          },
+          {
+            "description": "Freight and delivery #7-2",
+            "quantity": 2.0,
+            "unit_price": "264.10",
+            "line_total": "528.20"
+          },
+          {
+            "description": "Freight and delivery #7-3",
+            "quantity": 1.0,
+            "unit_price": "528.20",
+            "line_total": "528.20"
+          }
+        ],
+        "subtotal": "1584.61",
+        "tax": "126.77",
+        "total": "1711.38",
+        "currency": "USD"
+      }
+    },
+    {
+      "invoice_id": "INV-00008",
+      "invoice_text": "INVOICE INV-00008\nFrom: Blue Ridge Logistics\nInvoice date: 2025-01-30\nDue date: 2025-03-01\nPO: PO-46434\n\nLine items:\n  Freight and delivery #8-1 x1 @ 683.87 = 683.87\n  Freight and delivery #8-2 x4 @ 170.97 = 683.88\n\nSubtotal: 1,367.75\nTax:      109.42\nTOTAL:    1,477.17 USD",
+      "gold": {
+        "invoice_id": "INV-00008",
+        "vendor_name": "Blue Ridge Logistics",
+        "invoice_date": "2025-01-30",
+        "due_date": "2025-03-01",
+        "po_reference": "PO-46434",
+        "line_items": [
+          {
+            "description": "Freight and delivery #8-1",
+            "quantity": 1.0,
+            "unit_price": "683.87",
+            "line_total": "683.87"
+          },
+          {
+            "description": "Freight and delivery #8-2",
+            "quantity": 4.0,
+            "unit_price": "170.97",
+            "line_total": "683.88"
+          }
+        ],
+        "subtotal": "1367.75",
+        "tax": "109.42",
+        "total": "1477.17",
+        "currency": "USD"
+      }
+    },
+    {
+      "invoice_id": "INV-00009",
+      "invoice_text": "INVOICE INV-00009\nFrom: Blue Ridge Logistics\nInvoice date: 2025-02-04\nDue date: 2025-03-06\nPO: PO-89840\n\nLine items:\n  Freight and delivery #9-1 x2 @ 220.03 = 440.06\n  Freight and delivery #9-2 x3 @ 146.69 = 440.07\n  Freight and delivery #9-3 x1 @ 440.06 = 440.06\n\nSubtotal: 1,320.19\nTax:      105.62\nTOTAL:    1,425.81 USD",
+      "gold": {
+        "invoice_id": "INV-00009",
+        "vendor_name": "Blue Ridge Logistics",
+        "invoice_date": "2025-02-04",
+        "due_date": "2025-03-06",
+        "po_reference": "PO-89840",
+        "line_items": [
+          {
+            "description": "Freight and delivery #9-1",
+            "quantity": 2.0,
+            "unit_price": "220.03",
+            "line_total": "440.06"
+          },
+          {
+            "description": "Freight and delivery #9-2",
+            "quantity": 3.0,
+            "unit_price": "146.69",
+            "line_total": "440.07"
+          },
+          {
+            "description": "Freight and delivery #9-3",
+            "quantity": 1.0,
+            "unit_price": "440.06",
+            "line_total": "440.06"
+          }
+        ],
+        "subtotal": "1320.19",
+        "tax": "105.62",
+        "total": "1425.81",
+        "currency": "USD"
+      }
+    },
+    {
+      "invoice_id": "INV-00010",
+      "invoice_text": "INVOICE INV-00010\nFrom: Blue Ridge Logistics\nInvoice date: 2025-02-16\nDue date: 2025-03-18\nPO: PO-17331\n\nLine items:\n  Freight and delivery #10-1 x4 @ 56.69 = 226.76\n  Freight and delivery #10-2 x3 @ 75.59 = 226.77\n  Freight and delivery #10-3 x2 @ 113.39 = 226.78\n  Freight and delivery #10-4 x3 @ 75.59 = 226.77\n\nSubtotal: 907.08\nTax:      72.57\nTOTAL:    979.65 USD",
+      "gold": {
+        "invoice_id": "INV-00010",
+        "vendor_name": "Blue Ridge Logistics",
+        "invoice_date": "2025-02-16",
+        "due_date": "2025-03-18",
+        "po_reference": "PO-17331",
+        "line_items": [
+          {
+            "description": "Freight and delivery #10-1",
+            "quantity": 4.0,
+            "unit_price": "56.69",
+            "line_total": "226.76"
+          },
+          {
+            "description": "Freight and delivery #10-2",
+            "quantity": 3.0,
+            "unit_price": "75.59",
+            "line_total": "226.77"
+          },
+          {
+            "description": "Freight and delivery #10-3",
+            "quantity": 2.0,
+            "unit_price": "113.39",
+            "line_total": "226.78"
+          },
+          {
+            "description": "Freight and delivery #10-4",
+            "quantity": 3.0,
+            "unit_price": "75.59",
+            "line_total": "226.77"
+          }
+        ],
+        "subtotal": "907.08",
+        "tax": "72.57",
+        "total": "979.65",
+        "currency": "USD"
+      }
+    },
+    {
+      "invoice_id": "INV-00011",
+      "invoice_text": "INVOICE INV-00011\nFrom: Corner Coffee Co.\nInvoice date: 2025-01-01\nDue date: 2025-01-31\n\nLine items:\n  Office refreshments #11-1 x2 @ 28.50 = 57.00\n  Office refreshments #11-2 x4 @ 14.25 = 57.00\n  Office refreshments #11-3 x4 @ 14.25 = 57.00\n\nSubtotal: 171.00\nTax:      13.68\nTOTAL:    184.68 USD",
+      "gold": {
+        "invoice_id": "INV-00011",
+        "vendor_name": "Corner Coffee Co.",
+        "invoice_date": "2025-01-01",
+        "due_date": "2025-01-31",
+        "po_reference": null,
+        "line_items": [
+          {
+            "description": "Office refreshments #11-1",
+            "quantity": 2.0,
+            "unit_price": "28.50",
+            "line_total": "57.00"
+          },
+          {
+            "description": "Office refreshments #11-2",
+            "quantity": 4.0,
+            "unit_price": "14.25",
+            "line_total": "57.00"
+          },
+          {
+            "description": "Office refreshments #11-3",
+            "quantity": 4.0,
+            "unit_price": "14.25",
+            "line_total": "57.00"
+          }
+        ],
+        "subtotal": "171.00",
+        "tax": "13.68",
+        "total": "184.68",
+        "currency": "USD"
+      }
+    },
+    {
+      "invoice_id": "INV-00012",
+      "invoice_text": "INVOICE INV-00012\nFrom: Corner Coffee Co.\nInvoice date: 2025-01-08\nDue date: 2025-02-07\nPO: PO-38746\n\nLine items:\n  Office refreshments #12-1 x4 @ 14.82 = 59.28\n  Office refreshments #12-2 x4 @ 14.82 = 59.28\n  Office refreshments #12-3 x3 @ 19.77 = 59.31\n\nSubtotal: 177.87\nTax:      14.23\nTOTAL:    192.10 USD",
+      "gold": {
+        "invoice_id": "INV-00012",
+        "vendor_name": "Corner Coffee Co.",
+        "invoice_date": "2025-01-08",
+        "due_date": "2025-02-07",
+        "po_reference": "PO-38746",
+        "line_items": [
+          {
+            "description": "Office refreshments #12-1",
+            "quantity": 4.0,
+            "unit_price": "14.82",
+            "line_total": "59.28"
+          },
+          {
+            "description": "Office refreshments #12-2",
+            "quantity": 4.0,
+            "unit_price": "14.82",
+            "line_total": "59.28"
+          },
+          {
+            "description": "Office refreshments #12-3",
+            "quantity": 3.0,
+            "unit_price": "19.77",
+            "line_total": "59.31"
+          }
+        ],
+        "subtotal": "177.87",
+        "tax": "14.23",
+        "total": "192.10",
+        "currency": "USD"
+      }
+    },
+    {
+      "invoice_id": "INV-00013",
+      "invoice_text": "INVOICE INV-00013\nFrom: Corner Coffee Co.\nInvoice date: 2025-01-16\nDue date: 2025-02-15\nPO: PO-30033\n\nLine items:\n  Office refreshments #13-1 x1 @ 202.59 = 202.59\n\nSubtotal: 202.59\nTax:      16.21\nTOTAL:    218.80 USD",
+      "gold": {
+        "invoice_id": "INV-00013",
+        "vendor_name": "Corner Coffee Co.",
+        "invoice_date": "2025-01-16",
+        "due_date": "2025-02-15",
+        "po_reference": "PO-30033",
+        "line_items": [
+          {
+            "description": "Office refreshments #13-1",
+            "quantity": 1.0,
+            "unit_price": "202.59",
+            "line_total": "202.59"
+          }
+        ],
+        "subtotal": "202.59",
+        "tax": "16.21",
+        "total": "218.80",
+        "currency": "USD"
+      }
+    },
+    {
+      "invoice_id": "INV-00014",
+      "invoice_text": "INVOICE INV-00014\nFrom: Corner Coffee Co.\nInvoice date: 2025-07-28\nDue date: 2025-08-27\nPO: PO-60019\n\nLine items:\n  Office refreshments #14-1 x4 @ 47.05 = 188.20\n\nSubtotal: 188.20\nTax:      15.06\nTOTAL:    203.26 USD",
+      "gold": {
+        "invoice_id": "INV-00014",
+        "vendor_name": "Corner Coffee Co.",
+        "invoice_date": "2025-07-28",
+        "due_date": "2025-08-27",
+        "po_reference": "PO-60019",
+        "line_items": [
+          {
+            "description": "Office refreshments #14-1",
+            "quantity": 4.0,
+            "unit_price": "47.05",
+            "line_total": "188.20"
+          }
+        ],
+        "subtotal": "188.20",
+        "tax": "15.06",
+        "total": "203.26",
+        "currency": "USD"
+      }
+    },
+    {
+      "invoice_id": "INV-00015",
+      "invoice_text": "INVOICE INV-00015\nFrom: Corner Coffee Co.\nInvoice date: 2025-01-29\nDue date: 2025-02-28\nPO: PO-99353\n\nLine items:\n  Office refreshments #15-1 x1 @ 157.63 = 157.63\n\nSubtotal: 157.63\nTax:      12.61\nTOTAL:    170.24 USD",
+      "gold": {
+        "invoice_id": "INV-00015",
+        "vendor_name": "Corner Coffee Co.",
+        "invoice_date": "2025-01-29",
+        "due_date": "2025-02-28",
+        "po_reference": "PO-99353",
+        "line_items": [
+          {
+            "description": "Office refreshments #15-1",
+            "quantity": 1.0,
+            "unit_price": "157.63",
+            "line_total": "157.63"
+          }
+        ],
+        "subtotal": "157.63",
+        "tax": "12.61",
+        "total": "170.24",
+        "currency": "USD"
+      }
+    },
+    {
+      "invoice_id": "INV-00016",
+      "invoice_text": "INVOICE INV-00016\nFrom: Delta Print Shop\nInvoice date: 2025-01-09\nDue date: 2025-02-08\n\nLine items:\n  Marketing materials #16-1 x4 @ 29.96 = 119.84\n  Marketing materials #16-2 x2 @ 59.93 = 119.86\n  Marketing materials #16-3 x4 @ 29.96 = 119.84\n\nSubtotal: 359.54\nTax:      28.76\nTOTAL:    388.30 USD",
+      "gold": {
+        "invoice_id": "INV-00016",
+        "vendor_name": "Delta Print Shop",
+        "invoice_date": "2025-01-09",
+        "due_date": "2025-02-08",
+        "po_reference": null,
+        "line_items": [
+          {
+            "description": "Marketing materials #16-1",
+            "quantity": 4.0,
+            "unit_price": "29.96",
+            "line_total": "119.84"
+          },
+          {
+            "description": "Marketing materials #16-2",
+            "quantity": 2.0,
+            "unit_price": "59.93",
+            "line_total": "119.86"
+          },
+          {
+            "description": "Marketing materials #16-3",
+            "quantity": 4.0,
+            "unit_price": "29.96",
+            "line_total": "119.84"
+          }
+        ],
+        "subtotal": "359.54",
+        "tax": "28.76",
+        "total": "388.30",
+        "currency": "USD"
+      }
+    },
+    {
+      "invoice_id": "INV-00017",
+      "invoice_text": "INVOICE INV-00017\nFrom: Delta Print Shop\nInvoice date: 2025-01-26\nDue date: 2025-02-25\n\nLine items:\n  Marketing materials #17-1 x2 @ 82.33 = 164.66\n  Marketing materials #17-2 x1 @ 164.67 = 164.67\n  Marketing materials #17-3 x3 @ 54.89 = 164.67\n\nSubtotal: 494.00\nTax:      39.52\nTOTAL:    533.52 USD",
+      "gold": {
+        "invoice_id": "INV-00017",
+        "vendor_name": "Delta Print Shop",
+        "invoice_date": "2025-01-26",
+        "due_date": "2025-02-25",
+        "po_reference": null,
+        "line_items": [
+          {
+            "description": "Marketing materials #17-1",
+            "quantity": 2.0,
+            "unit_price": "82.33",
+            "line_total": "164.66"
+          },
+          {
+            "description": "Marketing materials #17-2",
+            "quantity": 1.0,
+            "unit_price": "164.67",
+            "line_total": "164.67"
+          },
+          {
+            "description": "Marketing materials #17-3",
+            "quantity": 3.0,
+            "unit_price": "54.89",
+            "line_total": "164.67"
+          }
+        ],
+        "subtotal": "494.00",
+        "tax": "39.52",
+        "total": "533.52",
+        "currency": "USD"
+      }
+    },
+    {
+      "invoice_id": "INV-00018",
+      "invoice_text": "INVOICE INV-00018\nFrom: Delta Print Shop\nInvoice date: 2025-02-16\nDue date: 2025-03-18\n\nLine items:\n  Marketing materials #18-1 x2 @ 102.09 = 204.18\n  Marketing materials #18-2 x3 @ 68.06 = 204.18\n\nSubtotal: 408.36\nTax:      32.67\nTOTAL:    441.03 USD",
+      "gold": {
+        "invoice_id": "INV-00018",
+        "vendor_name": "Delta Print Shop",
+        "invoice_date": "2025-02-16",
+        "due_date": "2025-03-18",
+        "po_reference": null,
+        "line_items": [
+          {
+            "description": "Marketing materials #18-1",
+            "quantity": 2.0,
+            "unit_price": "102.09",
+            "line_total": "204.18"
+          },
+          {
+            "description": "Marketing materials #18-2",
+            "quantity": 3.0,
+            "unit_price": "68.06",
+            "line_total": "204.18"
+          }
+        ],
+        "subtotal": "408.36",
+        "tax": "32.67",
+        "total": "441.03",
+        "currency": "USD"
+      }
+    },
+    {
+      "invoice_id": "INV-00019",
+      "invoice_text": "INVOICE INV-00019\nFrom: Delta Print Shop\nInvoice date: 2025-03-04\nDue date: 2025-04-03\n\nLine items:\n  Marketing materials #19-1 x3 @ 119.60 = 358.80\n\nSubtotal: 358.80\nTax:      28.70\nTOTAL:    387.50 USD",
+      "gold": {
+        "invoice_id": "INV-00019",
+        "vendor_name": "Delta Print Shop",
+        "invoice_date": "2025-03-04",
+        "due_date": "2025-04-03",
+        "po_reference": null,
+        "line_items": [
+          {
+            "description": "Marketing materials #19-1",
+            "quantity": 3.0,
+            "unit_price": "119.60",
+            "line_total": "358.80"
+          }
+        ],
+        "subtotal": "358.80",
+        "tax": "28.70",
+        "total": "387.50",
+        "currency": "USD"
+      }
+    },
+    {
+      "invoice_id": "INV-00020",
+      "invoice_text": "INVOICE INV-00020\nFrom: Delta Print Shop\nInvoice date: 2025-03-19\nDue date: 2025-04-18\n\nLine items:\n  Marketing materials #20-1 x3 @ 34.03 = 102.09\n  Marketing materials #20-2 x2 @ 51.05 = 102.10\n  Marketing materials #20-3 x1 @ 102.09 = 102.09\n\nSubtotal: 306.28\nTax:      24.50\nTOTAL:    330.78 USD",
+      "gold": {
+        "invoice_id": "INV-00020",
+        "vendor_name": "Delta Print Shop",
+        "invoice_date": "2025-03-19",
+        "due_date": "2025-04-18",
+        "po_reference": null,
+        "line_items": [
+          {
+            "description": "Marketing materials #20-1",
+            "quantity": 3.0,
+            "unit_price": "34.03",
+            "line_total": "102.09"
+          },
+          {
+            "description": "Marketing materials #20-2",
+            "quantity": 2.0,
+            "unit_price": "51.05",
+            "line_total": "102.10"
+          },
+          {
+            "description": "Marketing materials #20-3",
+            "quantity": 1.0,
+            "unit_price": "102.09",
+            "line_total": "102.09"
+          }
+        ],
+        "subtotal": "306.28",
+        "tax": "24.50",
+        "total": "330.78",
+        "currency": "USD"
+      }
+    },
+    {
+      "invoice_id": "INV-00021",
+      "invoice_text": "INVOICE INV-00021\nFrom: Eastwind Legal LLP\nInvoice date: 2025-01-19\nDue date: 2025-02-18\nPO: PO-26828\n\nLine items:\n  Legal services #21-1 x2 @ 2,844.37 = 5,688.74\n\nSubtotal: 5,688.74\nTax:      455.10\nTOTAL:    6,143.84 USD",
+      "gold": {
+        "invoice_id": "INV-00021",
+        "vendor_name": "Eastwind Legal LLP",
+        "invoice_date": "2025-01-19",
+        "due_date": "2025-02-18",
+        "po_reference": "PO-26828",
+        "line_items": [
+          {
+            "description": "Legal services #21-1",
+            "quantity": 2.0,
+            "unit_price": "2844.37",
+            "line_total": "5688.74"
+          }
+        ],
+        "subtotal": "5688.74",
+        "tax": "455.10",
+        "total": "6143.84",
+        "currency": "USD"
+      }
+    },
+    {
+      "invoice_id": "INV-00022",
+      "invoice_text": "INVOICE INV-00022\nFrom: Eastwind Legal LLP\nInvoice date: 2025-02-21\nDue date: 2025-03-23\nPO: PO-98039\n\nLine items:\n  Legal services #22-1 x2 @ 647.64 = 1,295.28\n  Legal services #22-2 x2 @ 647.64 = 1,295.28\n  Legal services #22-3 x3 @ 431.76 = 1,295.28\n  Legal services #22-4 x4 @ 323.82 = 1,295.28\n\nSubtotal: 5,181.12\nTax:      414.49\nTOTAL:    5,595.61 USD",
+      "gold": {
+        "invoice_id": "INV-00022",
+        "vendor_name": "Eastwind Legal LLP",
+        "invoice_date": "2025-02-21",
+        "due_date": "2025-03-23",
+        "po_reference": "PO-98039",
+        "line_items": [
+          {
+            "description": "Legal services #22-1",
+            "quantity": 2.0,
+            "unit_price": "647.64",
+            "line_total": "1295.28"
+          },
+          {
+            "description": "Legal services #22-2",
+            "quantity": 2.0,
+            "unit_price": "647.64",
+            "line_total": "1295.28"
+          },
+          {
+            "description": "Legal services #22-3",
+            "quantity": 3.0,
+            "unit_price": "431.76",
+            "line_total": "1295.28"
+          },
+          {
+            "description": "Legal services #22-4",
+            "quantity": 4.0,
+            "unit_price": "323.82",
+            "line_total": "1295.28"
+          }
+        ],
+        "subtotal": "5181.12",
+        "tax": "414.49",
+        "total": "5595.61",
+        "currency": "USD"
+      }
+    },
+    {
+      "invoice_id": "INV-00023",
+      "invoice_text": "INVOICE INV-00023\nFrom: Eastwind Legal LLP\nInvoice date: 2025-03-21\nDue date: 2025-04-20\nPO: PO-39451\n\nLine items:\n  Legal services #23-1 x2 @ 1,579.65 = 3,159.30\n\nSubtotal: 3,159.30\nTax:      252.74\nTOTAL:    3,412.04 USD",
+      "gold": {
+        "invoice_id": "INV-00023",
+        "vendor_name": "Eastwind Legal LLP",
+        "invoice_date": "2025-03-21",
+        "due_date": "2025-04-20",
+        "po_reference": "PO-39451",
+        "line_items": [
+          {
+            "description": "Legal services #23-1",
+            "quantity": 2.0,
+            "unit_price": "1579.65",
+            "line_total": "3159.30"
+          }
+        ],
+        "subtotal": "3159.30",
+        "tax": "252.74",
+        "total": "3412.04",
+        "currency": "USD"
+      }
+    },
+    {
+      "invoice_id": "INV-00024",
+      "invoice_text": "INVOICE INV-00024\nFrom: Eastwind Legal LLP\nInvoice date: 2025-04-22\nDue date: 2025-05-22\n\nLine items:\n  Legal services #24-1 x1 @ 3,005.73 = 3,005.73\n  Legal services #24-2 x1 @ 3,005.73 = 3,005.73\n\nSubtotal: 6,011.46\nTax:      480.92\nTOTAL:    6,492.38 USD",
+      "gold": {
+        "invoice_id": "INV-00024",
+        "vendor_name": "Eastwind Legal LLP",
+        "invoice_date": "2025-04-22",
+        "due_date": "2025-05-22",
+        "po_reference": null,
+        "line_items": [
+          {
+            "description": "Legal services #24-1",
+            "quantity": 1.0,
+            "unit_price": "3005.73",
+            "line_total": "3005.73"
+          },
+          {
+            "description": "Legal services #24-2",
+            "quantity": 1.0,
+            "unit_price": "3005.73",
+            "line_total": "3005.73"
+          }
+        ],
+        "subtotal": "6011.46",
+        "tax": "480.92",
+        "total": "6492.38",
+        "currency": "USD"
+      }
+    },
+    {
+      "invoice_id": "INV-00025",
+      "invoice_text": "INVOICE INV-00025\nFrom: Eastwind Legal LLP\nInvoice date: 2025-05-23\nDue date: 2025-06-22\nPO: PO-19287\n\nLine items:\n  Legal services #25-1 x3 @ 1,639.32 = 4,917.96\n\nSubtotal: 4,917.96\nTax:      393.44\nTOTAL:    5,311.40 USD",
+      "gold": {
+        "invoice_id": "INV-00025",
+        "vendor_name": "Eastwind Legal LLP",
+        "invoice_date": "2025-05-23",
+        "due_date": "2025-06-22",
+        "po_reference": "PO-19287",
+        "line_items": [
+          {
+            "description": "Legal services #25-1",
+            "quantity": 3.0,
+            "unit_price": "1639.32",
+            "line_total": "4917.96"
+          }
+        ],
+        "subtotal": "4917.96",
+        "tax": "393.44",
+        "total": "5311.40",
+        "currency": "USD"
+      }
+    },
+    {
+      "invoice_id": "INV-00026",
+      "invoice_text": "INVOICE INV-00026\nFrom: Foxtrot Facilities\nInvoice date: 2025-01-05\nDue date: 2025-02-04\nPO: PO-22363\n\nLine items:\n  Cleaning services #26-1 x2 @ 120.23 = 240.46\n  Cleaning services #26-2 x4 @ 60.12 = 240.48\n  Cleaning services #26-3 x4 @ 60.12 = 240.48\n  Cleaning services #26-4 x2 @ 120.23 = 240.46\n\nSubtotal: 961.88\nTax:      76.95\nTOTAL:    1,038.83 USD",
+      "gold": {
+        "invoice_id": "INV-00026",
+        "vendor_name": "Foxtrot Facilities",
+        "invoice_date": "2025-01-05",
+        "due_date": "2025-02-04",
+        "po_reference": "PO-22363",
+        "line_items": [
+          {
+            "description": "Cleaning services #26-1",
+            "quantity": 2.0,
+            "unit_price": "120.23",
+            "line_total": "240.46"
+          },
+          {
+            "description": "Cleaning services #26-2",
+            "quantity": 4.0,
+            "unit_price": "60.12",
+            "line_total": "240.48"
+          },
+          {
+            "description": "Cleaning services #26-3",
+            "quantity": 4.0,
+            "unit_price": "60.12",
+            "line_total": "240.48"
+          },
+          {
+            "description": "Cleaning services #26-4",
+            "quantity": 2.0,
+            "unit_price": "120.23",
+            "line_total": "240.46"
+          }
+        ],
+        "subtotal": "961.88",
+        "tax": "76.95",
+        "total": "1038.83",
+        "currency": "USD"
+      }
+    },
+    {
+      "invoice_id": "INV-00027",
+      "invoice_text": "INVOICE INV-00027\nFrom: Foxtrot Facilities\nInvoice date: 2025-01-20\nDue date: 2025-02-19\n\nLine items:\n  Cleaning services #27-1 x1 @ 213.68 = 213.68\n  Cleaning services #27-2 x1 @ 213.68 = 213.68\n  Cleaning services #27-3 x1 @ 213.68 = 213.68\n  Cleaning services #27-4 x4 @ 53.42 = 213.68\n\nSubtotal: 854.72\nTax:      68.38\nTOTAL:    923.10 USD",
+      "gold": {
+        "invoice_id": "INV-00027",
+        "vendor_name": "Foxtrot Facilities",
+        "invoice_date": "2025-01-20",
+        "due_date": "2025-02-19",
+        "po_reference": null,
+        "line_items": [
+          {
+            "description": "Cleaning services #27-1",
+            "quantity": 1.0,
+            "unit_price": "213.68",
+            "line_total": "213.68"
+          },
+          {
+            "description": "Cleaning services #27-2",
+            "quantity": 1.0,
+            "unit_price": "213.68",
+            "line_total": "213.68"
+          },
+          {
+            "description": "Cleaning services #27-3",
+            "quantity": 1.0,
+            "unit_price": "213.68",
+            "line_total": "213.68"
+          },
+          {
+            "description": "Cleaning services #27-4",
+            "quantity": 4.0,
+            "unit_price": "53.42",
+            "line_total": "213.68"
+          }
+        ],
+        "subtotal": "854.72",
+        "tax": "68.38",
+        "total": "923.10",
+        "currency": "USD"
+      }
+    },
+    {
+      "invoice_id": "INV-00028",
+      "invoice_text": "INVOICE INV-00028\nFrom: Foxtrot Facilities\nInvoice date: 2025-02-04\nDue date: 2025-03-06\nPO: PO-28373\n\nLine items:\n  Cleaning services #28-1 x2 @ 241.26 = 482.52\n  Cleaning services #28-2 x4 @ 120.63 = 482.52\n\nSubtotal: 965.04\nTax:      77.20\nTOTAL:    1,042.24 USD",
+      "gold": {
+        "invoice_id": "INV-00028",
+        "vendor_name": "Foxtrot Facilities",
+        "invoice_date": "2025-02-04",
+        "due_date": "2025-03-06",
+        "po_reference": "PO-28373",
+        "line_items": [
+          {
+            "description": "Cleaning services #28-1",
+            "quantity": 2.0,
+            "unit_price": "241.26",
+            "line_total": "482.52"
+          },
+          {
+            "description": "Cleaning services #28-2",
+            "quantity": 4.0,
+            "unit_price": "120.63",
+            "line_total": "482.52"
+          }
+        ],
+        "subtotal": "965.04",
+        "tax": "77.20",
+        "total": "1042.24",
+        "currency": "USD"
+      }
+    },
+    {
+      "invoice_id": "INV-00029",
+      "invoice_text": "INVOICE INV-00029\nFrom: Foxtrot Facilities\nInvoice date: 2025-02-16\nDue date: 2025-03-18\nPO: PO-82132\n\nLine items:\n  Cleaning services #29-1 x4 @ 234.12 = 936.48\n\nSubtotal: 936.48\nTax:      74.92\nTOTAL:    1,011.40 USD",
+      "gold": {
+        "invoice_id": "INV-00029",
+        "vendor_name": "Foxtrot Facilities",
+        "invoice_date": "2025-02-16",
+        "due_date": "2025-03-18",
+        "po_reference": "PO-82132",
+        "line_items": [
+          {
+            "description": "Cleaning services #29-1",
+            "quantity": 4.0,
+            "unit_price": "234.12",
+            "line_total": "936.48"
+          }
+        ],
+        "subtotal": "936.48",
+        "tax": "74.92",
+        "total": "1011.40",
+        "currency": "USD"
+      }
+    },
+    {
+      "invoice_id": "INV-00030",
+      "invoice_text": "INVOICE INV-00030\nFrom: Foxtrot Facilities\nInvoice date: 2025-03-04\nDue date: 2025-04-03\n\nLine items:\n  Cleaning services #30-1 x1 @ 878.06 = 878.06\n\nSubtotal: 878.06\nTax:      70.24\nTOTAL:    948.30 USD",
+      "gold": {
+        "invoice_id": "INV-00030",
+        "vendor_name": "Foxtrot Facilities",
+        "invoice_date": "2025-03-04",
+        "due_date": "2025-04-03",
+        "po_reference": null,
+        "line_items": [
+          {
+            "description": "Cleaning services #30-1",
+            "quantity": 1.0,
+            "unit_price": "878.06",
+            "line_total": "878.06"
+          }
+        ],
+        "subtotal": "878.06",
+        "tax": "70.24",
+        "total": "948.30",
+        "currency": "USD"
+      }
+    },
+    {
+      "invoice_id": "INV-00031",
+      "invoice_text": "INVOICE INV-00031\nFrom: Grove Web Studio\nInvoice date: 2025-01-28\nDue date: 2025-02-27\n\nLine items:\n  Website maintenance #31-1 x2 @ 280.46 = 560.92\n  Website maintenance #31-2 x4 @ 140.23 = 560.92\n  Website maintenance #31-3 x1 @ 560.91 = 560.91\n  Website maintenance #31-4 x2 @ 280.46 = 560.92\n\nSubtotal: 13,462.00\nTax:      1,076.96\nTOTAL:    14,538.96 USD",
+      "gold": {
+        "invoice_id": "INV-00031",
+        "vendor_name": "Grove Web Studio",
+        "invoice_date": "2025-01-28",
+        "due_date": "2025-02-27",
+        "po_reference": null,
+        "line_items": [
+          {
+            "description": "Website maintenance #31-1",
+            "quantity": 2.0,
+            "unit_price": "280.46",
+            "line_total": "560.92"
+          },
+          {
+            "description": "Website maintenance #31-2",
+            "quantity": 4.0,
+            "unit_price": "140.23",
+            "line_total": "560.92"
+          },
+          {
+            "description": "Website maintenance #31-3",
+            "quantity": 1.0,
+            "unit_price": "560.91",
+            "line_total": "560.91"
+          },
+          {
+            "description": "Website maintenance #31-4",
+            "quantity": 2.0,
+            "unit_price": "280.46",
+            "line_total": "560.92"
+          }
+        ],
+        "subtotal": "13462.00",
+        "tax": "1076.96",
+        "total": "14538.96",
+        "currency": "USD"
+      }
+    },
+    {
+      "invoice_id": "INV-00032",
+      "invoice_text": "INVOICE INV-00032\nFrom: Grove Web Studio\nInvoice date: 2025-03-05\nDue date: 2025-04-04\n\nLine items:\n  Website maintenance #32-1 x4 @ 95.62 = 382.48\n  Website maintenance #32-2 x3 @ 127.50 = 382.50\n  Website maintenance #32-3 x4 @ 95.62 = 382.48\n\nSubtotal: 1,147.46\nTax:      91.80\nTOTAL:    1,239.26 USD",
+      "gold": {
+        "invoice_id": "INV-00032",
+        "vendor_name": "Grove Web Studio",
+        "invoice_date": "2025-03-05",
+        "due_date": "2025-04-04",
+        "po_reference": null,
+        "line_items": [
+          {
+            "description": "Website maintenance #32-1",
+            "quantity": 4.0,
+            "unit_price": "95.62",
+            "line_total": "382.48"
+          },
+          {
+            "description": "Website maintenance #32-2",
+            "quantity": 3.0,
+            "unit_price": "127.50",
+            "line_total": "382.50"
+          },
+          {
+            "description": "Website maintenance #32-3",
+            "quantity": 4.0,
+            "unit_price": "95.62",
+            "line_total": "382.48"
+          }
+        ],
+        "subtotal": "1147.46",
+        "tax": "91.80",
+        "total": "1239.26",
+        "currency": "USD"
+      }
+    },
+    {
+      "invoice_id": "INV-00033",
+      "invoice_text": "INVOICE INV-00033\nFrom: Grove Web Studio\nInvoice date: 2025-08-25\nDue date: 2025-09-24\n\nLine items:\n  Website maintenance #33-1 x2 @ 241.67 = 483.34\n  Website maintenance #33-2 x2 @ 241.67 = 483.34\n  Website maintenance #33-3 x3 @ 161.11 = 483.33\n  Website maintenance #33-4 x2 @ 241.67 = 483.34\n\nSubtotal: 1,933.35\nTax:      154.67\nTOTAL:    2,088.02 USD",
+      "gold": {
+        "invoice_id": "INV-00033",
+        "vendor_name": "Grove Web Studio",
+        "invoice_date": "2025-08-25",
+        "due_date": "2025-09-24",
+        "po_reference": null,
+        "line_items": [
+          {
+            "description": "Website maintenance #33-1",
+            "quantity": 2.0,
+            "unit_price": "241.67",
+            "line_total": "483.34"
+          },
+          {
+            "description": "Website maintenance #33-2",
+            "quantity": 2.0,
+            "unit_price": "241.67",
+            "line_total": "483.34"
+          },
+          {
+            "description": "Website maintenance #33-3",
+            "quantity": 3.0,
+            "unit_price": "161.11",
+            "line_total": "483.33"
+          },
+          {
+            "description": "Website maintenance #33-4",
+            "quantity": 2.0,
+            "unit_price": "241.67",
+            "line_total": "483.34"
+          }
+        ],
+        "subtotal": "1933.35",
+        "tax": "154.67",
+        "total": "2088.02",
+        "currency": "USD"
+      }
+    },
+    {
+      "invoice_id": "INV-00034",
+      "invoice_text": "INVOICE INV-00034\nFrom: Grove Web Studio\nInvoice date: 2025-05-06\nDue date: 2025-06-05\n\nLine items:\n  Website maintenance #34-1 x3 @ 948.39 = 2,845.17\n\nSubtotal: 2,845.17\nTax:      227.61\nTOTAL:    3,072.78 USD",
+      "gold": {
+        "invoice_id": "INV-00034",
+        "vendor_name": "Grove Web Studio",
+        "invoice_date": "2025-05-06",
+        "due_date": "2025-06-05",
+        "po_reference": null,
+        "line_items": [
+          {
+            "description": "Website maintenance #34-1",
+            "quantity": 3.0,
+            "unit_price": "948.39",
+            "line_total": "2845.17"
+          }
+        ],
+        "subtotal": "2845.17",
+        "tax": "227.61",
+        "total": "3072.78",
+        "currency": "USD"
+      }
+    },
+    {
+      "invoice_id": "INV-00035",
+      "invoice_text": "INVOICE INV-00035\nFrom: Grove Web Studio\nInvoice date: 2025-06-03\nDue date: 2025-07-03\n\nLine items:\n  Website maintenance #35-1 x1 @ 1,410.06 = 1,410.06\n  Website maintenance #35-2 x1 @ 1,410.06 = 1,410.06\n\nSubtotal: 2,820.12\nTax:      225.61\nTOTAL:    3,045.73 USD",
+      "gold": {
+        "invoice_id": "INV-00035",
+        "vendor_name": "Grove Web Studio",
+        "invoice_date": "2025-06-03",
+        "due_date": "2025-07-03",
+        "po_reference": null,
+        "line_items": [
+          {
+            "description": "Website maintenance #35-1",
+            "quantity": 1.0,
+            "unit_price": "1410.06",
+            "line_total": "1410.06"
+          },
+          {
+            "description": "Website maintenance #35-2",
+            "quantity": 1.0,
+            "unit_price": "1410.06",
+            "line_total": "1410.06"
+          }
+        ],
+        "subtotal": "2820.12",
+        "tax": "225.61",
+        "total": "3045.73",
+        "currency": "USD"
+      }
+    },
+    {
+      "invoice_id": "INV-00036",
+      "invoice_text": "INVOICE INV-00036\nFrom: Harbor Insurance Brokers\nInvoice date: 2025-01-03\nDue date: 2025-02-02\n\nLine items:\n  Business insurance #36-1 x4 @ 193.99 = 775.96\n  Business insurance #36-2 x1 @ 775.98 = 775.98\n\nSubtotal: 1,551.94\nTax:      124.16\nTOTAL:    1,676.10 USD",
+      "gold": {
+        "invoice_id": "INV-00036",
+        "vendor_name": "Harbor Insurance Brokers",
+        "invoice_date": "2025-01-03",
+        "due_date": "2025-02-02",
+        "po_reference": null,
+        "line_items": [
+          {
+            "description": "Business insurance #36-1",
+            "quantity": 4.0,
+            "unit_price": "193.99",
+            "line_total": "775.96"
+          },
+          {
+            "description": "Business insurance #36-2",
+            "quantity": 1.0,
+            "unit_price": "775.98",
+            "line_total": "775.98"
+          }
+        ],
+        "subtotal": "1551.94",
+        "tax": "124.16",
+        "total": "1676.10",
+        "currency": "USD"
+      }
+    },
+    {
+      "invoice_id": "INV-00037",
+      "invoice_text": "INVOICE INV-00037\nFrom: Harbor Insurance Brokers\nInvoice date: 2025-01-27\nDue date: 2025-02-26\n\nLine items:\n  Business insurance #37-1 x1 @ 2,042.43 = 2,042.43\n\nSubtotal: 2,042.43\nTax:      163.39\nTOTAL:    2,205.82 USD",
+      "gold": {
+        "invoice_id": "INV-00037",
+        "vendor_name": "Harbor Insurance Brokers",
+        "invoice_date": "2025-01-27",
+        "due_date": "2025-02-26",
+        "po_reference": null,
+        "line_items": [
+          {
+            "description": "Business insurance #37-1",
+            "quantity": 1.0,
+            "unit_price": "2042.43",
+            "line_total": "2042.43"
+          }
+        ],
+        "subtotal": "2042.43",
+        "tax": "163.39",
+        "total": "2205.82",
+        "currency": "USD"
+      }
+    },
+    {
+      "invoice_id": "INV-00038",
+      "invoice_text": "INVOICE INV-00038\nFrom: Harbor Insurance Brokers\nInvoice date: 2025-02-23\nDue date: 2025-03-25\n\nLine items:\n  Business insurance #38-1 x3 @ 174.29 = 522.87\n  Business insurance #38-2 x2 @ 261.43 = 522.86\n  Business insurance #38-3 x3 @ 174.29 = 522.87\n\nSubtotal: 1,568.60\nTax:      125.49\nTOTAL:    1,694.09 USD",
+      "gold": {
+        "invoice_id": "INV-00038",
+        "vendor_name": "Harbor Insurance Brokers",
+        "invoice_date": "2025-02-23",
+        "due_date": "2025-03-25",
+        "po_reference": null,
+        "line_items": [
+          {
+            "description": "Business insurance #38-1",
+            "quantity": 3.0,
+            "unit_price": "174.29",
+            "line_total": "522.87"
+          },
+          {
+            "description": "Business insurance #38-2",
+            "quantity": 2.0,
+            "unit_price": "261.43",
+            "line_total": "522.86"
+          },
+          {
+            "description": "Business insurance #38-3",
+            "quantity": 3.0,
+            "unit_price": "174.29",
+            "line_total": "522.87"
+          }
+        ],
+        "subtotal": "1568.60",
+        "tax": "125.49",
+        "total": "1694.09",
+        "currency": "USD"
+      }
+    },
+    {
+      "invoice_id": "INV-00039",
+      "invoice_text": "INVOICE INV-00039\nFrom: Harbor Insurance Brokers\nInvoice date: 2025-03-28\nDue date: 2025-04-27\n\nLine items:\n  Business insurance #39-1 x4 @ 151.19 = 604.76\n  Business insurance #39-2 x3 @ 201.58 = 604.74\n  Business insurance #39-3 x1 @ 604.75 = 604.75\n\nSubtotal: 1,814.25\nTax:      145.14\nTOTAL:    1,959.39 USD",
+      "gold": {
+        "invoice_id": "INV-00039",
+        "vendor_name": "Harbor Insurance Brokers",
+        "invoice_date": "2025-03-28",
+        "due_date": "2025-04-27",
+        "po_reference": null,
+        "line_items": [
+          {
+            "description": "Business insurance #39-1",
+            "quantity": 4.0,
+            "unit_price": "151.19",
+            "line_total": "604.76"
+          },
+          {
+            "description": "Business insurance #39-2",
+            "quantity": 3.0,
+            "unit_price": "201.58",
+            "line_total": "604.74"
+          },
+          {
+            "description": "Business insurance #39-3",
+            "quantity": 1.0,
+            "unit_price": "604.75",
+            "line_total": "604.75"
+          }
+        ],
+        "subtotal": "1814.25",
+        "tax": "145.14",
+        "total": "1959.39",
+        "currency": "USD"
+      }
+    },
+    {
+      "invoice_id": "INV-00040",
+      "invoice_text": "INVOICE INV-00040\nFrom: Harbor Insurance Brokers\nInvoice date: 2025-05-03\nDue date: 2025-06-02\n\nLine items:\n  Business insurance #40-1 x1 @ 2,078.18 = 2,078.18\n\nSubtotal: 2,078.18\nTax:      166.25\nTOTAL:    2,244.43 USD",
+      "gold": {
+        "invoice_id": "INV-00040",
+        "vendor_name": "Harbor Insurance Brokers",
+        "invoice_date": "2025-05-03",
+        "due_date": "2025-06-02",
+        "po_reference": null,
+        "line_items": [
+          {
+            "description": "Business insurance #40-1",
+            "quantity": 1.0,
+            "unit_price": "2078.18",
+            "line_total": "2078.18"
+          }
+        ],
+        "subtotal": "2078.18",
+        "tax": "166.25",
+        "total": "2244.43",
+        "currency": "USD"
+      }
+    },
+    {
+      "invoice_id": "INV-00041",
+      "invoice_text": "INVOICE INV-00041\nFrom: Ivy Analytics\nInvoice date: 2025-01-17\nDue date: 2025-02-16\nPO: PO-30676\n\nLine items:\n  Data consulting #41-1 x3 @ 784.54 = 2,353.62\n  Data consulting #41-2 x3 @ 784.54 = 2,353.62\n\nSubtotal: 4,707.24\nTax:      376.58\nTOTAL:    5,083.82 USD",
+      "gold": {
+        "invoice_id": "INV-00041",
+        "vendor_name": "Ivy Analytics",
+        "invoice_date": "2025-01-17",
+        "due_date": "2025-02-16",
+        "po_reference": "PO-30676",
+        "line_items": [
+          {
+            "description": "Data consulting #41-1",
+            "quantity": 3.0,
+            "unit_price": "784.54",
+            "line_total": "2353.62"
+          },
+          {
+            "description": "Data consulting #41-2",
+            "quantity": 3.0,
+            "unit_price": "784.54",
+            "line_total": "2353.62"
+          }
+        ],
+        "subtotal": "4707.24",
+        "tax": "376.58",
+        "total": "5083.82",
+        "currency": "USD"
+      }
+    },
+    {
+      "invoice_id": "INV-00042",
+      "invoice_text": "INVOICE INV-00042\nFrom: Ivy Analytics\nInvoice date: 2025-02-10\nDue date: 2025-03-12\nPO: PO-96951\n\nLine items:\n  Data consulting #42-1 x3 @ 848.60 = 2,545.80\n\nSubtotal: 2,545.80\nTax:      203.66\nTOTAL:    2,749.46 USD",
+      "gold": {
+        "invoice_id": "INV-00042",
+        "vendor_name": "Ivy Analytics",
+        "invoice_date": "2025-02-10",
+        "due_date": "2025-03-12",
+        "po_reference": "PO-96951",
+        "line_items": [
+          {
+            "description": "Data consulting #42-1",
+            "quantity": 3.0,
+            "unit_price": "848.60",
+            "line_total": "2545.80"
+          }
+        ],
+        "subtotal": "2545.80",
+        "tax": "203.66",
+        "total": "2749.46",
+        "currency": "USD"
+      }
+    },
+    {
+      "invoice_id": "INV-00043",
+      "invoice_text": "INVOICE INV-00043\nFrom: Ivy Analytics\nInvoice date: 2025-05-17\nDue date: 2025-04-09\nPO: PO-45697\n\nLine items:\n  Data consulting #43-1 x2 @ 1,826.00 = 3,652.00\n\nSubtotal: 3,314.88\nTax:      265.19\nTOTAL:    3,580.07 USD",
+      "gold": {
+        "invoice_id": "INV-00043",
+        "vendor_name": "Ivy Analytics",
+        "invoice_date": "2025-05-17",
+        "due_date": "2025-04-09",
+        "po_reference": "PO-45697",
+        "line_items": [
+          {
+            "description": "Data consulting #43-1",
+            "quantity": 2.0,
+            "unit_price": "1826.00",
+            "line_total": "3652.00"
+          }
+        ],
+        "subtotal": "3314.88",
+        "tax": "265.19",
+        "total": "3580.07",
+        "currency": "USD"
+      }
+    },
+    {
+      "invoice_id": "INV-00044",
+      "invoice_text": "INVOICE INV-00044\nFrom: Ivy Analytics\nInvoice date: 2025-04-05\nDue date: 2025-05-05\nPO: PO-22097\n\nLine items:\n  Data consulting #44-1 x4 @ 281.63 = 1,126.52\n  Data consulting #44-2 x3 @ 375.50 = 1,126.50\n  Data consulting #44-3 x1 @ 1,126.50 = 1,126.50\n\nSubtotal: 3,379.52\nTax:      270.36\nTOTAL:    3,649.88 USD",
+      "gold": {
+        "invoice_id": "INV-00044",
+        "vendor_name": "Ivy Analytics",
+        "invoice_date": "2025-04-05",
+        "due_date": "2025-05-05",
+        "po_reference": "PO-22097",
+        "line_items": [
+          {
+            "description": "Data consulting #44-1",
+            "quantity": 4.0,
+            "unit_price": "281.63",
+            "line_total": "1126.52"
+          },
+          {
+            "description": "Data consulting #44-2",
+            "quantity": 3.0,
+            "unit_price": "375.50",
+            "line_total": "1126.50"
+          },
+          {
+            "description": "Data consulting #44-3",
+            "quantity": 1.0,
+            "unit_price": "1126.50",
+            "line_total": "1126.50"
+          }
+        ],
+        "subtotal": "3379.52",
+        "tax": "270.36",
+        "total": "3649.88",
+        "currency": "USD"
+      }
+    },
+    {
+      "invoice_id": "INV-00045",
+      "invoice_text": "INVOICE INV-00045\nFrom: Ivy Analytics\nInvoice date: 2025-05-10\nDue date: 2025-06-09\nPO: PO-67912\n\nLine items:\n  Data consulting #45-1 x2 @ 552.48 = 1,104.96\n  Data consulting #45-2 x3 @ 368.32 = 1,104.96\n  Data consulting #45-3 x2 @ 552.48 = 1,104.96\n\nSubtotal: 3,314.88\nTax:      265.19\nTOTAL:    3,580.07 USD",
+      "gold": {
+        "invoice_id": "INV-00045",
+        "vendor_name": "Ivy Analytics",
+        "invoice_date": "2025-05-10",
+        "due_date": "2025-06-09",
+        "po_reference": "PO-67912",
+        "line_items": [
+          {
+            "description": "Data consulting #45-1",
+            "quantity": 2.0,
+            "unit_price": "552.48",
+            "line_total": "1104.96"
+          },
+          {
+            "description": "Data consulting #45-2",
+            "quantity": 3.0,
+            "unit_price": "368.32",
+            "line_total": "1104.96"
+          },
+          {
+            "description": "Data consulting #45-3",
+            "quantity": 2.0,
+            "unit_price": "552.48",
+            "line_total": "1104.96"
+          }
+        ],
+        "subtotal": "3314.88",
+        "tax": "265.19",
+        "total": "3580.07",
+        "currency": "USD"
+      }
+    },
+    {
+      "invoice_id": "INV-00046",
+      "invoice_text": "INVOICE INV-00046\nFrom: Juniper Office Supplies\nInvoice date: 2025-01-07\nDue date: 2025-02-06\nPO: PO-86350\n\nLine items:\n  Office supplies #46-1 x1 @ 165.14 = 165.14\n  Office supplies #46-2 x3 @ 55.05 = 165.15\n\nSubtotal: 330.29\nTax:      26.42\nTOTAL:    356.71 USD",
+      "gold": {
+        "invoice_id": "INV-00046",
+        "vendor_name": "Juniper Office Supplies",
+        "invoice_date": "2025-01-07",
+        "due_date": "2025-02-06",
+        "po_reference": "PO-86350",
+        "line_items": [
+          {
+            "description": "Office supplies #46-1",
+            "quantity": 1.0,
+            "unit_price": "165.14",
+            "line_total": "165.14"
+          },
+          {
+            "description": "Office supplies #46-2",
+            "quantity": 3.0,
+            "unit_price": "55.05",
+            "line_total": "165.15"
+          }
+        ],
+        "subtotal": "330.29",
+        "tax": "26.42",
+        "total": "356.71",
+        "currency": "USD"
+      }
+    },
+    {
+      "invoice_id": "INV-00047",
+      "invoice_text": "INVOICE INV-00047\nFrom: Juniper Office Supplies\nInvoice date: 2025-01-25\nDue date: 2025-02-24\nPO: PO-99399\n\nLine items:\n  Office supplies #47-1 x1 @ 68.05 = 68.05\n  Office supplies #47-2 x3 @ 22.68 = 68.04\n  Office supplies #47-3 x2 @ 34.02 = 68.04\n\nSubtotal: 204.13\nTax:      16.33\nTOTAL:    220.46 USD",
+      "gold": {
+        "invoice_id": "INV-00047",
+        "vendor_name": "Juniper Office Supplies",
+        "invoice_date": "2025-01-25",
+        "due_date": "2025-02-24",
+        "po_reference": "PO-99399",
+        "line_items": [
+          {
+            "description": "Office supplies #47-1",
+            "quantity": 1.0,
+            "unit_price": "68.05",
+            "line_total": "68.05"
+          },
+          {
+            "description": "Office supplies #47-2",
+            "quantity": 3.0,
+            "unit_price": "22.68",
+            "line_total": "68.04"
+          },
+          {
+            "description": "Office supplies #47-3",
+            "quantity": 2.0,
+            "unit_price": "34.02",
+            "line_total": "68.04"
+          }
+        ],
+        "subtotal": "204.13",
+        "tax": "16.33",
+        "total": "220.46",
+        "currency": "USD"
+      }
+    },
+    {
+      "invoice_id": "INV-00048",
+      "invoice_text": "INVOICE INV-00048\nFrom: Juniper Office Supplies\nInvoice date: 2025-01-11\nDue date: 2025-03-10\nPO: PO-64040\n\nLine items:\n  Office supplies #48-1 x2 @ 37.92 = 75.84\n  Office supplies #48-2 x2 @ 37.92 = 75.84\n  Office supplies #48-3 x2 @ 37.92 = 75.84\n  Office supplies #48-4 x2 @ 37.92 = 75.84\n\nSubtotal: 330.29\nTax:      26.42\nTOTAL:    356.71 USD",
+      "gold": {
+        "invoice_id": "INV-00048",
+        "vendor_name": "Juniper Office Supplies",
+        "invoice_date": "2025-01-11",
+        "due_date": "2025-03-10",
+        "po_reference": "PO-64040",
+        "line_items": [
+          {
+            "description": "Office supplies #48-1",
+            "quantity": 2.0,
+            "unit_price": "37.92",
+            "line_total": "75.84"
+          },
+          {
+            "description": "Office supplies #48-2",
+            "quantity": 2.0,
+            "unit_price": "37.92",
+            "line_total": "75.84"
+          },
+          {
+            "description": "Office supplies #48-3",
+            "quantity": 2.0,
+            "unit_price": "37.92",
+            "line_total": "75.84"
+          },
+          {
+            "description": "Office supplies #48-4",
+            "quantity": 2.0,
+            "unit_price": "37.92",
+            "line_total": "75.84"
+          }
+        ],
+        "subtotal": "330.29",
+        "tax": "26.42",
+        "total": "356.71",
+        "currency": "USD"
+      }
+    },
+    {
+      "invoice_id": "INV-00049",
+      "invoice_text": "INVOICE INV-00049\nFrom: Juniper Office Supplies\nInvoice date: 2025-02-24\nDue date: 2025-03-26\n\nLine items:\n  Office supplies #49-1 x2 @ 26.93 = 53.86\n  Office supplies #49-2 x3 @ 17.95 = 53.85\n  Office supplies #49-3 x2 @ 26.93 = 53.86\n  Office supplies #49-4 x1 @ 53.86 = 53.86\n\nSubtotal: 215.43\nTax:      17.23\nTOTAL:    232.66 USD",
+      "gold": {
+        "invoice_id": "INV-00049",
+        "vendor_name": "Juniper Office Supplies",
+        "invoice_date": "2025-02-24",
+        "due_date": "2025-03-26",
+        "po_reference": null,
+        "line_items": [
+          {
+            "description": "Office supplies #49-1",
+            "quantity": 2.0,
+            "unit_price": "26.93",
+            "line_total": "53.86"
+          },
+          {
+            "description": "Office supplies #49-2",
+            "quantity": 3.0,
+            "unit_price": "17.95",
+            "line_total": "53.85"
+          },
+          {
+            "description": "Office supplies #49-3",
+            "quantity": 2.0,
+            "unit_price": "26.93",
+            "line_total": "53.86"
+          },
+          {
+            "description": "Office supplies #49-4",
+            "quantity": 1.0,
+            "unit_price": "53.86",
+            "line_total": "53.86"
+          }
+        ],
+        "subtotal": "215.43",
+        "tax": "17.23",
+        "total": "232.66",
+        "currency": "USD"
+      }
+    },
+    {
+      "invoice_id": "INV-00050",
+      "invoice_text": "INVOICE INV-00050\nFrom: Juniper Office Supplies\nInvoice date: 2025-03-07\nDue date: 2025-04-06\nPO: PO-50001\n\nLine items:\n  Office supplies #50-1 x4 @ 35.71 = 142.84\n  Office supplies #50-2 x3 @ 47.61 = 142.83\n\nSubtotal: 285.67\nTax:      22.85\nTOTAL:    308.52 USD",
+      "gold": {
+        "invoice_id": "INV-00050",
+        "vendor_name": "Juniper Office Supplies",
+        "invoice_date": "2025-03-07",
+        "due_date": "2025-04-06",
+        "po_reference": "PO-50001",
+        "line_items": [
+          {
+            "description": "Office supplies #50-1",
+            "quantity": 4.0,
+            "unit_price": "35.71",
+            "line_total": "142.84"
+          },
+          {
+            "description": "Office supplies #50-2",
+            "quantity": 3.0,
+            "unit_price": "47.61",
+            "line_total": "142.83"
+          }
+        ],
+        "subtotal": "285.67",
+        "tax": "22.85",
+        "total": "308.52",
+        "currency": "USD"
+      }
+    },
+    {
+      "invoice_id": "INV-00051",
+      "invoice_text": "INVOICE INV-00051\nFrom: Kestrel HR Partners\nInvoice date: 2025-06-25\nDue date: 2025-07-25\n\nLine items:\n  HR consulting #51-1 x4 @ 301.54 = 1,206.16\n  HR consulting #51-2 x3 @ 402.05 = 1,206.15\n\nSubtotal: 2,412.31\nTax:      192.98\nTOTAL:    2,605.29 USD",
+      "gold": {
+        "invoice_id": "INV-00051",
+        "vendor_name": "Kestrel HR Partners",
+        "invoice_date": "2025-06-25",
+        "due_date": "2025-07-25",
+        "po_reference": null,
+        "line_items": [
+          {
+            "description": "HR consulting #51-1",
+            "quantity": 4.0,
+            "unit_price": "301.54",
+            "line_total": "1206.16"
+          },
+          {
+            "description": "HR consulting #51-2",
+            "quantity": 3.0,
+            "unit_price": "402.05",
+            "line_total": "1206.15"
+          }
+        ],
+        "subtotal": "2412.31",
+        "tax": "192.98",
+        "total": "2605.29",
+        "currency": "USD"
+      }
+    },
+    {
+      "invoice_id": "INV-00052",
+      "invoice_text": "INVOICE INV-00052\nFrom: Kestrel HR Partners\nInvoice date: 2025-02-28\nDue date: 2025-03-30\n\nLine items:\n  HR consulting #52-1 x3 @ 263.65 = 790.95\n  HR consulting #52-2 x4 @ 197.74 = 790.96\n  HR consulting #52-3 x3 @ 263.65 = 790.95\n\nSubtotal: 2,372.86\nTax:      189.83\nTOTAL:    2,562.69 USD",
+      "gold": {
+        "invoice_id": "INV-00052",
+        "vendor_name": "Kestrel HR Partners",
+        "invoice_date": "2025-02-28",
+        "due_date": "2025-03-30",
+        "po_reference": null,
+        "line_items": [
+          {
+            "description": "HR consulting #52-1",
+            "quantity": 3.0,
+            "unit_price": "263.65",
+            "line_total": "790.95"
+          },
+          {
+            "description": "HR consulting #52-2",
+            "quantity": 4.0,
+            "unit_price": "197.74",
+            "line_total": "790.96"
+          },
+          {
+            "description": "HR consulting #52-3",
+            "quantity": 3.0,
+            "unit_price": "263.65",
+            "line_total": "790.95"
+          }
+        ],
+        "subtotal": "2372.86",
+        "tax": "189.83",
+        "total": "2562.69",
+        "currency": "USD"
+      }
+    },
+    {
+      "invoice_id": "INV-00053",
+      "invoice_text": "INVOICE INV-00053\nFrom: Kestrel HR Partners\nInvoice date: 2025-04-01\nDue date: 2025-05-01\n\nLine items:\n  HR consulting #53-1 x2 @ 430.63 = 861.26\n  HR consulting #53-2 x3 @ 287.09 = 861.27\n  HR consulting #53-3 x1 @ 861.26 = 861.26\n\nSubtotal: 2,583.79\nTax:      206.70\nTOTAL:    2,790.49 USD",
+      "gold": {
+        "invoice_id": "INV-00053",
+        "vendor_name": "Kestrel HR Partners",
+        "invoice_date": "2025-04-01",
+        "due_date": "2025-05-01",
+        "po_reference": null,
+        "line_items": [
+          {
+            "description": "HR consulting #53-1",
+            "quantity": 2.0,
+            "unit_price": "430.63",
+            "line_total": "861.26"
+          },
+          {
+            "description": "HR consulting #53-2",
+            "quantity": 3.0,
+            "unit_price": "287.09",
+            "line_total": "861.27"
+          },
+          {
+            "description": "HR consulting #53-3",
+            "quantity": 1.0,
+            "unit_price": "861.26",
+            "line_total": "861.26"
+          }
+        ],
+        "subtotal": "2583.79",
+        "tax": "206.70",
+        "total": "2790.49",
+        "currency": "USD"
+      }
+    },
+    {
+      "invoice_id": "INV-00054",
+      "invoice_text": "INVOICE INV-00054\nFrom: Kestrel HR Partners\nInvoice date: 2025-04-29\nDue date: 2025-05-29\n\nLine items:\n  HR consulting #54-1 x4 @ 227.65 = 910.60\n  HR consulting #54-2 x1 @ 910.61 = 910.61\n  HR consulting #54-3 x4 @ 227.65 = 910.60\n\nSubtotal: 2,731.81\nTax:      218.54\nTOTAL:    2,950.35 USD",
+      "gold": {
+        "invoice_id": "INV-00054",
+        "vendor_name": "Kestrel HR Partners",
+        "invoice_date": "2025-04-29",
+        "due_date": "2025-05-29",
+        "po_reference": null,
+        "line_items": [
+          {
+            "description": "HR consulting #54-1",
+            "quantity": 4.0,
+            "unit_price": "227.65",
+            "line_total": "910.60"
+          },
+          {
+            "description": "HR consulting #54-2",
+            "quantity": 1.0,
+            "unit_price": "910.61",
+            "line_total": "910.61"
+          },
+          {
+            "description": "HR consulting #54-3",
+            "quantity": 4.0,
+            "unit_price": "227.65",
+            "line_total": "910.60"
+          }
+        ],
+        "subtotal": "2731.81",
+        "tax": "218.54",
+        "total": "2950.35",
+        "currency": "USD"
+      }
+    },
+    {
+      "invoice_id": "INV-00055",
+      "invoice_text": "INVOICE INV-00055\nFrom: Kestrel HR Partners\nInvoice date: 2025-06-02\nDue date: 2025-07-02\n\nLine items:\n  HR consulting #55-1 x4 @ 652.41 = 2,609.64\n\nSubtotal: 2,609.64\nTax:      208.77\nTOTAL:    2,818.41 USD",
+      "gold": {
+        "invoice_id": "INV-00055",
+        "vendor_name": "Kestrel HR Partners",
+        "invoice_date": "2025-06-02",
+        "due_date": "2025-07-02",
+        "po_reference": null,
+        "line_items": [
+          {
+            "description": "HR consulting #55-1",
+            "quantity": 4.0,
+            "unit_price": "652.41",
+            "line_total": "2609.64"
+          }
+        ],
+        "subtotal": "2609.64",
+        "tax": "208.77",
+        "total": "2818.41",
+        "currency": "USD"
+      }
+    },
+    {
+      "invoice_id": "INV-00056",
+      "invoice_text": "INVOICE INV-00056\nFrom: Larkspur Design\nInvoice date: 2025-01-18\nDue date: 2025-02-17\nPO: PO-19171\n\nLine items:\n  Design services #56-1 x3 @ 393.39 = 1,180.17\n  Design services #56-2 x4 @ 295.04 = 1,180.16\n\nSubtotal: 2,360.33\nTax:      188.83\nTOTAL:    2,549.16 USD",
+      "gold": {
+        "invoice_id": "INV-00056",
+        "vendor_name": "Larkspur Design",
+        "invoice_date": "2025-01-18",
+        "due_date": "2025-02-17",
+        "po_reference": "PO-19171",
+        "line_items": [
+          {
+            "description": "Design services #56-1",
+            "quantity": 3.0,
+            "unit_price": "393.39",
+            "line_total": "1180.17"
+          },
+          {
+            "description": "Design services #56-2",
+            "quantity": 4.0,
+            "unit_price": "295.04",
+            "line_total": "1180.16"
+          }
+        ],
+        "subtotal": "2360.33",
+        "tax": "188.83",
+        "total": "2549.16",
+        "currency": "USD"
+      }
+    },
+    {
+      "invoice_id": "INV-00057",
+      "invoice_text": "INVOICE INV-00057\nFrom: Larkspur Design\nInvoice date: 2025-02-05\nDue date: 2025-03-07\nPO: PO-76469\n\nLine items:\n  Design services #57-1 x3 @ 737.92 = 2,213.76\n\nSubtotal: 8,855.04\nTax:      708.40\nTOTAL:    9,563.44 USD",
+      "gold": {
+        "invoice_id": "INV-00057",
+        "vendor_name": "Larkspur Design",
+        "invoice_date": "2025-02-05",
+        "due_date": "2025-03-07",
+        "po_reference": "PO-76469",
+        "line_items": [
+          {
+            "description": "Design services #57-1",
+            "quantity": 3.0,
+            "unit_price": "737.92",
+            "line_total": "2213.76"
+          }
+        ],
+        "subtotal": "8855.04",
+        "tax": "708.40",
+        "total": "9563.44",
+        "currency": "USD"
+      }
+    },
+    {
+      "invoice_id": "INV-00058",
+      "invoice_text": "INVOICE INV-00058\nFrom: Larkspur Design\nInvoice date: 2025-02-23\nDue date: 2025-03-25\nPO: PO-97153\n\nLine items:\n  Design services #58-1 x2 @ 195.73 = 391.46\n  Design services #58-2 x2 @ 195.73 = 391.46\n  Design services #58-3 x4 @ 97.87 = 391.48\n\nSubtotal: 1,174.40\nTax:      93.95\nTOTAL:    1,268.35 USD",
+      "gold": {
+        "invoice_id": "INV-00058",
+        "vendor_name": "Larkspur Design",
+        "invoice_date": "2025-02-23",
+        "due_date": "2025-03-25",
+        "po_reference": "PO-97153",
+        "line_items": [
+          {
+            "description": "Design services #58-1",
+            "quantity": 2.0,
+            "unit_price": "195.73",
+            "line_total": "391.46"
+          },
+          {
+            "description": "Design services #58-2",
+            "quantity": 2.0,
+            "unit_price": "195.73",
+            "line_total": "391.46"
+          },
+          {
+            "description": "Design services #58-3",
+            "quantity": 4.0,
+            "unit_price": "97.87",
+            "line_total": "391.48"
+          }
+        ],
+        "subtotal": "1174.40",
+        "tax": "93.95",
+        "total": "1268.35",
+        "currency": "USD"
+      }
+    },
+    {
+      "invoice_id": "INV-00059",
+      "invoice_text": "INVOICE INV-00059\nFrom: Larkspur Design\nInvoice date: 2025-03-18\nDue date: 2025-04-17\nPO: PO-47606\n\nLine items:\n  Design services #59-1 x4 @ 93.66 = 374.64\n  Design services #59-2 x1 @ 374.65 = 374.65\n  Design services #59-3 x3 @ 124.88 = 374.64\n\nSubtotal: 1,123.93\nTax:      89.91\nTOTAL:    1,213.84 USD",
+      "gold": {
+        "invoice_id": "INV-00059",
+        "vendor_name": "Larkspur Design",
+        "invoice_date": "2025-03-18",
+        "due_date": "2025-04-17",
+        "po_reference": "PO-47606",
+        "line_items": [
+          {
+            "description": "Design services #59-1",
+            "quantity": 4.0,
+            "unit_price": "93.66",
+            "line_total": "374.64"
+          },
+          {
+            "description": "Design services #59-2",
+            "quantity": 1.0,
+            "unit_price": "374.65",
+            "line_total": "374.65"
+          },
+          {
+            "description": "Design services #59-3",
+            "quantity": 3.0,
+            "unit_price": "124.88",
+            "line_total": "374.64"
+          }
+        ],
+        "subtotal": "1123.93",
+        "tax": "89.91",
+        "total": "1213.84",
+        "currency": "USD"
+      }
+    },
+    {
+      "invoice_id": "INV-00060",
+      "invoice_text": "INVOICE INV-00060\nFrom: Larkspur Design\nInvoice date: 2025-03-30\nDue date: 2025-04-29\nPO: PO-98555\n\nLine items:\n  Design services #60-1 x4 @ 146.01 = 584.04\n  Design services #60-2 x4 @ 146.01 = 584.04\n  Design services #60-3 x4 @ 146.01 = 584.04\n\nSubtotal: 1,752.12\nTax:      140.17\nTOTAL:    1,892.29 USD",
+      "gold": {
+        "invoice_id": "INV-00060",
+        "vendor_name": "Larkspur Design",
+        "invoice_date": "2025-03-30",
+        "due_date": "2025-04-29",
+        "po_reference": "PO-98555",
+        "line_items": [
+          {
+            "description": "Design services #60-1",
+            "quantity": 4.0,
+            "unit_price": "146.01",
+            "line_total": "584.04"
+          },
+          {
+            "description": "Design services #60-2",
+            "quantity": 4.0,
+            "unit_price": "146.01",
+            "line_total": "584.04"
+          },
+          {
+            "description": "Design services #60-3",
+            "quantity": 4.0,
+            "unit_price": "146.01",
+            "line_total": "584.04"
+          }
+        ],
+        "subtotal": "1752.12",
+        "tax": "140.17",
+        "total": "1892.29",
+        "currency": "USD"
+      }
+    }
+  ],
+  "anomaly": [
+    {
+      "invoice_id": "INV-00001",
+      "injected_categories": []
+    },
+    {
+      "invoice_id": "INV-00002",
+      "injected_categories": []
+    },
+    {
+      "invoice_id": "INV-00003",
+      "injected_categories": []
+    },
+    {
+      "invoice_id": "INV-00004",
+      "injected_categories": []
+    },
+    {
+      "invoice_id": "INV-00005",
+      "injected_categories": []
+    },
+    {
+      "invoice_id": "INV-00006",
+      "injected_categories": [
+        "amount_outlier"
+      ]
+    },
+    {
+      "invoice_id": "INV-00007",
+      "injected_categories": []
+    },
+    {
+      "invoice_id": "INV-00008",
+      "injected_categories": []
+    },
+    {
+      "invoice_id": "INV-00009",
+      "injected_categories": []
+    },
+    {
+      "invoice_id": "INV-00010",
+      "injected_categories": []
+    },
+    {
+      "invoice_id": "INV-00011",
+      "injected_categories": [
+        "missing_po"
+      ]
+    },
+    {
+      "invoice_id": "INV-00012",
+      "injected_categories": []
+    },
+    {
+      "invoice_id": "INV-00013",
+      "injected_categories": []
+    },
+    {
+      "invoice_id": "INV-00014",
+      "injected_categories": [
+        "off_cadence"
+      ]
+    },
+    {
+      "invoice_id": "INV-00015",
+      "injected_categories": []
+    },
+    {
+      "invoice_id": "INV-00016",
+      "injected_categories": []
+    },
+    {
+      "invoice_id": "INV-00017",
+      "injected_categories": []
+    },
+    {
+      "invoice_id": "INV-00018",
+      "injected_categories": []
+    },
+    {
+      "invoice_id": "INV-00019",
+      "injected_categories": []
+    },
+    {
+      "invoice_id": "INV-00020",
+      "injected_categories": []
+    },
+    {
+      "invoice_id": "INV-00021",
+      "injected_categories": []
+    },
+    {
+      "invoice_id": "INV-00022",
+      "injected_categories": []
+    },
+    {
+      "invoice_id": "INV-00023",
+      "injected_categories": []
+    },
+    {
+      "invoice_id": "INV-00024",
+      "injected_categories": []
+    },
+    {
+      "invoice_id": "INV-00025",
+      "injected_categories": []
+    },
+    {
+      "invoice_id": "INV-00026",
+      "injected_categories": []
+    },
+    {
+      "invoice_id": "INV-00027",
+      "injected_categories": []
+    },
+    {
+      "invoice_id": "INV-00028",
+      "injected_categories": []
+    },
+    {
+      "invoice_id": "INV-00029",
+      "injected_categories": []
+    },
+    {
+      "invoice_id": "INV-00030",
+      "injected_categories": []
+    },
+    {
+      "invoice_id": "INV-00031",
+      "injected_categories": [
+        "amount_outlier"
+      ]
+    },
+    {
+      "invoice_id": "INV-00032",
+      "injected_categories": []
+    },
+    {
+      "invoice_id": "INV-00033",
+      "injected_categories": [
+        "off_cadence"
+      ]
+    },
+    {
+      "invoice_id": "INV-00034",
+      "injected_categories": []
+    },
+    {
+      "invoice_id": "INV-00035",
+      "injected_categories": []
+    },
+    {
+      "invoice_id": "INV-00036",
+      "injected_categories": []
+    },
+    {
+      "invoice_id": "INV-00037",
+      "injected_categories": []
+    },
+    {
+      "invoice_id": "INV-00038",
+      "injected_categories": []
+    },
+    {
+      "invoice_id": "INV-00039",
+      "injected_categories": []
+    },
+    {
+      "invoice_id": "INV-00040",
+      "injected_categories": []
+    },
+    {
+      "invoice_id": "INV-00041",
+      "injected_categories": []
+    },
+    {
+      "invoice_id": "INV-00042",
+      "injected_categories": []
+    },
+    {
+      "invoice_id": "INV-00043",
+      "injected_categories": [
+        "duplicate"
+      ]
+    },
+    {
+      "invoice_id": "INV-00044",
+      "injected_categories": []
+    },
+    {
+      "invoice_id": "INV-00045",
+      "injected_categories": []
+    },
+    {
+      "invoice_id": "INV-00046",
+      "injected_categories": []
+    },
+    {
+      "invoice_id": "INV-00047",
+      "injected_categories": []
+    },
+    {
+      "invoice_id": "INV-00048",
+      "injected_categories": [
+        "duplicate"
+      ]
+    },
+    {
+      "invoice_id": "INV-00049",
+      "injected_categories": []
+    },
+    {
+      "invoice_id": "INV-00050",
+      "injected_categories": []
+    },
+    {
+      "invoice_id": "INV-00051",
+      "injected_categories": [
+        "off_cadence"
+      ]
+    },
+    {
+      "invoice_id": "INV-00052",
+      "injected_categories": []
+    },
+    {
+      "invoice_id": "INV-00053",
+      "injected_categories": []
+    },
+    {
+      "invoice_id": "INV-00054",
+      "injected_categories": []
+    },
+    {
+      "invoice_id": "INV-00055",
+      "injected_categories": []
+    },
+    {
+      "invoice_id": "INV-00056",
+      "injected_categories": []
+    },
+    {
+      "invoice_id": "INV-00057",
+      "injected_categories": [
+        "amount_outlier"
+      ]
+    },
+    {
+      "invoice_id": "INV-00058",
+      "injected_categories": []
+    },
+    {
+      "invoice_id": "INV-00059",
+      "injected_categories": []
+    },
+    {
+      "invoice_id": "INV-00060",
+      "injected_categories": []
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+INVOICE INV-00031
+From: Grove Web Studio
+Invoice date: 2025-01-28
+Due date: 2025-02-27
+
+Line items:
+  Website maintenance #31-1 x2 @ 280.46 = 560.92
+  Website maintenance #31-2 x4 @ 140.23 = 560.92
+  Website maintenance #31-3 x1 @ 560.91 = 560.91
+  Website maintenance #31-4 x2 @ 280.46 = 560.92
+
+Subtotal: 13,462.00
+Tax:      1,076.96
+TOTAL:    14,538.96 USD

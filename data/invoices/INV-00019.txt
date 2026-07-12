@@ -1,0 +1,11 @@
+INVOICE INV-00019
+From: Delta Print Shop
+Invoice date: 2025-03-04
+Due date: 2025-04-03
+
+Line items:
+  Marketing materials #19-1 x3 @ 119.60 = 358.80
+
+Subtotal: 358.80
+Tax:      28.70
+TOTAL:    387.50 USD

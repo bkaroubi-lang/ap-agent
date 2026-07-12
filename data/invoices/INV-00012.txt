@@ -1,0 +1,14 @@
+INVOICE INV-00012
+From: Corner Coffee Co.
+Invoice date: 2025-01-08
+Due date: 2025-02-07
+PO: PO-38746
+
+Line items:
+  Office refreshments #12-1 x4 @ 14.82 = 59.28
+  Office refreshments #12-2 x4 @ 14.82 = 59.28
+  Office refreshments #12-3 x3 @ 19.77 = 59.31
+
+Subtotal: 177.87
+Tax:      14.23
+TOTAL:    192.10 USD

@@ -1,0 +1,22 @@
+name: ap-agent
+channels:
+  - conda-forge
+dependencies:
+  - python=3.11
+  - pandas>=2.2
+  - numpy>=1.26,<2.0
+  - scipy>=1.13
+  - scikit-learn>=1.5
+  - matplotlib>=3.9
+  - pyyaml
+  - python-dotenv
+  - tqdm
+  - jupyterlab
+  - pytest
+  - pip
+  - pip:
+      - pydantic>=2.9
+      - pydantic-ai>=0.0.14
+      - anthropic>=0.40
+      - deepeval>=2.0
+      - ragas>=0.2

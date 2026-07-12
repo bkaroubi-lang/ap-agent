@@ -1,0 +1,11 @@
+INVOICE INV-00030
+From: Foxtrot Facilities
+Invoice date: 2025-03-04
+Due date: 2025-04-03
+
+Line items:
+  Cleaning services #30-1 x1 @ 878.06 = 878.06
+
+Subtotal: 878.06
+Tax:      70.24
+TOTAL:    948.30 USD

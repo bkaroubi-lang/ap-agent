@@ -1,0 +1,13 @@
+INVOICE INV-00017
+From: Delta Print Shop
+Invoice date: 2025-01-26
+Due date: 2025-02-25
+
+Line items:
+  Marketing materials #17-1 x2 @ 82.33 = 164.66
+  Marketing materials #17-2 x1 @ 164.67 = 164.67
+  Marketing materials #17-3 x3 @ 54.89 = 164.67
+
+Subtotal: 494.00
+Tax:      39.52
+TOTAL:    533.52 USD

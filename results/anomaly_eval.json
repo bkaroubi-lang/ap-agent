@@ -1,0 +1,71 @@
+{
+  "per_category": [
+    {
+      "category": "duplicate",
+      "tp": 2,
+      "fp": 0,
+      "fn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    {
+      "category": "amount_outlier",
+      "tp": 3,
+      "fp": 0,
+      "fn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    {
+      "category": "off_cadence",
+      "tp": 2,
+      "fp": 0,
+      "fn": 1,
+      "precision": 1.0,
+      "recall": 0.6666666666666666,
+      "f1": 0.8
+    },
+    {
+      "category": "missing_po",
+      "tp": 1,
+      "fp": 3,
+      "fn": 0,
+      "precision": 0.25,
+      "recall": 1.0,
+      "f1": 0.4
+    },
+    {
+      "category": "unknown_vendor",
+      "tp": 0,
+      "fp": 0,
+      "fn": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    }
+  ],
+  "micro": {
+    "precision": 0.7272727272727273,
+    "recall": 0.8888888888888888,
+    "f1": 0.7999999999999999,
+    "tp": 8,
+    "fp": 3,
+    "fn": 1
+  },
+  "macro": {
+    "precision": 0.8125,
+    "recall": 0.9166666666666666,
+    "f1": 0.7999999999999999
+  },
+  "invoice_flag": {
+    "precision": 0.8,
+    "recall": 0.8888888888888888,
+    "f1": 0.8421052631578948,
+    "tp": 8,
+    "fp": 2,
+    "tn": 49,
+    "fn": 1
+  }
+}

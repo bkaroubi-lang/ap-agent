@@ -1,0 +1,14 @@
+INVOICE INV-00049
+From: Juniper Office Supplies
+Invoice date: 2025-02-24
+Due date: 2025-03-26
+
+Line items:
+  Office supplies #49-1 x2 @ 26.93 = 53.86
+  Office supplies #49-2 x3 @ 17.95 = 53.85
+  Office supplies #49-3 x2 @ 26.93 = 53.86
+  Office supplies #49-4 x1 @ 53.86 = 53.86
+
+Subtotal: 215.43
+Tax:      17.23
+TOTAL:    232.66 USD

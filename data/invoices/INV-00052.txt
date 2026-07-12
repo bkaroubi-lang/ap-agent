@@ -1,0 +1,13 @@
+INVOICE INV-00052
+From: Kestrel HR Partners
+Invoice date: 2025-02-28
+Due date: 2025-03-30
+
+Line items:
+  HR consulting #52-1 x3 @ 263.65 = 790.95
+  HR consulting #52-2 x4 @ 197.74 = 790.96
+  HR consulting #52-3 x3 @ 263.65 = 790.95
+
+Subtotal: 2,372.86
+Tax:      189.83
+TOTAL:    2,562.69 USD
