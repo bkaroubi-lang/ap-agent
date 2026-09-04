@@ -100,6 +100,16 @@ Agent core is **Pydantic AI**. Chosen for:
 
 ## Setup
 
+**Recommended — [uv](https://docs.astral.sh/uv/)** (Linux/macOS; fetches Python 3.11, no conda needed):
+
+```bash
+uv sync
+cp .env.example .env      # then put ANTHROPIC_API_KEY=sk-... in .env
+uv run pytest -q          # verify eval math + schema round-trip
+```
+
+**Alternative — original Windows + Miniconda path:**
+
 ```powershell
 # reuses the Miniconda installed by credit-bench
 & "$env:USERPROFILE\miniconda3\shell\condabin\conda-hook.ps1"

@@ -1,0 +1,30 @@
+# uv project config (replaces conda/environment.yml).
+# Create the env:   uv sync           (uv fetches Python 3.11 automatically)
+# Run tests:        uv run pytest
+# Run a script:     uv run python -m scripts.generate_invoices
+# environment.yml is kept as a conda fallback but uv is the primary path.
+[project]
+name = "ap-agent"
+version = "0.1.0"
+requires-python = ">=3.11,<3.12"
+dependencies = [
+    "pandas>=2.2",
+    "numpy>=1.26,<2.0",
+    "scipy>=1.13",
+    "scikit-learn>=1.5",
+    "matplotlib>=3.9",
+    "pyyaml",
+    "python-dotenv",
+    "tqdm",
+    "jupyterlab",
+    "pytest",
+    "pydantic>=2.9",
+    "pydantic-ai>=0.0.14",
+    "anthropic>=0.40",
+    "deepeval>=2.0",
+    "ragas>=0.2",
+]
+
+[tool.uv]
+# Analysis/agent project run via scripts + pytest; not a build/installable package.
+package = false
