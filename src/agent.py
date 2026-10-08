@@ -3,6 +3,7 @@ processing tools. For deterministic extraction/anomaly evals, prefer calling
 `build_extraction_agent` (src/tools.py) or `flag_anomaly_rules` directly —
 this agent is for the free-form Q&A leg that the LLM-as-judge evaluates.
 """
+
 from __future__ import annotations
 
 from dataclasses import dataclass
@@ -15,7 +16,7 @@ from src.store import VendorStore
 from src.tools import flag_anomaly_rules, retrieve_vendor_history, spend_in_window
 
 if TYPE_CHECKING:
-    from pydantic_ai import Agent, RunContext
+    from pydantic_ai import RunContext
 
 
 AP_AGENT_SYSTEM_PROMPT = """\
@@ -32,7 +33,7 @@ class AgentDeps:
 
 
 def build_ap_agent(model: str, temperature: float = 0.0):
-    from pydantic_ai import Agent, RunContext
+    from pydantic_ai import Agent
 
     agent = Agent(
         model,

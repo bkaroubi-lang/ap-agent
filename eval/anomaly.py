@@ -4,9 +4,10 @@ and macro/micro rollups.
 The evaluator is set-based: for each invoice, compare the set of predicted
 categories to the set of injected categories.
 """
+
 from __future__ import annotations
 
-from collections import Counter, defaultdict
+from collections import Counter
 from dataclasses import dataclass
 
 from src.schemas import AnomalyCategory, AnomalyEvalItem, AnomalyReport
@@ -35,9 +36,7 @@ def score_reports(
     gold: list[AnomalyEvalItem],
 ) -> dict:
     gold_by_id = {g.invoice_id: set(g.injected_categories) for g in gold}
-    pred_by_id = {
-        r.invoice_id: {a.category for a in r.anomalies} for r in reports
-    }
+    pred_by_id = {r.invoice_id: {a.category for a in r.anomalies} for r in reports}
 
     per_cat_tp: Counter[AnomalyCategory] = Counter()
     per_cat_fp: Counter[AnomalyCategory] = Counter()
@@ -93,12 +92,22 @@ def score_reports(
 
     return {
         "per_category": [cs.__dict__ for cs in per_cat],
-        "micro": {"precision": micro_p, "recall": micro_r, "f1": micro_f,
-                   "tp": total_tp, "fp": total_fp, "fn": total_fn},
+        "micro": {
+            "precision": micro_p,
+            "recall": micro_r,
+            "f1": micro_f,
+            "tp": total_tp,
+            "fp": total_fp,
+            "fn": total_fn,
+        },
         "macro": {"precision": macro_p, "recall": macro_r, "f1": macro_f},
         "invoice_flag": {
-            "precision": flag_p, "recall": flag_r, "f1": flag_f,
-            "tp": is_flagged_tp, "fp": is_flagged_fp,
-            "tn": is_flagged_tn, "fn": is_flagged_fn,
+            "precision": flag_p,
+            "recall": flag_r,
+            "f1": flag_f,
+            "tp": is_flagged_tp,
+            "fp": is_flagged_fp,
+            "tn": is_flagged_tn,
+            "fn": is_flagged_fn,
         },
     }

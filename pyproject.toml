@@ -19,12 +19,40 @@ dependencies = [
     "jupyterlab",
     "pytest",
     "pydantic>=2.9",
-    "pydantic-ai>=0.0.14",
+    "pydantic-ai>=2.39,<3",
     "anthropic>=0.40",
-    "deepeval>=2.0",
-    "ragas>=0.2",
 ]
 
 [tool.uv]
 # Analysis/agent project run via scripts + pytest; not a build/installable package.
 package = false
+
+[dependency-groups]
+# Dev-only tooling, installed by `uv sync` and in CI; not needed at runtime.
+dev = ["ruff>=0.6"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+extend-exclude = ["data", "results"]  # data fixtures / generated result JSON
+
+[tool.ruff.lint]
+# Pragmatic default set: pyflakes (F), pycodestyle (E/W), isort (I),
+# bugbear (B), pyupgrade (UP). Broad enough to catch real issues, not noisy.
+select = ["E", "W", "F", "I", "B", "UP"]
+# E501: line length is enforced by the formatter, not the linter.
+# UP042: keep the (str, Enum) idiom — StrEnum changes str() semantics, not
+#        worth a behavior change for a lint preference.
+ignore = ["E501", "UP042"]
+
+[tool.pytest.ini_options]
+# Tests import the local `src`/`eval` packages; put the repo root on sys.path
+# so `uv run pytest` works without installing the project (package = false).
+pythonpath = ["."]
+testpaths = ["tests"]
+
+[tool.ruff.lint.per-file-ignores]
+# These drivers insert the repo root into sys.path before importing local
+# modules, so local imports intentionally follow a statement (E402).
+"scripts/*" = ["E402"]
+"eval/harness.py" = ["E402"]

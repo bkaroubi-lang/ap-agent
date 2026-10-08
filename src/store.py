@@ -4,9 +4,9 @@ The store is deliberately small and eager (all in memory) — realistic for
 an SMB with ~thousands of invoices, and keeps the agent's retrieval tool a
 pure function of the store snapshot for reproducibility.
 """
+
 from __future__ import annotations
 
-import json
 import statistics
 from datetime import date
 from decimal import Decimal
@@ -26,7 +26,7 @@ class VendorStore:
 
     # ------- persistence -------
     @classmethod
-    def from_json(cls, path: Path) -> "VendorStore":
+    def from_json(cls, path: Path) -> VendorStore:
         records = _RECORD_LIST_ADAPTER.validate_json(path.read_text())
         return cls(records=records)
 
@@ -44,8 +44,7 @@ class VendorStore:
             return sorted(exact, key=lambda r: r.invoice_date)
         # Fuzzy fallback for OCR/typo tolerance.
         scored = [
-            (SequenceMatcher(None, target, r.vendor_name.lower()).ratio(), r)
-            for r in self.records
+            (SequenceMatcher(None, target, r.vendor_name.lower()).ratio(), r) for r in self.records
         ]
         matched = [r for score, r in scored if score >= fuzzy_cutoff]
         return sorted(matched, key=lambda r: r.invoice_date)
@@ -58,10 +57,7 @@ class VendorStore:
         mean_total = Decimal(f"{statistics.fmean(totals):.2f}")
         std_total = Decimal(f"{statistics.pstdev(totals):.2f}") if len(totals) > 1 else Decimal("0")
         # Days between consecutive invoices; 0 for single-record vendors.
-        gaps = [
-            (recs[i].invoice_date - recs[i - 1].invoice_date).days
-            for i in range(1, len(recs))
-        ]
+        gaps = [(recs[i].invoice_date - recs[i - 1].invoice_date).days for i in range(1, len(recs))]
         mean_gap = float(statistics.fmean(gaps)) if gaps else 0.0
         return VendorHistory(
             vendor_name=recs[0].vendor_name,

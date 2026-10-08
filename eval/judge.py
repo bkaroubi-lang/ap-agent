@@ -7,6 +7,7 @@ Two protocols:
 Both return JudgeVerdict objects. Confidence is elicited explicitly; downstream
 calibration compares confidence to empirical accuracy.
 """
+
 from __future__ import annotations
 
 from dataclasses import dataclass
@@ -15,7 +16,6 @@ from typing import Literal
 from pydantic import BaseModel, ConfigDict, Field
 
 from src.schemas import JudgeVerdict
-
 
 JUDGE_SINGLE_PROMPT = """\
 You are grading a candidate answer against a reference answer for a question.
@@ -124,9 +124,7 @@ def judge_single(agent, item: JudgeSingleItem, judge_id: str) -> JudgeVerdict:
 
 def judge_pairwise(agent, item: JudgePairwiseItem, judge_id: str) -> JudgeVerdict:
     prompt = (
-        f"Question:\n{item.question}\n\n"
-        f"Answer A:\n{item.answer_a}\n\n"
-        f"Answer B:\n{item.answer_b}"
+        f"Question:\n{item.question}\n\nAnswer A:\n{item.answer_a}\n\nAnswer B:\n{item.answer_b}"
     )
     reply: _PairwiseJudgeReply = agent.run_sync(prompt).output
     # Encode A->5, B->1 so we can reuse Likert-oriented calibration downstream.

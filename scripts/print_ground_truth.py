@@ -2,6 +2,7 @@
 of vendor stats + anomaly labels. Use it alongside qa_gold.json to look
 up the right answer for each labeling task.
 """
+
 from __future__ import annotations
 
 import json
@@ -25,8 +26,9 @@ def main() -> None:
     for rec in store:
         by_vendor[rec["vendor_name"]].append(rec)
 
-    anomalies = {a["invoice_id"]: a["injected_categories"]
-                 for a in gt["anomaly"] if a["injected_categories"]}
+    anomalies = {
+        a["invoice_id"]: a["injected_categories"] for a in gt["anomaly"] if a["injected_categories"]
+    }
     inv_by_id = {r["invoice_id"]: r for r in store}
 
     lines: list[str] = []
@@ -69,7 +71,7 @@ def main() -> None:
     lines.append(
         "These invoices were tagged as anomalous in the synthetic data. "
         "Any invoice NOT listed here is a normal invoice — the correct "
-        "answer to \"was it flagged?\" is **no**.\n"
+        'answer to "was it flagged?" is **no**.\n'
     )
     lines.append("| Invoice | Vendor | Injected category |")
     lines.append("| --- | --- | --- |")
@@ -81,9 +83,7 @@ def main() -> None:
 
     # ---- Individual invoices (compact) ----
     lines.append("## All invoices (per vendor)\n")
-    lines.append(
-        "Compact per-vendor list. `!` marks an injected anomaly.\n"
-    )
+    lines.append("Compact per-vendor list. `!` marks an injected anomaly.\n")
     for v in sorted(by_vendor):
         recs = sorted(by_vendor[v], key=lambda r: r["invoice_date"])
         lines.append(f"### {v}\n")
@@ -102,16 +102,14 @@ def main() -> None:
     # ---- Meta ----
     earliest = min(r["invoice_date"] for r in store)
     latest = max(r["invoice_date"] for r in store)
-    lines.append(f"## Meta\n")
+    lines.append("## Meta\n")
     lines.append(f"- Total invoices in the vendor store: **{len(store)}**")
     lines.append(f"- Earliest invoice date: **{earliest}**")
     lines.append(f"- Latest invoice date: **{latest}**")
     lines.append(f"- Injected anomalies: **{len(anomalies)}**")
     lines.append(f"- Distinct vendors: **{len(by_vendor)}**")
     lines.append("")
-    lines.append(
-        "**Anything referring to 2024 or earlier does not exist in this data.**\n"
-    )
+    lines.append("**Anything referring to 2024 or earlier does not exist in this data.**\n")
 
     OUT.write_text("\n".join(lines))
     print(f"Wrote {OUT}")

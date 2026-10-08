@@ -11,13 +11,13 @@ Emits:
 Run:
     python scripts/generate_invoices.py
 """
+
 from __future__ import annotations
 
 import argparse
 import json
 import random
 import sys
-from dataclasses import asdict
 from datetime import date, timedelta
 from decimal import Decimal
 from pathlib import Path
@@ -113,7 +113,7 @@ def _make_clean_invoice(
         running += line_total
         line_items.append(
             LineItem(
-                description=f"{line_desc} #{invoice_seq}-{i+1}",
+                description=f"{line_desc} #{invoice_seq}-{i + 1}",
                 quantity=qty,
                 unit_price=unit,
                 line_total=line_total,
@@ -154,7 +154,7 @@ def generate(cfg: dict) -> None:
         # 60% of vendors typically include a PO; the other 40% typically don't.
         vendor_usually_has_po = rng.random() < 0.6
         cur_date = start + timedelta(days=rng.randint(0, cadence_days))
-        for i in range(n_per):
+        for _ in range(n_per):
             seq += 1
             include_po = vendor_usually_has_po and rng.random() > 0.1
             inv = _make_clean_invoice(
@@ -175,9 +175,7 @@ def generate(cfg: dict) -> None:
     # Inject anomalies into a copy of the invoices (not the store — store
     # represents historical truth against which anomalies get flagged).
     inv_by_id = {inv.invoice_id: inv for inv in all_invoices}
-    anomaly_targets = rng.sample(
-        list(inv_by_id.keys()), k=int(len(inv_by_id) * anomaly_rate)
-    )
+    anomaly_targets = rng.sample(list(inv_by_id.keys()), k=int(len(inv_by_id) * anomaly_rate))
     for inv_id in anomaly_targets:
         inv = inv_by_id[inv_id]
         choice = rng.choice(
@@ -190,7 +188,11 @@ def generate(cfg: dict) -> None:
         )
         if choice is AnomalyCategory.DUPLICATE:
             # Copy total from an earlier invoice of the same vendor, if any.
-            peers = [r for r in vendor_store_records if r.vendor_name == inv.vendor_name and r.invoice_id != inv.invoice_id]
+            peers = [
+                r
+                for r in vendor_store_records
+                if r.vendor_name == inv.vendor_name and r.invoice_id != inv.invoice_id
+            ]
             if peers:
                 twin = rng.choice(peers)
                 new_total = twin.total
@@ -250,7 +252,9 @@ def generate(cfg: dict) -> None:
     )
 
     print(f"Wrote {len(all_invoices)} invoices to {INVOICE_DIR}")
-    print(f"Injected anomalies: {sum(len(v) for v in injected.values())} across {len(injected)} invoices")
+    print(
+        f"Injected anomalies: {sum(len(v) for v in injected.values())} across {len(injected)} invoices"
+    )
     print(f"Ground truth -> {GT_PATH}")
     print(f"Vendor store -> {STORE_PATH}")
 

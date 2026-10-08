@@ -1,5 +1,9 @@
 # ap-agent
 
+[![CI](https://github.com/bkaroubi-lang/ap-agent/actions/workflows/ci.yml/badge.svg)](https://github.com/bkaroubi-lang/ap-agent/actions/workflows/ci.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+![Python 3.11](https://img.shields.io/badge/python-3.11-blue.svg)
+
 **A Pydantic-AI accounts-payable agent + a statistically grounded eval harness that treats LLM-as-judge agreement as an inter-rater reliability problem.**
 
 The agent itself is standard: extract structured fields from invoices, flag
@@ -104,8 +108,10 @@ Agent core is **Pydantic AI**. Chosen for:
 
 ```bash
 uv sync
-cp .env.example .env      # then put ANTHROPIC_API_KEY=sk-... in .env
-uv run pytest -q          # verify eval math + schema round-trip
+cp .env.example .env      # then put GROQ_API_KEY=gsk_... in .env
+uv run pytest -q                        # verify eval math + schema round-trip
+uv run python scripts/generate_invoices.py   # deterministic synthetic set
+uv run python -m eval.harness --no-llm        # deterministic evals, ~0 cost, no key
 ```
 
 **Alternative — original Windows + Miniconda path:**
@@ -116,7 +122,7 @@ uv run pytest -q          # verify eval math + schema round-trip
 conda env create -f environment.yml
 conda activate ap-agent
 copy .env.example .env
-# edit .env: put ANTHROPIC_API_KEY=sk-... in there
+# edit .env: put GROQ_API_KEY=gsk_... in there (default provider)
 python -m pytest tests\ -q                  # verify eval math + schema round-trip
 python scripts\generate_invoices.py         # deterministic synthetic set -> data/invoices/
 python -m eval.harness --no-llm             # runs deterministic evals only, ~0 cost

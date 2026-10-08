@@ -2,9 +2,10 @@
 from evaluation scripts (so the eval harness can bypass the agentic loop for
 deterministic tests of the underlying capabilities).
 """
+
 from __future__ import annotations
 
-from datetime import date, timedelta
+from datetime import date
 from decimal import Decimal
 from typing import TYPE_CHECKING
 
@@ -39,7 +40,7 @@ Rules:
 """
 
 
-def build_extraction_agent(model: str, temperature: float = 0.0) -> "Agent[None, Invoice]":
+def build_extraction_agent(model: str, temperature: float = 0.0) -> Agent[None, Invoice]:
     """Return a Pydantic AI Agent whose output_type is Invoice."""
     from pydantic_ai import Agent
 
@@ -96,7 +97,10 @@ def flag_anomaly_rules(
     for r in hist.records:
         if r.invoice_id == invoice.invoice_id:
             continue
-        if r.total == invoice.total and abs((r.invoice_date - invoice.invoice_date).days) <= duplicate_days_window:
+        if (
+            r.total == invoice.total
+            and abs((r.invoice_date - invoice.invoice_date).days) <= duplicate_days_window
+        ):
             anomalies.append(
                 Anomaly(
                     category=AnomalyCategory.DUPLICATE,
@@ -105,7 +109,10 @@ def flag_anomaly_rules(
                         f"Potential duplicate of invoice {r.invoice_id} "
                         f"({r.invoice_date.isoformat()}, total {r.total})."
                     ),
-                    evidence={"matched_invoice_id": r.invoice_id, "days_apart": abs((r.invoice_date - invoice.invoice_date).days)},
+                    evidence={
+                        "matched_invoice_id": r.invoice_id,
+                        "days_apart": abs((r.invoice_date - invoice.invoice_date).days),
+                    },
                 )
             )
             break  # one duplicate flag is enough
@@ -135,8 +142,7 @@ def flag_anomaly_rules(
                     category=AnomalyCategory.OFF_CADENCE,
                     severity=min(1.0, gap / (hist.mean_days_between * 6.0)),
                     explanation=(
-                        f"Gap of {gap}d since last invoice, mean is "
-                        f"{hist.mean_days_between:.1f}d."
+                        f"Gap of {gap}d since last invoice, mean is {hist.mean_days_between:.1f}d."
                     ),
                     evidence={"gap_days": gap, "mean_gap_days": hist.mean_days_between},
                 )
@@ -165,6 +171,7 @@ def flag_anomaly_rules(
 
 
 # ---------- Tool 3: retrieve_vendor_history ----------
+
 
 def retrieve_vendor_history(vendor_name: str, store: VendorStore) -> VendorHistory | None:
     return store.history(vendor_name)

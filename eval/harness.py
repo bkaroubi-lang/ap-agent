@@ -14,6 +14,7 @@ Run:
     python -m eval.harness --no-llm     # skip Phase 1 & 3 (free)
     python -m eval.harness              # full run (billed)
 """
+
 from __future__ import annotations
 
 import argparse
@@ -27,15 +28,6 @@ import yaml
 from dotenv import load_dotenv
 from pydantic import TypeAdapter
 
-from src.schemas import (
-    AnomalyEvalItem,
-    ExtractionEvalItem,
-    Invoice,
-    VendorRecord,
-)
-from src.store import VendorStore
-from src.tools import build_extraction_agent, flag_anomaly_rules
-
 from eval.anomaly import score_reports
 from eval.calibration import (
     bootstrap_kappa_ci,
@@ -47,6 +39,14 @@ from eval.calibration import (
     verbosity_bias_correlation,
 )
 from eval.extraction import aggregate, score_invoice
+from src.schemas import (
+    AnomalyEvalItem,
+    ExtractionEvalItem,
+    Invoice,
+    VendorRecord,
+)
+from src.store import VendorStore
+from src.tools import build_extraction_agent, flag_anomaly_rules
 
 REPO = Path(__file__).resolve().parents[1]
 DATA_DIR = REPO / "data"
@@ -77,7 +77,9 @@ def run_anomaly_eval() -> dict:
     reports = [flag_anomaly_rules(inv, store) for inv in invoices]
     scored = score_reports(reports, ano)
     (RESULTS_DIR / "anomaly_eval.json").write_text(json.dumps(scored, indent=2))
-    print(f"  micro F1={scored['micro']['f1']:.3f}  invoice-flag F1={scored['invoice_flag']['f1']:.3f}")
+    print(
+        f"  micro F1={scored['micro']['f1']:.3f}  invoice-flag F1={scored['invoice_flag']['f1']:.3f}"
+    )
     print(f"  wrote {RESULTS_DIR / 'anomaly_eval.json'}")
     return scored
 
@@ -150,6 +152,7 @@ def run_judge_calibration(cfg: dict) -> dict:
     scores_flat: list[float] = []
 
     import time as _time
+
     delay = float(cfg["eval"].get("rate_limit_delay_s", 0.0))
 
     # Store per-judge results keyed by item index so unequal success rates
@@ -170,7 +173,9 @@ def run_judge_calibration(cfg: dict) -> dict:
             try:
                 v = judge_pairwise(
                     agent,
-                    JudgePairwiseItem(item_id=f"{i}-ab", question=ex["question"], answer_a=a, answer_b=b),
+                    JudgePairwiseItem(
+                        item_id=f"{i}-ab", question=ex["question"], answer_a=a, answer_b=b
+                    ),
                     judge_id=m,
                 )
             except Exception as e:
@@ -184,7 +189,9 @@ def run_judge_calibration(cfg: dict) -> dict:
             lengths_by_item[i] = len(a) + len(b)
             scores_flat_stream.append(float(v.score))
             lengths_stream.append(len(a) + len(b))
-            print(f"  [{m}] item {i}: judge_score={v.score}  conf={v.confidence:.2f}  gold={gold_choice}")
+            print(
+                f"  [{m}] item {i}: judge_score={v.score}  conf={v.confidence:.2f}  gold={gold_choice}"
+            )
             if delay > 0:
                 _time.sleep(delay)
 
@@ -193,7 +200,9 @@ def run_judge_calibration(cfg: dict) -> dict:
                 try:
                     v_swap = judge_pairwise(
                         agent,
-                        JudgePairwiseItem(item_id=f"{i}-ba", question=ex["question"], answer_a=b, answer_b=a),
+                        JudgePairwiseItem(
+                            item_id=f"{i}-ba", question=ex["question"], answer_a=b, answer_b=a
+                        ),
                         judge_id=m,
                     )
                 except Exception as e:
@@ -201,9 +210,7 @@ def run_judge_calibration(cfg: dict) -> dict:
                     if delay > 0:
                         _time.sleep(delay)
                     continue
-                prefer_first_flags.append(
-                    (v.score == 5) and (v_swap.score == 1)
-                )
+                prefer_first_flags.append((v.score == 5) and (v_swap.score == 1))
                 if delay > 0:
                     _time.sleep(delay)
 
@@ -219,16 +226,13 @@ def run_judge_calibration(cfg: dict) -> dict:
         print(f"  {m}: {len(per)}/{len(items_raw)} items")
 
     verdicts_by_judge: dict[str, list[int]] = {
-        m: [verdicts_by_judge_by_item[m][i] for i in common_items]
-        for m in judge_models
+        m: [verdicts_by_judge_by_item[m][i] for i in common_items] for m in judge_models
     }
     confidences_by_judge: dict[str, list[float]] = {
-        m: [confidences_by_judge_by_item[m][i] for i in common_items]
-        for m in judge_models
+        m: [confidences_by_judge_by_item[m][i] for i in common_items] for m in judge_models
     }
     correct_by_judge: dict[str, list[bool]] = {
-        m: [correct_by_judge_by_item[m][i] for i in common_items]
-        for m in judge_models
+        m: [correct_by_judge_by_item[m][i] for i in common_items] for m in judge_models
     }
     lengths = lengths_stream
     scores_flat = scores_flat_stream
@@ -240,7 +244,14 @@ def run_judge_calibration(cfg: dict) -> dict:
         a1 = np.asarray(verdicts_by_judge[m1])
         a2 = np.asarray(verdicts_by_judge[m2])
         ck = cohens_kappa(a1, a2)
-        ck_ci = bootstrap_kappa_ci(cohens_kappa, a1, a2, n_boot=cfg["eval"]["bootstrap"]["n_boot"], alpha=cfg["eval"]["bootstrap"]["alpha"], seed=cfg["eval"]["bootstrap"]["seed"])
+        ck_ci = bootstrap_kappa_ci(
+            cohens_kappa,
+            a1,
+            a2,
+            n_boot=cfg["eval"]["bootstrap"]["n_boot"],
+            alpha=cfg["eval"]["bootstrap"]["alpha"],
+            seed=cfg["eval"]["bootstrap"]["seed"],
+        )
         kappa_out["cohens_pair"] = {
             "raters": [m1, m2],
             "kappa": ck,
@@ -290,8 +301,10 @@ def run_judge_calibration(cfg: dict) -> dict:
     print(f"  wrote {RESULTS_DIR / 'judge_calibration.json'}")
     if kappa_out.get("cohens_pair"):
         p = kappa_out["cohens_pair"]
-        print(f"  Cohen's kappa ({p['raters'][0]} vs {p['raters'][1]}): {p['kappa']:.3f} "
-              f"[{p['ci_lower']:.3f}, {p['ci_upper']:.3f}]  ({p['label']})")
+        print(
+            f"  Cohen's kappa ({p['raters'][0]} vs {p['raters'][1]}): {p['kappa']:.3f} "
+            f"[{p['ci_lower']:.3f}, {p['ci_upper']:.3f}]  ({p['label']})"
+        )
     return payload
 
 
@@ -306,9 +319,7 @@ def main() -> None:
     cfg = yaml.safe_load(args.config.read_text())
 
     if not GT_PATH.exists():
-        raise SystemExit(
-            f"Missing {GT_PATH}. Run scripts/generate_invoices.py first."
-        )
+        raise SystemExit(f"Missing {GT_PATH}. Run scripts/generate_invoices.py first.")
 
     if args.only in (None, "anomaly"):
         run_anomaly_eval()

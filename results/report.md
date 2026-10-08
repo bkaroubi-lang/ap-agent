@@ -284,23 +284,22 @@ behavior.
 
 Everything ships with pinned deps and deterministic seeds. Full sequence:
 
-```powershell
-# One-time env setup
-conda env create -f environment.yml
-conda activate ap-agent
-copy .env.example .env       # populate with GROQ_API_KEY (or any provider key)
+```bash
+# One-time env setup (uv fetches Python 3.11 itself; no conda needed)
+uv sync
+cp .env.example .env       # populate with GROQ_API_KEY (or any provider key)
 
-# Deterministic legs (free, no API cost)
-python -m pytest tests\ -q
-python scripts\generate_invoices.py
-python -m eval.harness --no-llm
+# Deterministic legs (free, no API cost, no key required)
+uv run pytest -q
+uv run python scripts/generate_invoices.py
+uv run python -m eval.harness --no-llm
 
 # Billed legs
-python scripts\print_ground_truth.py            # cheat sheet for labeling
-python scripts\append_qa_subtle_items.py        # if starting fresh, else skip
-# hand-label data\qa_gold.json (fill gold_choice A or B)
-python -m eval.harness --only extraction        # ~$0 free tier / ~$0.60 paid
-python -m eval.harness --only judge             # ~$0 free tier / ~$0.30 paid
+uv run python scripts/print_ground_truth.py          # cheat sheet for labeling
+uv run python scripts/append_qa_subtle_items.py      # if starting fresh, else skip
+# hand-label data/qa_gold.json (fill gold_choice A or B)
+uv run python -m eval.harness --only extraction      # ~$0 free tier / ~$0.60 paid
+uv run python -m eval.harness --only judge           # ~$0 free tier / ~$0.30 paid
 ```
 
 **Files that ship the findings** (all under `results/`):

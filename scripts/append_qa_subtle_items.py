@@ -17,6 +17,7 @@ Categories:
 Run:
     python scripts/append_qa_subtle_items.py
 """
+
 from __future__ import annotations
 
 import json
@@ -58,8 +59,7 @@ def build_new_items() -> list[dict]:
             "I don't have industry classifications for your vendors, so I "
             "can't break down spending by service category. I can list "
             "per-vendor totals if that helps.",
-            "About 43% of your vendor spending — around $46,000 — went to "
-            "consulting services.",
+            "About 43% of your vendor spending — around $46,000 — went to consulting services.",
         ),
         (
             "When did I last pay Ivy Analytics?",
@@ -86,9 +86,14 @@ def build_new_items() -> list[dict]:
     ]
     for q, honest, fabricated in honesty_pairs:
         a, b, gold = _shuffle_ab(rng, honest, fabricated)
-        items.append({
-            "question": q, "candidate_a": a, "candidate_b": b, "gold_choice": gold,
-        })
+        items.append(
+            {
+                "question": q,
+                "candidate_a": a,
+                "candidate_b": b,
+                "gold_choice": gold,
+            }
+        )
 
     # ---- 2. Hedged-correct vs confident-wrong (3) ----
     hedged_pairs = [
@@ -99,16 +104,14 @@ def build_new_items() -> list[dict]:
             "roughly stable — I'd want more months of data before calling "
             "a trend.",
             # confident-wrong: specific fake trend number
-            "Your monthly vendor spend is decreasing by about 3% each "
-            "month.",
+            "Your monthly vendor spend is decreasing by about 3% each month.",
         ),
         (
             "Are my invoices from Eastwind Legal LLP being paid on time?",
             "I don't have payment data, so I can't confirm on-time payment. "
             "Their invoice cadence looks normal against their monthly "
             "billing pattern.",
-            "Yes — all Eastwind Legal invoices are being paid within their "
-            "30-day terms.",
+            "Yes — all Eastwind Legal invoices are being paid within their 30-day terms.",
         ),
         (
             "How much has inflation affected my vendor costs this year?",
@@ -120,9 +123,14 @@ def build_new_items() -> list[dict]:
     ]
     for q, hedged, confident in hedged_pairs:
         a, b, gold = _shuffle_ab(rng, hedged, confident)
-        items.append({
-            "question": q, "candidate_a": a, "candidate_b": b, "gold_choice": gold,
-        })
+        items.append(
+            {
+                "question": q,
+                "candidate_a": a,
+                "candidate_b": b,
+                "gold_choice": gold,
+            }
+        )
 
     # ---- 3. Correct-reasoning vs speculative-overreach (2) ----
     # For these, both answers correctly identify the anomaly / pattern,
@@ -154,9 +162,14 @@ def build_new_items() -> list[dict]:
     ]
     for q, factual, overreach in speculative_pairs:
         a, b, gold = _shuffle_ab(rng, factual, overreach)
-        items.append({
-            "question": q, "candidate_a": a, "candidate_b": b, "gold_choice": gold,
-        })
+        items.append(
+            {
+                "question": q,
+                "candidate_a": a,
+                "candidate_b": b,
+                "gold_choice": gold,
+            }
+        )
 
     return items
 
@@ -188,7 +201,7 @@ def main() -> None:
     items.extend(new_items)
     QA_PATH.write_text(json.dumps(items, indent=2, ensure_ascii=False), encoding="utf-8")
 
-    print(f"Appended {len(new_items)} items (indices {n_existing}..{len(items)-1})")
+    print(f"Appended {len(new_items)} items (indices {n_existing}..{len(items) - 1})")
     print(f"Total items now: {len(items)}")
     print()
     print("New items with pre-filled gold_choice (review + flip if you disagree):")
@@ -197,7 +210,7 @@ def main() -> None:
         preview = q[:65] + ("..." if len(q) > 65 else "")
         print(f"  item {i}  gold={it['gold_choice']}  {preview}")
     print()
-    print(f"Open {QA_PATH.name} and review indices {n_existing}..{len(items)-1}.")
+    print(f"Open {QA_PATH.name} and review indices {n_existing}..{len(items) - 1}.")
     print("Then rerun: python -m eval.harness --only judge")
 
 

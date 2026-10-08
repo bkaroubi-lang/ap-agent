@@ -13,8 +13,18 @@ def _gold_invoice() -> Invoice:
         due_date=date(2025, 3, 31),
         po_reference="PO-99999",
         line_items=[
-            LineItem(description="Widget", quantity=2.0, unit_price=Decimal("50.00"), line_total=Decimal("100.00")),
-            LineItem(description="Gadget", quantity=1.0, unit_price=Decimal("25.00"), line_total=Decimal("25.00")),
+            LineItem(
+                description="Widget",
+                quantity=2.0,
+                unit_price=Decimal("50.00"),
+                line_total=Decimal("100.00"),
+            ),
+            LineItem(
+                description="Gadget",
+                quantity=1.0,
+                unit_price=Decimal("25.00"),
+                line_total=Decimal("25.00"),
+            ),
         ],
         subtotal=Decimal("125.00"),
         tax=Decimal("10.00"),

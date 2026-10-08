@@ -16,7 +16,5 @@ dependencies:
   - pip
   - pip:
       - pydantic>=2.9
-      - pydantic-ai>=0.0.14
+      - pydantic-ai>=2.39,<3
       - anthropic>=0.40
-      - deepeval>=2.0
-      - ragas>=0.2

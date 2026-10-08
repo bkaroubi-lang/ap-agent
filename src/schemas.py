@@ -6,12 +6,13 @@ exposed to LLM tool-calls is `{"type": "number"}` — the default Decimal
 schema emits a regex with a lookahead that Groq's JSON-schema validator
 rejects.
 """
+
 from __future__ import annotations
 
 from datetime import date
 from decimal import Decimal
 from enum import Enum
-from typing import Annotated, Optional
+from typing import Annotated
 
 from pydantic import BaseModel, ConfigDict, Field, WithJsonSchema, field_validator
 
@@ -31,8 +32,8 @@ class Invoice(BaseModel):
     invoice_id: str
     vendor_name: str
     invoice_date: date
-    due_date: Optional[date] = None
-    po_reference: Optional[str] = None
+    due_date: date | None = None
+    po_reference: str | None = None
     line_items: list[LineItem] = Field(default_factory=list)
     subtotal: Money
     tax: Money = Decimal("0")
@@ -47,16 +48,18 @@ class Invoice(BaseModel):
 
 class VendorRecord(BaseModel):
     """A single historical invoice record for a vendor."""
+
     model_config = ConfigDict(extra="forbid")
     vendor_name: str
     invoice_id: str
     invoice_date: date
     total: Money
-    po_reference: Optional[str] = None
+    po_reference: str | None = None
 
 
 class VendorHistory(BaseModel):
     """Aggregated stats for one vendor."""
+
     model_config = ConfigDict(extra="forbid")
     vendor_name: str
     n_invoices: int
@@ -90,22 +93,24 @@ class AnomalyReport(BaseModel):
     is_flagged: bool
 
     @classmethod
-    def from_anomalies(cls, invoice_id: str, anomalies: list[Anomaly]) -> "AnomalyReport":
+    def from_anomalies(cls, invoice_id: str, anomalies: list[Anomaly]) -> AnomalyReport:
         return cls(invoice_id=invoice_id, anomalies=anomalies, is_flagged=bool(anomalies))
 
 
 class JudgeVerdict(BaseModel):
     """One judge's verdict on one item."""
+
     model_config = ConfigDict(extra="forbid")
     item_id: str
     judge_id: str
-    score: int = Field(ge=1, le=5)             # 5-point Likert
+    score: int = Field(ge=1, le=5)  # 5-point Likert
     confidence: float = Field(ge=0.0, le=1.0)  # judge's own confidence
     rationale: str
 
 
 class ExtractionEvalItem(BaseModel):
     """Per-invoice ground truth for extraction eval."""
+
     model_config = ConfigDict(extra="forbid")
     invoice_id: str
     invoice_text: str
@@ -114,6 +119,7 @@ class ExtractionEvalItem(BaseModel):
 
 class AnomalyEvalItem(BaseModel):
     """Per-invoice ground truth for anomaly eval."""
+
     model_config = ConfigDict(extra="forbid")
     invoice_id: str
     injected_categories: list[AnomalyCategory]

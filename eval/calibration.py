@@ -7,19 +7,19 @@ self-reported confidence vs empirical accuracy.
 
 The judge module (eval/judge.py) produces the ratings; this module scores them.
 """
+
 from __future__ import annotations
 
-from collections import Counter
+from collections.abc import Sequence
 from dataclasses import dataclass
-from typing import Sequence
 
 import numpy as np
 from scipy import stats
 from sklearn.calibration import calibration_curve
 from sklearn.metrics import brier_score_loss
 
-
 # ---------- Cohen's kappa (2 raters, categorical) ----------
+
 
 def cohens_kappa(a: Sequence, b: Sequence) -> float:
     """Cohen's kappa. Ratings can be any hashable categorical values."""
@@ -32,7 +32,7 @@ def cohens_kappa(a: Sequence, b: Sequence) -> float:
     idx = {c: i for i, c in enumerate(categories)}
     K = len(categories)
     conf = np.zeros((K, K), dtype=float)
-    for x, y in zip(a, b):
+    for x, y in zip(a, b, strict=False):
         conf[idx[x], idx[y]] += 1.0
     po = np.trace(conf) / n
     pa = conf.sum(axis=1) / n
@@ -44,6 +44,7 @@ def cohens_kappa(a: Sequence, b: Sequence) -> float:
 
 
 # ---------- Fleiss' kappa (>=2 raters, categorical) ----------
+
 
 def fleiss_kappa(ratings: np.ndarray) -> float:
     """Fleiss' kappa on a matrix of shape (n_items, n_categories),
@@ -61,17 +62,18 @@ def fleiss_kappa(ratings: np.ndarray) -> float:
     if n < 2:
         raise ValueError("fleiss_kappa: need >= 2 raters per item.")
     # P_i (agreement per item)
-    P = ((ratings ** 2).sum(axis=1) - n) / (n * (n - 1))
+    P = ((ratings**2).sum(axis=1) - n) / (n * (n - 1))
     P_bar = float(P.mean())
     # P_e (category prevalence)
     p_j = ratings.sum(axis=0) / (n_items * n)
-    P_e = float((p_j ** 2).sum())
+    P_e = float((p_j**2).sum())
     if P_e == 1.0:
         return 1.0 if P_bar == 1.0 else 0.0
     return (P_bar - P_e) / (1.0 - P_e)
 
 
 # ---------- Bootstrap CIs for kappa ----------
+
 
 def bootstrap_kappa_ci(
     kappa_fn,
@@ -100,11 +102,12 @@ def bootstrap_kappa_ci(
 
 # ---------- Bias tests ----------
 
+
 @dataclass
 class PositionBiasResult:
     prefer_first_rate: float
     n: int
-    p_value: float               # two-sided binomial test vs 0.5
+    p_value: float  # two-sided binomial test vs 0.5
     ci_lower: float
     ci_upper: float
 
@@ -147,6 +150,7 @@ def verbosity_bias_correlation(scores: Sequence[float], lengths: Sequence[int]) 
 
 # ---------- Judge reliability (confidence vs accuracy) ----------
 
+
 def reliability_curve(
     correct: Sequence[bool], confidence: Sequence[float], n_bins: int = 10
 ) -> dict:
@@ -166,6 +170,7 @@ def reliability_curve(
 
 
 # ---------- Kappa magnitude interpretation ----------
+
 
 def kappa_label(k: float) -> str:
     """Landis-Koch magnitude labels, for a legend in reports (not policy)."""

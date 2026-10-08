@@ -5,6 +5,7 @@ normalizers that reflect what a human would consider "the same value" — dates
 compared as ISO strings, decimals compared with tolerance, whitespace/case
 normalized for text.
 """
+
 from __future__ import annotations
 
 from collections import Counter
@@ -14,11 +15,19 @@ from typing import Any
 
 from src.schemas import Invoice, LineItem
 
-
 DECIMAL_TOL = Decimal("0.01")
 
-FIELDS = ("invoice_id", "vendor_name", "invoice_date", "due_date",
-          "po_reference", "subtotal", "tax", "total", "currency")
+FIELDS = (
+    "invoice_id",
+    "vendor_name",
+    "invoice_date",
+    "due_date",
+    "po_reference",
+    "subtotal",
+    "tax",
+    "total",
+    "currency",
+)
 
 
 def _norm_text(x: Any) -> str:
@@ -105,5 +114,6 @@ def aggregate(scores: list[InvoiceScore]) -> dict:
         "mean_field_accuracy": sum(s.field_accuracy for s in scores) / n,
         "per_field_accuracy": per_field_acc,
         "mean_line_item_f1": sum(s.line_item_f1 for s in scores) / n,
-        "perfect_invoice_rate": sum(1 for s in scores if s.n_correct_fields == s.n_total_fields) / n,
+        "perfect_invoice_rate": sum(1 for s in scores if s.n_correct_fields == s.n_total_fields)
+        / n,
     }
