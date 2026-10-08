@@ -1,6 +1,6 @@
 {
   "aggregate": {
-    "n": 50,
+    "n": 44,
     "mean_field_accuracy": 1.0,
     "per_field_accuracy": {
       "invoice_id": 1.0,
@@ -17,32 +17,6 @@
     "perfect_invoice_rate": 1.0
   },
   "per_invoice": [
-    {
-      "invoice_id": "INV-00001",
-      "per_field": {
-        "invoice_id": true,
-        "vendor_name": true,
-        "invoice_date": true,
-        "due_date": true,
-        "po_reference": true,
-        "subtotal": true,
-        "tax": true,
-        "total": true,
-        "currency": true
-      },
-      "line_item": {
-        "tp": 2,
-        "fp": 0,
-        "fn": 0,
-        "precision": 1.0,
-        "recall": 1.0,
-        "f1": 1.0
-      },
-      "n_correct_fields": 9,
-      "n_total_fields": 9,
-      "field_accuracy": 1.0,
-      "line_item_f1": 1.0
-    },
     {
       "invoice_id": "INV-00002",
       "per_field": {
@@ -382,58 +356,6 @@
       "line_item_f1": 1.0
     },
     {
-      "invoice_id": "INV-00015",
-      "per_field": {
-        "invoice_id": true,
-        "vendor_name": true,
-        "invoice_date": true,
-        "due_date": true,
-        "po_reference": true,
-        "subtotal": true,
-        "tax": true,
-        "total": true,
-        "currency": true
-      },
-      "line_item": {
-        "tp": 1,
-        "fp": 0,
-        "fn": 0,
-        "precision": 1.0,
-        "recall": 1.0,
-        "f1": 1.0
-      },
-      "n_correct_fields": 9,
-      "n_total_fields": 9,
-      "field_accuracy": 1.0,
-      "line_item_f1": 1.0
-    },
-    {
-      "invoice_id": "INV-00016",
-      "per_field": {
-        "invoice_id": true,
-        "vendor_name": true,
-        "invoice_date": true,
-        "due_date": true,
-        "po_reference": true,
-        "subtotal": true,
-        "tax": true,
-        "total": true,
-        "currency": true
-      },
-      "line_item": {
-        "tp": 3,
-        "fp": 0,
-        "fn": 0,
-        "precision": 1.0,
-        "recall": 1.0,
-        "f1": 1.0
-      },
-      "n_correct_fields": 9,
-      "n_total_fields": 9,
-      "field_accuracy": 1.0,
-      "line_item_f1": 1.0
-    },
-    {
       "invoice_id": "INV-00017",
       "per_field": {
         "invoice_id": true,
@@ -669,32 +591,6 @@
     },
     {
       "invoice_id": "INV-00026",
-      "per_field": {
-        "invoice_id": true,
-        "vendor_name": true,
-        "invoice_date": true,
-        "due_date": true,
-        "po_reference": true,
-        "subtotal": true,
-        "tax": true,
-        "total": true,
-        "currency": true
-      },
-      "line_item": {
-        "tp": 4,
-        "fp": 0,
-        "fn": 0,
-        "precision": 1.0,
-        "recall": 1.0,
-        "f1": 1.0
-      },
-      "n_correct_fields": 9,
-      "n_total_fields": 9,
-      "field_accuracy": 1.0,
-      "line_item_f1": 1.0
-    },
-    {
-      "invoice_id": "INV-00027",
       "per_field": {
         "invoice_id": true,
         "vendor_name": true,
@@ -980,32 +876,6 @@
       "line_item_f1": 1.0
     },
     {
-      "invoice_id": "INV-00038",
-      "per_field": {
-        "invoice_id": true,
-        "vendor_name": true,
-        "invoice_date": true,
-        "due_date": true,
-        "po_reference": true,
-        "subtotal": true,
-        "tax": true,
-        "total": true,
-        "currency": true
-      },
-      "line_item": {
-        "tp": 3,
-        "fp": 0,
-        "fn": 0,
-        "precision": 1.0,
-        "recall": 1.0,
-        "f1": 1.0
-      },
-      "n_correct_fields": 9,
-      "n_total_fields": 9,
-      "field_accuracy": 1.0,
-      "line_item_f1": 1.0
-    },
-    {
       "invoice_id": "INV-00039",
       "per_field": {
         "invoice_id": true,
@@ -1124,32 +994,6 @@
       },
       "line_item": {
         "tp": 1,
-        "fp": 0,
-        "fn": 0,
-        "precision": 1.0,
-        "recall": 1.0,
-        "f1": 1.0
-      },
-      "n_correct_fields": 9,
-      "n_total_fields": 9,
-      "field_accuracy": 1.0,
-      "line_item_f1": 1.0
-    },
-    {
-      "invoice_id": "INV-00044",
-      "per_field": {
-        "invoice_id": true,
-        "vendor_name": true,
-        "invoice_date": true,
-        "due_date": true,
-        "po_reference": true,
-        "subtotal": true,
-        "tax": true,
-        "total": true,
-        "currency": true
-      },
-      "line_item": {
-        "tp": 3,
         "fp": 0,
         "fn": 0,
         "precision": 1.0,

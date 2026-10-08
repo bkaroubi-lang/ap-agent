@@ -23,6 +23,13 @@ from pydantic import BaseModel
 M = TypeVar("M", bound=BaseModel)
 
 
+class CacheMiss(Exception):
+    """Raised on a per-call replay miss. Subclasses Exception (not BaseException)
+    so the eval loops' `except Exception` skip it exactly like a live call
+    failure — a call that errored during --record was never stored, so it is
+    skipped identically on --replay, reproducing the recorded run."""
+
+
 class _Result:
     """Minimal stand-in for a pydantic-ai run result (exposes `.output`)."""
 
@@ -67,10 +74,10 @@ class LLMCache:
         if self.mode == "replay":
             entry = self._data.get(key)
             if entry is None:
-                raise SystemExit(
-                    f"replay cache miss (model={model}, type={output_type.__name__}).\n"
-                    "The cache is stale vs the current inputs — re-record with --record."
-                )
+                # Either this call errored during --record (never stored, so
+                # skip it identically now) or the cache is stale vs the inputs.
+                # Caught by the eval loops' `except Exception` -> item skipped.
+                raise CacheMiss(f"replay cache miss (model={model}, type={output_type.__name__})")
             return _Result(output_type.model_validate(entry["output"]))
 
         result = agent.run_sync(prompt)

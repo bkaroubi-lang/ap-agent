@@ -10,44 +10,50 @@ The agent itself is standard: extract structured fields from invoices, flag
 anomalies against vendor history, answer Q&A. What makes this a portfolio piece
 is the evaluation layer.
 
-## Headline finding: the kappa collapse
+## Headline: a finding that failed to replicate — and the infra that caught it
 
-Two Groq-hosted LLM judges (Meta `llama-3.3-70b-versatile` and OpenAI
-`gpt-oss-20b`) scored the same 26 hand-labeled Q&A pairs.
+In **July 2026** two Groq judges (`llama-3.3-70b-versatile` and `gpt-oss-20b`)
+produced a striking result: inter-judge κ "collapsed" from 0.92 to 0.61 when I
+added subtle epistemic-honesty items, and the **larger** model was far worse on
+them (llama 20% vs gpt-oss-20b 70%) — it preferred confident fabrications over
+an honest "I don't have that data."
 
-| Test set | n | Cohen's κ | 95% CI |
-|---|---:|---:|---|
-| Trivial (right-vs-wrong-number) | 26 | **0.923** | [0.71, 1.00] |
-| Adds 10 subtle items (epistemic honesty, hedging, overreach) | 36 | **0.611** | [0.33, 0.83] |
+In **October 2026** I re-ran the exact same gold set to cache it for offline
+reproduction. Two things happened:
 
-Adding 10 items probing whether the judge prefers a confident hallucination
-over an honest "I don't have that data" **dropped kappa by 31 percentage
-points**, and revealed:
+1. **`llama-3.3-70b-versatile` had been retired by Groq** — every call now 404s.
+   The original headline is not reproducible: the model is gone.
+2. **Re-running with a current same-lab size pair (`gpt-oss-120b` vs
+   `gpt-oss-20b`), the finding reversed.** No kappa collapse, and the *larger*
+   model was now the *more* honest one on the subtle items.
 
-- **llama-3.3-70b: 20% accuracy** on the added subset. Chose the fabricated
-  answer over "no data" on 5/5 unknown-vendor questions.
-- **gpt-oss-20b: 70% accuracy**. The smaller model was substantially better on
-  the exact axis that matters for real evaluation.
+| Metric | July: llama-70b vs gpt-oss-20b | Oct: gpt-oss-120b vs gpt-oss-20b |
+|---|---|---|
+| κ (trivial 26 → full 36) | 0.92 → 0.61 (**collapse**) | 0.49 → 0.46 (**no collapse**) |
+| Subtle-item accuracy, larger model | **20%** | **80%** |
+| Subtle-item accuracy, smaller model | 70% | 50% |
+| "Smaller model is more honest" | held | **reversed** |
 
-The judges themselves articulate the bias. Direct quote from llama-3.3-70b:
-*"Answer B [the honest 'no data' answer] indicates a lack of information,
-which does not help… therefore Answer A [with fabricated numbers] is more
-informative and useful."*
+Same gold set, harness, protocol, `temperature=0` — only the judges changed.
+**That is the result:** an LLM-eval headline was contingent on a specific model
+pair that vanished within a quarter, and re-running flipped it. What survives
+both runs is the durable thesis — *inter-judge agreement is not evidence of
+judge quality, and judge quality on hard items is model-specific and must be
+measured per model, not inferred from size or a prior run.*
 
-**Three defensible portfolio claims from n=36**:
+This repo now ships a **record/replay cache**, so the October numbers are
+reproducible by anyone with zero API keys and zero cost — the exact thing the
+July run lacked when its model disappeared:
 
-1. Inter-judge κ on an easy subset is not evidence of judge quality — it's
-   compatible with both judges being reliable *or* both sharing errors.
-2. Model size doesn't predict judgment quality on this axis.
-3. LLM judges systematically prefer confident specificity over honest
-   uncertainty — a portable cross-lab bias.
+```bash
+uv sync && uv run python -m eval.harness --replay   # reproduces the report offline
+```
 
-Also in the harness: deterministic rule-based anomaly detection (invoice-flag
-F1 = 0.842), and LLM-based extraction — 50 invoices with per-field accuracy =
-1.000 and line-item F1 = 1.000 (perfect on all 50), *after* I found and fixed
-an eval-strictness bug that had inflated the reported error rate. Full method,
-tables, direct-quote rationales, position-bias tests, calibration, and honest
-caveats:
+Also in the harness: deterministic anomaly detection (invoice-flag F1 = 0.842,
+no model dependency), and LLM extraction at per-field / line-item F1 = 1.000 on
+returned invoices — *after* I found and fixed an eval-strictness bug that had
+inflated the error rate. Full method, both runs, position-bias and calibration
+tests, and honest caveats:
 
 **→ [results/report.md](results/report.md)**
 

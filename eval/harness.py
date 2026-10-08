@@ -245,7 +245,13 @@ def run_judge_calibration(cfg: dict, cache: LLMCache) -> dict:
 
     # --- Inter-judge agreement ---
     kappa_out: dict = {}
-    if len(judge_models) >= 2:
+    can_kappa = len(judge_models) >= 2 and len(common_items) >= 2
+    if len(judge_models) >= 2 and not can_kappa:
+        print(
+            "  WARNING: judges share <2 items in common (a model may be "
+            "unavailable); skipping inter-judge kappa."
+        )
+    if can_kappa:
         m1, m2 = judge_models[0], judge_models[1]
         a1 = np.asarray(verdicts_by_judge[m1])
         a2 = np.asarray(verdicts_by_judge[m2])
@@ -265,7 +271,7 @@ def run_judge_calibration(cfg: dict, cache: LLMCache) -> dict:
             "ci_lower": ck_ci["ci_lower"],
             "ci_upper": ck_ci["ci_upper"],
         }
-    if len(judge_models) >= 2:
+    if can_kappa:
         cats = sorted({v for lst in verdicts_by_judge.values() for v in lst})
         cat_idx = {c: i for i, c in enumerate(cats)}
         n_items = len(next(iter(verdicts_by_judge.values())))

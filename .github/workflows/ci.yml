@@ -37,3 +37,9 @@ jobs:
         run: |
           uv run python scripts/generate_invoices.py
           uv run python -m eval.harness --no-llm
+
+      # Replays the full extraction + judge legs from the committed cache with
+      # no API key. Exercises the real pipeline (provider import, agent
+      # construction, metrics) offline, and reproduces the report's numbers.
+      - name: Full eval via replay cache (no API key)
+        run: uv run python -m eval.harness --replay

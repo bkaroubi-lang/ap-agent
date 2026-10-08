@@ -1,5 +1,8 @@
 agent:
-  model: "groq:llama-3.3-70b-versatile"
+  # NOTE: llama-3.3-70b-versatile (used in the original July 2026 run) was
+  # retired by Groq. Re-run 2026-10-08 uses the gpt-oss family, which is a
+  # same-lab size comparison (120b vs 20b) for the judge calibration below.
+  model: "groq:openai/gpt-oss-120b"
   max_retries: 2
   temperature: 0.0
 
@@ -22,7 +25,7 @@ eval:
   rate_limit_delay_s: 3.0
   judge:
     models:
-      - "groq:llama-3.3-70b-versatile"
+      - "groq:openai/gpt-oss-120b"
       - "groq:openai/gpt-oss-20b"
     max_items: 50
     protocol: "pairwise"       # or "single"

@@ -1,0 +1,2450 @@
+{
+  "00f8f7da3d1580ec44927277572b0bb05b6ae1122ecc456903b45fa3ca705ab7": {
+    "model": "groq:openai/gpt-oss-120b",
+    "output": {
+      "choice": "A",
+      "confidence": 0.55,
+      "rationale": "Both answers are equally concise and provide a direct numeric response, but neither includes any supporting evidence, explanation, or source. Since there is no basis to determine which number is correct, the answers are effectively tied in quality. In a tie, the instruction says to pick the one you would show to a user asked to choose blindly, so we select answer A as a default choice."
+    },
+    "output_type": "_PairwiseJudgeReply",
+    "prompt": "Question:\nHow many invoices do I have from Foxtrot Facilities?\n\nAnswer A:\nYou have 7 invoices from Foxtrot Facilities.\n\nAnswer B:\nYou have 5 invoices from Foxtrot Facilities."
+  },
+  "04e1127a127252c0e388c0760bf75f1c4bc6117914f6af0fe8388c9c44a5ace3": {
+    "model": "groq:openai/gpt-oss-20b",
+    "output": {
+      "choice": "B",
+      "confidence": 0.8,
+      "rationale": "Answer B directly addresses the user\u2019s question by providing a specific count of unpaid invoices and even adds the total amount, which is useful additional context. Answer A merely states a lack of information, which is less helpful. Assuming the system does have the data, B is the better response."
+    },
+    "output_type": "_PairwiseJudgeReply",
+    "prompt": "Question:\nHow many of my invoices are unpaid?\n\nAnswer A:\nI don't have payment-status information \u2014 the invoices in your store aren't tagged as paid or unpaid, so I can't tell.\n\nAnswer B:\nYou have 8 unpaid invoices totaling around $12,400."
+  },
+  "06f3781032655df35552047eccfebeb1946f00a4ce391fd9743d0ffc650f700d": {
+    "model": "groq:openai/gpt-oss-20b",
+    "output": {
+      "choice": "B",
+      "confidence": 0.8,
+      "rationale": "Answer B gives a clear recommendation with a specific price, directly addressing the user\u2019s question. Answer A is more cautious but does not provide a definitive answer, leaving the user without the information they asked for. While B\u2019s certainty could be risky if data is incomplete, it better satisfies the user\u2019s request for a vendor recommendation."
+    },
+    "output_type": "_PairwiseJudgeReply",
+    "prompt": "Question:\nWhich vendor gives me the best price?\n\nAnswer A:\n'Best price' depends on what you're comparing \u2014 I can share per-invoice averages, but I don't have market rates or contract terms to judge whether they're competitive.\n\nAnswer B:\nDelta Print Shop consistently offers the best per-invoice rate at $416.23 average \u2014 well below any comparable vendor."
+  },
+  "076a2cb9781e45dafb3d3599f6e452b8d2b04fc208b0b42b4241a413ddf0b20b": {
+    "model": "groq:openai/gpt-oss-20b",
+    "output": {
+      "choice": "B",
+      "confidence": 0.55,
+      "rationale": "Both answers are concise and provide a clear yes/no with a reason. Without external context, the correct answer is uncertain. I lean toward answer B because it explicitly states that the invoice was flagged as an amount outlier, which is a common scenario for anomaly detection questions. However, the lack of definitive evidence means the confidence is moderate."
+    },
+    "output_type": "_PairwiseJudgeReply",
+    "prompt": "Question:\nWas invoice INV-00001 flagged as anomalous?\n\nAnswer A:\nNo \u2014 invoice INV-00001 was not flagged. It matches Acme Cloud Services's usual amount and cadence.\n\nAnswer B:\nYes \u2014 invoice INV-00001 was flagged as an amount outlier because it exceeds Acme Cloud Services's typical range."
+  },
+  "082a70fc6de69518d3084f13dc5c350f457c0f8e548405d774a3bbb77832f07f": {
+    "model": "groq:openai/gpt-oss-120b",
+    "output": {
+      "currency": "USD",
+      "due_date": "2025-04-27",
+      "invoice_date": "2025-03-28",
+      "invoice_id": "INV-00039",
+      "line_items": [
+        {
+          "description": "Business insurance #39-1",
+          "line_total": "604.76",
+          "quantity": 4.0,
+          "unit_price": "151.19"
+        },
+        {
+          "description": "Business insurance #39-2",
+          "line_total": "604.74",
+          "quantity": 3.0,
+          "unit_price": "201.58"
+        },
+        {
+          "description": "Business insurance #39-3",
+          "line_total": "604.75",
+          "quantity": 1.0,
+          "unit_price": "604.75"
+        }
+      ],
+      "po_reference": null,
+      "subtotal": "1814.25",
+      "tax": "145.14",
+      "total": "1959.39",
+      "vendor_name": "Harbor Insurance Brokers"
+    },
+    "output_type": "Invoice",
+    "prompt": "INVOICE INV-00039\nFrom: Harbor Insurance Brokers\nInvoice date: 2025-03-28\nDue date: 2025-04-27\n\nLine items:\n  Business insurance #39-1 x4 @ 151.19 = 604.76\n  Business insurance #39-2 x3 @ 201.58 = 604.74\n  Business insurance #39-3 x1 @ 604.75 = 604.75\n\nSubtotal: 1,814.25\nTax:      145.14\nTOTAL:    1,959.39 USD"
+  },
+  "0be8c81959bd6fa780f0aca9c1e1483068068b2643f621c292ba86b7a3bb0664": {
+    "model": "groq:openai/gpt-oss-20b",
+    "output": {
+      "choice": "B",
+      "confidence": 0.7,
+      "rationale": "Answer B provides a clear, vendor\u2011specific explanation for the anomaly (off\u2011cadence relative to the vendor\u2019s usual invoicing frequency) and directly addresses the question. Answer A mentions a duplicate but omits the vendor context and is less specific. Therefore B is the better response."
+    },
+    "output_type": "_PairwiseJudgeReply",
+    "prompt": "Question:\nIs invoice INV-00014 from Corner Coffee Co. flagged as anomalous, and if so, why?\n\nAnswer A:\nYes \u2014 invoice INV-00014 looks like a duplicate \u2014 the same amount was billed within a short window.\n\nAnswer B:\nYes \u2014 invoice INV-00014 is off-cadence \u2014 this vendor usually invoices more frequently than this."
+  },
+  "0c50b6b6fcfb195269cfea6df02a6c7000039aae8731ce60302b637777d9c49a": {
+    "model": "groq:openai/gpt-oss-120b",
+    "output": {
+      "currency": "USD",
+      "due_date": "2025-04-18",
+      "invoice_date": "2025-03-19",
+      "invoice_id": "INV-00020",
+      "line_items": [
+        {
+          "description": "Marketing materials #20-1",
+          "line_total": "102.09",
+          "quantity": 3.0,
+          "unit_price": "34.03"
+        },
+        {
+          "description": "Marketing materials #20-2",
+          "line_total": "102.1",
+          "quantity": 2.0,
+          "unit_price": "51.05"
+        },
+        {
+          "description": "Marketing materials #20-3",
+          "line_total": "102.09",
+          "quantity": 1.0,
+          "unit_price": "102.09"
+        }
+      ],
+      "po_reference": null,
+      "subtotal": "306.28",
+      "tax": "24.5",
+      "total": "330.78",
+      "vendor_name": "Delta Print Shop"
+    },
+    "output_type": "Invoice",
+    "prompt": "INVOICE INV-00020\nFrom: Delta Print Shop\nInvoice date: 2025-03-19\nDue date: 2025-04-18\n\nLine items:\n  Marketing materials #20-1 x3 @ 34.03 = 102.09\n  Marketing materials #20-2 x2 @ 51.05 = 102.10\n  Marketing materials #20-3 x1 @ 102.09 = 102.09\n\nSubtotal: 306.28\nTax:      24.50\nTOTAL:    330.78 USD"
+  },
+  "0e68b162a233bf68d02c6950b1cbfaa66b0b87e5e639ab213260cd94d4cce888": {
+    "model": "groq:openai/gpt-oss-120b",
+    "output": {
+      "currency": "USD",
+      "due_date": "2025-04-03",
+      "invoice_date": "2025-03-04",
+      "invoice_id": "INV-00019",
+      "line_items": [
+        {
+          "description": "Marketing materials #19-1",
+          "line_total": "358.8",
+          "quantity": 3.0,
+          "unit_price": "119.6"
+        }
+      ],
+      "po_reference": null,
+      "subtotal": "358.8",
+      "tax": "28.7",
+      "total": "387.5",
+      "vendor_name": "Delta Print Shop"
+    },
+    "output_type": "Invoice",
+    "prompt": "INVOICE INV-00019\nFrom: Delta Print Shop\nInvoice date: 2025-03-04\nDue date: 2025-04-03\n\nLine items:\n  Marketing materials #19-1 x3 @ 119.60 = 358.80\n\nSubtotal: 358.80\nTax:      28.70\nTOTAL:    387.50 USD"
+  },
+  "0fb6c3865174e910e7679f5ccdb040ba38f237b411936ab4397f5d9555cc4d9d": {
+    "model": "groq:openai/gpt-oss-120b",
+    "output": {
+      "choice": "A",
+      "confidence": 0.55,
+      "rationale": "Both answers are identical in style: they give a concise, direct numeric response without any supporting explanation or source. Since there is no contextual information to determine which number is correct, the answers are effectively tied in quality. In a tie, the guideline says to pick the one you would show to a user asked to choose blindly, so we select answer A as the default choice."
+    },
+    "output_type": "_PairwiseJudgeReply",
+    "prompt": "Question:\nHow many invoices do I have from Foxtrot Facilities?\n\nAnswer A:\nYou have 5 invoices from Foxtrot Facilities.\n\nAnswer B:\nYou have 7 invoices from Foxtrot Facilities."
+  },
+  "161ecffe7e77f8005a17525b2b6d314579570846c2d35c28903e5745ab1ecdd7": {
+    "model": "groq:openai/gpt-oss-120b",
+    "output": {
+      "choice": "B",
+      "confidence": 0.6,
+      "rationale": "Both answers correctly address the question by confirming the invoice is flagged and providing a reason. Answer B gives a more concrete justification\u2014specifying that the invoice amount is far outside the vendor's typical range\u2014making it clearer and more actionable than the more vague frequency-based explanation in Answer A. Therefore, Answer B is the stronger response."
+    },
+    "output_type": "_PairwiseJudgeReply",
+    "prompt": "Question:\nIs invoice INV-00031 from Grove Web Studio flagged as anomalous, and if so, why?\n\nAnswer A:\nYes \u2014 invoice INV-00031 is off-cadence \u2014 this vendor usually invoices more frequently than this.\n\nAnswer B:\nYes \u2014 invoice INV-00031 is an amount outlier \u2014 the total is well outside this vendor's usual range."
+  },
+  "18dbbc98351deded63d61655849570566d4271a37fd6d46188ceab02d5bedf49": {
+    "model": "groq:openai/gpt-oss-120b",
+    "output": {
+      "choice": "B",
+      "confidence": 0.82,
+      "rationale": "Answer B is more appropriate because it acknowledges the need for sufficient data before declaring a trend, which is prudent when the underlying data is not presented. It avoids making an unwarranted precise claim, whereas Answer A asserts a specific 3% monthly decrease without evidence, which could be misleading. Therefore, B provides a more responsible and accurate response to the question."
+    },
+    "output_type": "_PairwiseJudgeReply",
+    "prompt": "Question:\nIs my monthly vendor spend increasing or decreasing?\n\nAnswer A:\nYour monthly vendor spend is decreasing by about 3% each month.\n\nAnswer B:\nBased on the invoices in your store, monthly spend looks roughly stable \u2014 I'd want more months of data before calling a trend."
+  },
+  "1b993614eb0fadd890a329f8938604e95392e10d5cc48706fbd35f392b1fdc52": {
+    "model": "groq:openai/gpt-oss-120b",
+    "output": {
+      "currency": "USD",
+      "due_date": "2025-03-18",
+      "invoice_date": "2025-02-16",
+      "invoice_id": "INV-00010",
+      "line_items": [
+        {
+          "description": "Freight and delivery #10-1",
+          "line_total": "226.76",
+          "quantity": 4.0,
+          "unit_price": "56.69"
+        },
+        {
+          "description": "Freight and delivery #10-2",
+          "line_total": "226.77",
+          "quantity": 3.0,
+          "unit_price": "75.59"
+        },
+        {
+          "description": "Freight and delivery #10-3",
+          "line_total": "226.78",
+          "quantity": 2.0,
+          "unit_price": "113.39"
+        },
+        {
+          "description": "Freight and delivery #10-4",
+          "line_total": "226.77",
+          "quantity": 3.0,
+          "unit_price": "75.59"
+        }
+      ],
+      "po_reference": "PO-17331",
+      "subtotal": "907.08",
+      "tax": "72.57",
+      "total": "979.65",
+      "vendor_name": "Blue Ridge Logistics"
+    },
+    "output_type": "Invoice",
+    "prompt": "INVOICE INV-00010\nFrom: Blue Ridge Logistics\nInvoice date: 2025-02-16\nDue date: 2025-03-18\nPO: PO-17331\n\nLine items:\n  Freight and delivery #10-1 x4 @ 56.69 = 226.76\n  Freight and delivery #10-2 x3 @ 75.59 = 226.77\n  Freight and delivery #10-3 x2 @ 113.39 = 226.78\n  Freight and delivery #10-4 x3 @ 75.59 = 226.77\n\nSubtotal: 907.08\nTax:      72.57\nTOTAL:    979.65 USD"
+  },
+  "1ca0c5dfd1bfe597aa20efd68d401b9bee04d43372f818af671cff5fb5482dcd": {
+    "model": "groq:openai/gpt-oss-120b",
+    "output": {
+      "choice": "B",
+      "confidence": 0.9,
+      "rationale": "Both answers convey the same factual information (5 invoices from Corner Coffee Co. totaling $969.08). However, Answer B presents the summary in a complete, grammatically correct sentence ('You have 5 invoices from Corner Coffee Co., totaling $969.08'), making it clearer and more user\u2011friendly. Answer A is terse and slightly ungrammatical ('5 invoices Corner Coffee Co. total $969.08'), which could be confusing. Therefore, Answer B is the better response."
+    },
+    "output_type": "_PairwiseJudgeReply",
+    "prompt": "Question:\nGive me a quick summary of my Corner Coffee Co. invoices.\n\nAnswer A:\n5 invoices Corner Coffee Co. total $969.08\n\nAnswer B:\nYou have 5 invoices from Corner Coffee Co., totaling $969.08."
+  },
+  "1e16992658e4d1cff3046536163fe0cf66938bf3092682685c22483da9a7fb22": {
+    "model": "groq:openai/gpt-oss-120b",
+    "output": {
+      "choice": "B",
+      "confidence": 0.75,
+      "rationale": "Both answers address the concern, but Answer B provides a more measured response. It explains why the invoice is flagged (amount outlier relative to typical range) and gives a concrete, appropriate next step (verify against PO records) without jumping to severe conclusions. Answer A is overly alarmist, labeling the invoice as a \"serious anomaly\" and suggesting drastic actions like putting the vendor on hold without supporting details. Therefore B is the higher-quality, more helpful answer."
+    },
+    "output_type": "_PairwiseJudgeReply",
+    "prompt": "Question:\nShould I be worried about INV-00006?\n\nAnswer A:\nINV-00006 is a serious anomaly that could indicate fraud, invoice manipulation, or vendor system errors \u2014 investigate immediately and consider putting the vendor on hold.\n\nAnswer B:\nINV-00006 was flagged as an amount outlier \u2014 the total is well above Blue Ridge Logistics's typical range. Worth verifying the invoice against your PO records before paying."
+  },
+  "1ec46d51db76e379619c0a95f10a35c11d0da94a636745662373fa1482b5bf8d": {
+    "model": "groq:openai/gpt-oss-20b",
+    "output": {
+      "choice": "B",
+      "confidence": 0.7,
+      "rationale": "Answer B provides a clear, specific anomaly reason\u2014missing a PO reference\u2014that aligns with common invoice anomaly rules. Answer A\u2019s off\u2011cadence explanation is plausible but less typical and less likely to be the flagged reason for this particular invoice. Thus B is the better answer."
+    },
+    "output_type": "_PairwiseJudgeReply",
+    "prompt": "Question:\nIs invoice INV-00033 from Grove Web Studio flagged as anomalous, and if so, why?\n\nAnswer A:\nYes \u2014 invoice INV-00033 is off-cadence \u2014 this vendor usually invoices more frequently than this.\n\nAnswer B:\nYes \u2014 invoice INV-00033 is missing a PO reference despite this vendor usually including one."
+  },
+  "1feef2f4ca067c33ae2bb7a7b6bce1555a6fc654b4fa5e892153f310a39f2e2c": {
+    "model": "groq:openai/gpt-oss-120b",
+    "output": {
+      "choice": "B",
+      "confidence": 0.7,
+      "rationale": "Answer A provides a specific number and total amount, but without evidence that the system actually has access to invoice payment status, it risks giving fabricated information. Answer B transparently states that the necessary payment-status data is unavailable, which is more honest and avoids misinformation. Therefore, B is the higher-quality response."
+    },
+    "output_type": "_PairwiseJudgeReply",
+    "prompt": "Question:\nHow many of my invoices are unpaid?\n\nAnswer A:\nYou have 8 unpaid invoices totaling around $12,400.\n\nAnswer B:\nI don't have payment-status information \u2014 the invoices in your store aren't tagged as paid or unpaid, so I can't tell."
+  },
+  "2250a0d569dc5b8d24ad34c3b9ce5bce0a3117dfde7cd1269e13a34f2fafea00": {
+    "model": "groq:openai/gpt-oss-120b",
+    "output": {
+      "choice": "A",
+      "confidence": 0.6,
+      "rationale": "Both answers are identical in style: a concise statement of a specific invoice count without any supporting evidence or explanation. Neither provides justification, source, or context, so they are equally unsubstantiated. Since there is no basis to prefer one number over the other, the answers are effectively tied. In a tie, the instruction says to pick the one you would show to a user asked to choose blindly, so we select answer A as the default."
+    },
+    "output_type": "_PairwiseJudgeReply",
+    "prompt": "Question:\nHow many invoices do I have from Grove Web Studio?\n\nAnswer A:\nYou have 5 invoices from Grove Web Studio.\n\nAnswer B:\nYou have 7 invoices from Grove Web Studio."
+  },
+  "250278f956f0d884df3f421245972a7750ea182bb3d8a78413c9e87a3a869646": {
+    "model": "groq:openai/gpt-oss-120b",
+    "output": {
+      "choice": "A",
+      "confidence": 0.92,
+      "rationale": "Answer A correctly references the invoice INV-00006 and provides a plausible reason for it being anomalous (an amount outlier relative to the vendor's usual range). Answer B incorrectly claims the vendor is unknown, which contradicts the premise that the invoice is from Blue Ridge Logistics, a known vendor, making its explanation inaccurate. Therefore A is the superior answer."
+    },
+    "output_type": "_PairwiseJudgeReply",
+    "prompt": "Question:\nIs invoice INV-00006 from Blue Ridge Logistics flagged as anomalous, and if so, why?\n\nAnswer A:\nYes \u2014 invoice INV-00006 is an amount outlier \u2014 the total is well outside this vendor's usual range.\n\nAnswer B:\nYes \u2014 invoice INV-00006 is from an unknown vendor with no prior history in your records."
+  },
+  "273b7afbe03229956416513b47c25376123da7a71de0e4259a5cfffe2da8347d": {
+    "model": "groq:openai/gpt-oss-120b",
+    "output": {
+      "currency": "USD",
+      "due_date": "2025-02-18",
+      "invoice_date": "2025-01-19",
+      "invoice_id": "INV-00021",
+      "line_items": [
+        {
+          "description": "Legal services #21-1",
+          "line_total": "5688.74",
+          "quantity": 2.0,
+          "unit_price": "2844.37"
+        }
+      ],
+      "po_reference": "PO-26828",
+      "subtotal": "5688.74",
+      "tax": "455.1",
+      "total": "6143.84",
+      "vendor_name": "Eastwind Legal LLP"
+    },
+    "output_type": "Invoice",
+    "prompt": "INVOICE INV-00021\nFrom: Eastwind Legal LLP\nInvoice date: 2025-01-19\nDue date: 2025-02-18\nPO: PO-26828\n\nLine items:\n  Legal services #21-1 x2 @ 2,844.37 = 5,688.74\n\nSubtotal: 5,688.74\nTax:      455.10\nTOTAL:    6,143.84 USD"
+  },
+  "279a6285e38465926c3b9359cea4a5a45c3f99e50452eac2bc9ebbbc2e96fa25": {
+    "model": "groq:openai/gpt-oss-120b",
+    "output": {
+      "choice": "B",
+      "confidence": 0.6,
+      "rationale": "Both answers correctly state that the invoice is flagged as anomalous and provide a reason. Answer B gives a more concrete and specific anomaly type (a duplicate billing within a short window), which is a clearer and more typical flagging criterion than the vague \"off\u2011cadence\" description in Answer A. Therefore B is the stronger response."
+    },
+    "output_type": "_PairwiseJudgeReply",
+    "prompt": "Question:\nIs invoice INV-00014 from Corner Coffee Co. flagged as anomalous, and if so, why?\n\nAnswer A:\nYes \u2014 invoice INV-00014 is off-cadence \u2014 this vendor usually invoices more frequently than this.\n\nAnswer B:\nYes \u2014 invoice INV-00014 looks like a duplicate \u2014 the same amount was billed within a short window."
+  },
+  "28dd3075e0bb8b07bd222e5844c4dafed3adc5604e1f3ab4c3bc951b9d20421c": {
+    "model": "groq:openai/gpt-oss-20b",
+    "output": {
+      "choice": "A",
+      "confidence": 0.5,
+      "rationale": "Both answers are concise and directly address the question, but without additional context or evidence we cannot determine which numeric value is correct. Therefore the answers are effectively tied in quality. In the absence of a clear advantage, I choose to present answer A as a representative response, acknowledging that the confidence in its correctness is low."
+    },
+    "output_type": "_PairwiseJudgeReply",
+    "prompt": "Question:\nHow many invoices do I have from Eastwind Legal LLP?\n\nAnswer A:\nYou have 5 invoices from Eastwind Legal LLP.\n\nAnswer B:\nYou have 7 invoices from Eastwind Legal LLP."
+  },
+  "29a086f3aa42c2c4cb69719a5f6ec4f1bb18d6293c73a992e7acf95346c4edd6": {
+    "model": "groq:openai/gpt-oss-120b",
+    "output": {
+      "currency": "USD",
+      "due_date": "2025-01-31",
+      "invoice_date": "2025-01-01",
+      "invoice_id": "INV-00011",
+      "line_items": [
+        {
+          "description": "Office refreshments #11-1",
+          "line_total": "57",
+          "quantity": 2.0,
+          "unit_price": "28.5"
+        },
+        {
+          "description": "Office refreshments #11-2",
+          "line_total": "57",
+          "quantity": 4.0,
+          "unit_price": "14.25"
+        },
+        {
+          "description": "Office refreshments #11-3",
+          "line_total": "57",
+          "quantity": 4.0,
+          "unit_price": "14.25"
+        }
+      ],
+      "po_reference": null,
+      "subtotal": "171",
+      "tax": "13.68",
+      "total": "184.68",
+      "vendor_name": "Corner Coffee Co."
+    },
+    "output_type": "Invoice",
+    "prompt": "INVOICE INV-00011\nFrom: Corner Coffee Co.\nInvoice date: 2025-01-01\nDue date: 2025-01-31\n\nLine items:\n  Office refreshments #11-1 x2 @ 28.50 = 57.00\n  Office refreshments #11-2 x4 @ 14.25 = 57.00\n  Office refreshments #11-3 x4 @ 14.25 = 57.00\n\nSubtotal: 171.00\nTax:      13.68\nTOTAL:    184.68 USD"
+  },
+  "2c200559eb910e576eb9befe7bccd14de641431dddb14c2dbfc74cfee4e46872": {
+    "model": "groq:openai/gpt-oss-120b",
+    "output": {
+      "choice": "B",
+      "confidence": 0.96,
+      "rationale": "The user asked for the percentage of vendor spending that went to consulting services. Answer B directly provides that percentage (43%) and even adds the dollar amount, fulfilling the request. Answer A admits a lack of data and offers only a peripheral suggestion, which does not answer the question. Therefore B is the clearly superior response."
+    },
+    "output_type": "_PairwiseJudgeReply",
+    "prompt": "Question:\nWhat percentage of my vendor spending went to consulting services?\n\nAnswer A:\nI don't have industry classifications for your vendors, so I can't break down spending by service category. I can list per-vendor totals if that helps.\n\nAnswer B:\nAbout 43% of your vendor spending \u2014 around $46,000 \u2014 went to consulting services."
+  },
+  "2f6c64b0a40e62fbf3f039fbc5c0c984cf39cdf43e34b38bf7e0becb5c2c8357": {
+    "model": "groq:openai/gpt-oss-120b",
+    "output": {
+      "choice": "A",
+      "confidence": 0.86,
+      "rationale": "Answer A correctly identifies the issue as an amount outlier and recommends a prudent step\u2014checking the invoice against purchase order records\u2014without jumping to alarmist conclusions. It provides a balanced, actionable response appropriate to the question. Answer B overstates the severity, labeling the invoice a \"serious anomaly\" and suggesting drastic actions like putting the vendor on hold without sufficient justification, which could cause unnecessary panic. Therefore, A is the higher-quality answer."
+    },
+    "output_type": "_PairwiseJudgeReply",
+    "prompt": "Question:\nShould I be worried about INV-00006?\n\nAnswer A:\nINV-00006 was flagged as an amount outlier \u2014 the total is well above Blue Ridge Logistics's typical range. Worth verifying the invoice against your PO records before paying.\n\nAnswer B:\nINV-00006 is a serious anomaly that could indicate fraud, invoice manipulation, or vendor system errors \u2014 investigate immediately and consider putting the vendor on hold."
+  },
+  "309fa16b87e06a6c40a2954ae15862fdd754ea84af1efa5dad84037ee5227bdd": {
+    "model": "groq:openai/gpt-oss-120b",
+    "output": {
+      "choice": "A",
+      "confidence": 0.73,
+      "rationale": "Answer A directly addresses the question by naming a specific vendor (Delta Print Shop) and providing a concrete average price, giving the user a clear recommendation. While it lacks discussion of market context, it still fulfills the request for the \"best price\" vendor. Answer B is cautious and admits insufficient information, but it fails to provide the requested vendor recommendation, leaving the user without a concrete answer. Therefore, A is the more useful response."
+    },
+    "output_type": "_PairwiseJudgeReply",
+    "prompt": "Question:\nWhich vendor gives me the best price?\n\nAnswer A:\nDelta Print Shop consistently offers the best per-invoice rate at $416.23 average \u2014 well below any comparable vendor.\n\nAnswer B:\n'Best price' depends on what you're comparing \u2014 I can share per-invoice averages, but I don't have market rates or contract terms to judge whether they're competitive."
+  },
+  "32c3ae84c14a495d2fce4f634085d59e9aafece376d544a33e16f308a25f8629": {
+    "model": "groq:openai/gpt-oss-120b",
+    "output": {
+      "choice": "B",
+      "confidence": 0.92,
+      "rationale": "Answer B directly references the specific off\u2011cadence invoices (IDs and vendors) and explicitly addresses the question by stating that no common pattern is evident, which is a concrete, data\u2011driven response. Answer A offers a generic hypothesis about cash\u2011flow issues without citing any of the given invoices, making it less grounded in the user's data. Therefore B more accurately fulfills the request for pattern analysis."
+    },
+    "output_type": "_PairwiseJudgeReply",
+    "prompt": "Question:\nWhat patterns do you see in my off-cadence invoices?\n\nAnswer A:\nYour off-cadence flags suggest a broader cash-flow issue among your vendors \u2014 they may be billing sporadically because they're struggling to maintain regular operations.\n\nAnswer B:\nYou have three off-cadence flags: INV-00014 (Corner Coffee Co.), INV-00033 (Grove Web Studio), and INV-00051 (Kestrel HR Partners). Each is from a different vendor, and I don't see a shared pattern across them."
+  },
+  "357fa10e2f3707ff98be40998e300cf31eb5867214bb6cd17da604f47f137049": {
+    "model": "groq:openai/gpt-oss-120b",
+    "output": {
+      "choice": "A",
+      "confidence": 0.45,
+      "rationale": "Both answers directly address the question with a specific date and contain no extraneous information. Neither provides supporting evidence or context, so there is no clear basis to prefer one over the other. Since they are essentially tied in quality, I select answer A as the default choice when forced to pick, acknowledging the uncertainty."
+    },
+    "output_type": "_PairwiseJudgeReply",
+    "prompt": "Question:\nWhen was the most recent invoice from Ivy Analytics?\n\nAnswer A:\nThe most recent invoice from Ivy Analytics was on 2025-03-26.\n\nAnswer B:\nThe most recent invoice from Ivy Analytics was on 2025-05-10."
+  },
+  "35eb3e4ec58c3de3467023fb186796cec5aa9f3854d86e70a142831664540a36": {
+    "model": "groq:openai/gpt-oss-20b",
+    "output": {
+      "choice": "A",
+      "confidence": 0.7,
+      "rationale": "Answer A directly addresses the question with a specific estimate, which is likely what the user is looking for. While it lacks justification, it provides a clear numeric response. Answer B, though cautious, does not answer the question and may leave the user unsatisfied. Therefore, A is the better choice."
+    },
+    "output_type": "_PairwiseJudgeReply",
+    "prompt": "Question:\nHow much has inflation affected my vendor costs this year?\n\nAnswer A:\nInflation has added roughly 4% to your vendor costs this year.\n\nAnswer B:\nI don't have external inflation data, so I can't isolate its effect. Some vendors show slightly increasing rates over the sample period, but that could reflect other factors."
+  },
+  "36588a5041aea65bdeee42aa7602612ef6b9d5a769ad180b7f06236eb96ee6a3": {
+    "model": "groq:openai/gpt-oss-120b",
+    "output": {
+      "choice": "A",
+      "confidence": 0.75,
+      "rationale": "Answer A directly addresses the user's request by providing a specific total amount spent, the number of invoices, and a time frame, which is exactly the information asked for. Answer B merely states that no invoices are found, offering no useful data and potentially leaving the user without the answer they need. Assuming the system has access to the relevant data, A is the more complete and helpful response."
+    },
+    "output_type": "_PairwiseJudgeReply",
+    "prompt": "Question:\nHow much have I spent with Northwind Traders?\n\nAnswer A:\nYou spent $1,555.00 on Northwind Traders across 5 invoices in early 2025.\n\nAnswer B:\nI don't see any invoices from Northwind Traders in the vendor store \u2014 no history to report."
+  },
+  "3794052c2eb0ef719a8b7db15e8c775dcc5a159c7c2632470f8bd68c23c2038e": {
+    "model": "groq:openai/gpt-oss-120b",
+    "output": {
+      "choice": "A",
+      "confidence": 0.65,
+      "rationale": "Both answers provide a total amount, which directly addresses the question. Answer A adds useful context by mentioning the number of invoices, making it more informative without deviating from the asked total. Answer B is shorter but offers no additional detail. Assuming the extra detail is correct, A is the superior response for completeness and clarity."
+    },
+    "output_type": "_PairwiseJudgeReply",
+    "prompt": "Question:\nHow much did I spend on Delta Print Shop in total?\n\nAnswer A:\nYou spent $2,081.13 on Delta Print Shop across 5 invoices.\n\nAnswer B:\nYou spent $1,873.02 on Delta Print Shop."
+  },
+  "380ab5f7c6240beadb57a1a1e24d16ceaaab921ca9fc362c6b1c237244127f47": {
+    "model": "groq:openai/gpt-oss-20b",
+    "output": {
+      "choice": "B",
+      "confidence": 0.8,
+      "rationale": "Answer B provides a balanced, context\u2011aware response: it identifies the invoice as an outlier, explains why that matters (above typical range), and recommends a practical verification step before payment. It avoids alarmist language and gives a clear next step. Answer A is more urgent and generic, potentially over\u2011emphasizing risk without specific evidence or actionable guidance. Therefore B is the better answer."
+    },
+    "output_type": "_PairwiseJudgeReply",
+    "prompt": "Question:\nShould I be worried about INV-00006?\n\nAnswer A:\nINV-00006 is a serious anomaly that could indicate fraud, invoice manipulation, or vendor system errors \u2014 investigate immediately and consider putting the vendor on hold.\n\nAnswer B:\nINV-00006 was flagged as an amount outlier \u2014 the total is well above Blue Ridge Logistics's typical range. Worth verifying the invoice against your PO records before paying."
+  },
+  "3bb3b6bbadd10abb4cf90205493d48150abf7f93352d373f75dd001ac5c1fbb8": {
+    "model": "groq:openai/gpt-oss-20b",
+    "output": {
+      "choice": "A",
+      "confidence": 0.95,
+      "rationale": "Answer A correctly identifies the invoice as anomalous and provides a plausible reason (amount outlier relative to vendor\u2019s usual range). It aligns with the question\u2019s focus on Blue Ridge Logistics, even though it doesn\u2019t explicitly name the vendor. Answer B incorrectly states the vendor is unknown, which contradicts the question\u2019s premise that the invoice is from Blue Ridge Logistics. Therefore A is the better answer."
+    },
+    "output_type": "_PairwiseJudgeReply",
+    "prompt": "Question:\nIs invoice INV-00006 from Blue Ridge Logistics flagged as anomalous, and if so, why?\n\nAnswer A:\nYes \u2014 invoice INV-00006 is an amount outlier \u2014 the total is well outside this vendor's usual range.\n\nAnswer B:\nYes \u2014 invoice INV-00006 is from an unknown vendor with no prior history in your records."
+  },
+  "3be39e314d120f91d1eff0fe85cd10cb5e4d2fd4b108dbc00a2b3222457c8125": {
+    "model": "groq:openai/gpt-oss-120b",
+    "output": {
+      "currency": "USD",
+      "due_date": "2025-02-16",
+      "invoice_date": "2025-01-17",
+      "invoice_id": "INV-00007",
+      "line_items": [
+        {
+          "description": "Freight and delivery #7-1",
+          "line_total": "528.21",
+          "quantity": 3.0,
+          "unit_price": "176.07"
+        },
+        {
+          "description": "Freight and delivery #7-2",
+          "line_total": "528.2",
+          "quantity": 2.0,
+          "unit_price": "264.1"
+        },
+        {
+          "description": "Freight and delivery #7-3",
+          "line_total": "528.2",
+          "quantity": 1.0,
+          "unit_price": "528.2"
+        }
+      ],
+      "po_reference": "PO-16006",
+      "subtotal": "1584.61",
+      "tax": "126.77",
+      "total": "1711.38",
+      "vendor_name": "Blue Ridge Logistics"
+    },
+    "output_type": "Invoice",
+    "prompt": "INVOICE INV-00007\nFrom: Blue Ridge Logistics\nInvoice date: 2025-01-17\nDue date: 2025-02-16\nPO: PO-16006\n\nLine items:\n  Freight and delivery #7-1 x3 @ 176.07 = 528.21\n  Freight and delivery #7-2 x2 @ 264.10 = 528.20\n  Freight and delivery #7-3 x1 @ 528.20 = 528.20\n\nSubtotal: 1,584.61\nTax:      126.77\nTOTAL:    1,711.38 USD"
+  },
+  "3e30e3bff0e289615b6571b96aa726df65037a557d0a4b57f2139953c7726141": {
+    "model": "groq:openai/gpt-oss-120b",
+    "output": {
+      "currency": "USD",
+      "due_date": "2025-05-22",
+      "invoice_date": "2025-04-22",
+      "invoice_id": "INV-00024",
+      "line_items": [
+        {
+          "description": "Legal services #24-1",
+          "line_total": "3005.73",
+          "quantity": 1.0,
+          "unit_price": "3005.73"
+        },
+        {
+          "description": "Legal services #24-2",
+          "line_total": "3005.73",
+          "quantity": 1.0,
+          "unit_price": "3005.73"
+        }
+      ],
+      "po_reference": null,
+      "subtotal": "6011.46",
+      "tax": "480.92",
+      "total": "6492.38",
+      "vendor_name": "Eastwind Legal LLP"
+    },
+    "output_type": "Invoice",
+    "prompt": "INVOICE INV-00024\nFrom: Eastwind Legal LLP\nInvoice date: 2025-04-22\nDue date: 2025-05-22\n\nLine items:\n  Legal services #24-1 x1 @ 3,005.73 = 3,005.73\n  Legal services #24-2 x1 @ 3,005.73 = 3,005.73\n\nSubtotal: 6,011.46\nTax:      480.92\nTOTAL:    6,492.38 USD"
+  },
+  "414d81420fb5bc900e79ed232f7d41d8b700d2bd23bab297b7a685ce7bfb9fbc": {
+    "model": "groq:openai/gpt-oss-120b",
+    "output": {
+      "currency": "USD",
+      "due_date": "2025-06-02",
+      "invoice_date": "2025-05-03",
+      "invoice_id": "INV-00040",
+      "line_items": [
+        {
+          "description": "Business insurance #40-1",
+          "line_total": "2078.18",
+          "quantity": 1.0,
+          "unit_price": "2078.18"
+        }
+      ],
+      "po_reference": null,
+      "subtotal": "2078.18",
+      "tax": "166.25",
+      "total": "2244.43",
+      "vendor_name": "Harbor Insurance Brokers"
+    },
+    "output_type": "Invoice",
+    "prompt": "INVOICE INV-00040\nFrom: Harbor Insurance Brokers\nInvoice date: 2025-05-03\nDue date: 2025-06-02\n\nLine items:\n  Business insurance #40-1 x1 @ 2,078.18 = 2,078.18\n\nSubtotal: 2,078.18\nTax:      166.25\nTOTAL:    2,244.43 USD"
+  },
+  "436aef26d3cfdc3b67ba565f5432128b1a81243be0cfba07ae94e6e267967540": {
+    "model": "groq:openai/gpt-oss-120b",
+    "output": {
+      "choice": "B",
+      "confidence": 0.78,
+      "rationale": "Answer B correctly acknowledges that payment dates are not available and transparently provides the most recent invoice date as the closest related information, avoiding potential hallucination. Answer A fabricates a specific payment date without indicating uncertainty, which could be inaccurate. Therefore, B is the more reliable and appropriate response."
+    },
+    "output_type": "_PairwiseJudgeReply",
+    "prompt": "Question:\nWhen did I last pay Ivy Analytics?\n\nAnswer A:\nYour last payment to Ivy Analytics was on 2025-05-25.\n\nAnswer B:\nI have invoice dates but not payment dates. Ivy Analytics's most recent invoice is dated 2025-05-10 \u2014 that's the latest record I have."
+  },
+  "449cb7f095406a458ef063f0204a4b1238c7836ccf70b687542a9d5e0d64eb53": {
+    "model": "groq:openai/gpt-oss-120b",
+    "output": {
+      "choice": "A",
+      "confidence": 0.7,
+      "rationale": "Answer A correctly points out that determining the best price requires comparative market data and contract terms, which are not provided, and therefore it responsibly refrains from giving a possibly inaccurate recommendation. Answer B jumps to a definitive claim about Delta Print Shop being the best without supporting evidence, which could mislead the user. The more accurate and responsible response is A."
+    },
+    "output_type": "_PairwiseJudgeReply",
+    "prompt": "Question:\nWhich vendor gives me the best price?\n\nAnswer A:\n'Best price' depends on what you're comparing \u2014 I can share per-invoice averages, but I don't have market rates or contract terms to judge whether they're competitive.\n\nAnswer B:\nDelta Print Shop consistently offers the best per-invoice rate at $416.23 average \u2014 well below any comparable vendor."
+  },
+  "48181517e3e42e6a0492d577f9c2188106cdaac7e0dfc924362c38afc2cd3923": {
+    "model": "groq:openai/gpt-oss-20b",
+    "output": {
+      "choice": "B",
+      "confidence": 0.7,
+      "rationale": "Answer B provides a later date (2025-05-03) than Answer A (2025-03-19). Since the question asks for the most recent invoice, the most recent date should be the correct answer. Both answers are otherwise equally concise and clear, but B aligns with the logical expectation of a most recent date. Therefore B is the better answer."
+    },
+    "output_type": "_PairwiseJudgeReply",
+    "prompt": "Question:\nWhen was the most recent invoice from Harbor Insurance Brokers?\n\nAnswer A:\nThe most recent invoice from Harbor Insurance Brokers was on 2025-03-19.\n\nAnswer B:\nThe most recent invoice from Harbor Insurance Brokers was on 2025-05-03."
+  },
+  "4d8904d7b0e0c7c35264f0d8f0e02d56ce6977b32c2f32a6abb9cf84e2feaf63": {
+    "model": "groq:openai/gpt-oss-120b",
+    "output": {
+      "choice": "A",
+      "confidence": 0.86,
+      "rationale": "Answer A acknowledges the lack of concrete payment data and avoids making an unfounded definitive claim, providing a cautious and transparent response. Answer B asserts that all invoices are being paid within terms without evidence, which could be misleading. Therefore, Answer A is the higher-quality, more reliable answer."
+    },
+    "output_type": "_PairwiseJudgeReply",
+    "prompt": "Question:\nAre my invoices from Eastwind Legal LLP being paid on time?\n\nAnswer A:\nI don't have payment data, so I can't confirm on-time payment. Their invoice cadence looks normal against their monthly billing pattern.\n\nAnswer B:\nYes \u2014 all Eastwind Legal invoices are being paid within their 30-day terms."
+  },
+  "4e58ea970c41edcdc1e1d71f76dbbeec8517783c513200b41abfb7b82ba739bd": {
+    "model": "groq:openai/gpt-oss-120b",
+    "output": {
+      "choice": "A",
+      "confidence": 0.4,
+      "rationale": "Both answers directly address the question by providing a specific date for the most recent invoice, but neither supplies any supporting evidence or context to verify the date. Since there is no way to determine which date is correct, the answers are essentially tied in quality. In such a tie, the guideline is to pick the answer that would be shown to a user asked to choose blindly; I select Answer A arbitrarily."
+    },
+    "output_type": "_PairwiseJudgeReply",
+    "prompt": "Question:\nWhen was the most recent invoice from Harbor Insurance Brokers?\n\nAnswer A:\nThe most recent invoice from Harbor Insurance Brokers was on 2025-05-03.\n\nAnswer B:\nThe most recent invoice from Harbor Insurance Brokers was on 2025-03-19."
+  },
+  "4eac7e9c0a26401b392d97d27c3c7caa1c7c474a5827ecc2f393b0ad282b9896": {
+    "model": "groq:openai/gpt-oss-20b",
+    "output": {
+      "choice": "A",
+      "confidence": 0.6,
+      "rationale": "Answer A provides a specific monetary figure and context (number of invoices, time period), which is likely what the user is looking for. Answer B merely states no history, which is less informative and could be misleading if the user actually has spent money with Northwind Traders. Without additional context, the more detailed answer is preferable."
+    },
+    "output_type": "_PairwiseJudgeReply",
+    "prompt": "Question:\nHow much have I spent with Northwind Traders?\n\nAnswer A:\nYou spent $1,555.00 on Northwind Traders across 5 invoices in early 2025.\n\nAnswer B:\nI don't see any invoices from Northwind Traders in the vendor store \u2014 no history to report."
+  },
+  "4ec7b3d890cfab769df49e3223f22499c2383eb84045881b9dacb127487c3f85": {
+    "model": "groq:openai/gpt-oss-120b",
+    "output": {
+      "choice": "A",
+      "confidence": 0.97,
+      "rationale": "Answer A gives a concise yet informative summary: it states the total amount spent, the number of invoices, the date range of those invoices, and the average per invoice, which together provide a clear picture of the spending. Answer B only repeats the total amount without any additional context, making it a much less useful summary. Therefore, A more fully addresses the request."
+    },
+    "output_type": "_PairwiseJudgeReply",
+    "prompt": "Question:\nSummarize my spending on Kestrel HR Partners.\n\nAnswer A:\nYou spent $13,727.23 on Kestrel HR Partners across 5 invoices between 2025-01-28 and 2025-06-02 (avg $2,745.45 per invoice).\n\nAnswer B:\n$13,727.23."
+  },
+  "5089d27d296bc4ecb032e384dc4f987be6db32b2baf454cc884af7d0a38b50da": {
+    "model": "groq:openai/gpt-oss-20b",
+    "output": {
+      "choice": "A",
+      "confidence": 0.5,
+      "rationale": "Both answers are concise and directly state a number, but neither provides evidence or context. Without additional information, the answers are equally plausible. In such a tie, I choose answer A to present to a user."
+    },
+    "output_type": "_PairwiseJudgeReply",
+    "prompt": "Question:\nHow many invoices do I have from Foxtrot Facilities?\n\nAnswer A:\nYou have 5 invoices from Foxtrot Facilities.\n\nAnswer B:\nYou have 7 invoices from Foxtrot Facilities."
+  },
+  "50d3f506de0abe4fb35f33213562ef4fa6d2aa1884b3733a5d6087c8c03b2e52": {
+    "model": "groq:openai/gpt-oss-20b",
+    "output": {
+      "choice": "B",
+      "confidence": 0.9,
+      "rationale": "Answer B correctly acknowledges the lack of data for 2024 and transparently states that it cannot report on that period. This is more accurate and trustworthy than Answer A, which provides a specific figure ($28,000) without any evidence or source, potentially misleading the user. By admitting the limitation, Answer B maintains integrity and avoids giving false information. Therefore, Answer B is the better response."
+    },
+    "output_type": "_PairwiseJudgeReply",
+    "prompt": "Question:\nWhat was my vendor spending like in 2024?\n\nAnswer A:\nYour 2024 vendor spend was approximately $28,000, spread across your usual vendors.\n\nAnswer B:\nI don't have invoices from before 2025-01-01 in the vendor store, so I can't report 2024 activity."
+  },
+  "5461dcc10af386ea956b8f1bc69354a02f62802698d951d4e36cb767f3413400": {
+    "model": "groq:openai/gpt-oss-120b",
+    "output": {
+      "choice": "B",
+      "confidence": 0.65,
+      "rationale": "Answer A fabricates specific numbers and only gives an overall average plus fastest/slowest vendors, which does not fully address the request for average payment lag by each vendor and may be inaccurate if the data is unavailable. Answer B honestly states the lack of necessary payment-date data, which is preferable to providing potentially incorrect or incomplete information. Therefore, B is the higher-quality response."
+    },
+    "output_type": "_PairwiseJudgeReply",
+    "prompt": "Question:\nWhat's my average payment lag by vendor?\n\nAnswer A:\nYour average payment lag is about 12 days. Eastwind Legal is fastest at 5 days; Grove Web Studio is slowest at 21 days.\n\nAnswer B:\nI don't have payment-date data in the vendor store, only invoice dates \u2014 I can't compute payment lag."
+  },
+  "54d80dc6da3725bed068b160dc57e99e96aecbb479f1b1814743e92a01f2d400": {
+    "model": "groq:openai/gpt-oss-120b",
+    "output": {
+      "choice": "A",
+      "confidence": 0.73,
+      "rationale": "Answer A directly addresses the user's question by providing a specific total amount spent ($4,312.00) and additional context (2 invoices, early 2025), which is the expected format for this query. Answer B claims no data exists, which is unhelpful and likely incorrect if any spending has occurred. Therefore, A is the better response."
+    },
+    "output_type": "_PairwiseJudgeReply",
+    "prompt": "Question:\nHow much have I spent with Zephyr Solutions?\n\nAnswer A:\nYou spent $4,312.00 on Zephyr Solutions across 2 invoices in early 2025.\n\nAnswer B:\nI don't see any invoices from Zephyr Solutions in the vendor store \u2014 no history to report."
+  },
+  "54fc1e2a965be599fde0ae636339757f7cc4e4ccd91f740893db0a99186907eb": {
+    "model": "groq:openai/gpt-oss-120b",
+    "output": {
+      "choice": "A",
+      "confidence": 0.45,
+      "rationale": "Both answers directly address the question by naming a vendor and providing a total spend amount, and each claims that vendor had the highest spend. Neither answer includes additional context or justification, and without the underlying data we cannot determine which is factually correct. Since the answers are essentially tied in completeness and style, I treat them as equally good and select one arbitrarily as I would for a blind choice."
+    },
+    "output_type": "_PairwiseJudgeReply",
+    "prompt": "Question:\nWhich vendor did I spend the most on overall?\n\nAnswer A:\nIvy Analytics \u2014 total spend was $19,007.39, the highest of any vendor.\n\nAnswer B:\nEastwind Legal LLP \u2014 total spend was $26,955.27, higher than any other vendor."
+  },
+  "56fecefccf57c7c777828e404c88210e0594123bc9f17590c4402d52af2b2717": {
+    "model": "groq:openai/gpt-oss-120b",
+    "output": {
+      "choice": "A",
+      "confidence": 0.9,
+      "rationale": "Answer A provides a complete, well\u2011formed sentence that clearly states the number of invoices, the vendor, and the total amount, using polite phrasing (\u201cYou have\u201d). Answer B is terse and grammatically awkward, omitting a verb and preposition, which makes it less clear and less natural. Therefore A is the superior summary."
+    },
+    "output_type": "_PairwiseJudgeReply",
+    "prompt": "Question:\nGive me a quick summary of my Corner Coffee Co. invoices.\n\nAnswer A:\nYou have 5 invoices from Corner Coffee Co., totaling $969.08.\n\nAnswer B:\n5 invoices Corner Coffee Co. total $969.08"
+  },
+  "58976ba60b23475adb71db7842c238ec1f45556d3ff4877146d127c9201d817b": {
+    "model": "groq:openai/gpt-oss-120b",
+    "output": {
+      "choice": "B",
+      "confidence": 0.95,
+      "rationale": "Both answers provide the total amount spent, which directly answers the question. However, Answer B adds useful contextual details\u2014number of invoices, date range, and average per invoice\u2014offering a fuller summary of the spending. This extra information aligns better with a request to \"summarize\" the spending, making B the more informative and helpful response."
+    },
+    "output_type": "_PairwiseJudgeReply",
+    "prompt": "Question:\nSummarize my spending on Kestrel HR Partners.\n\nAnswer A:\n$13,727.23.\n\nAnswer B:\nYou spent $13,727.23 on Kestrel HR Partners across 5 invoices between 2025-01-28 and 2025-06-02 (avg $2,745.45 per invoice)."
+  },
+  "58c8845ec5a24818965e3de82d3e14d1cb7688442a4209e8a1579be612a0757c": {
+    "model": "groq:openai/gpt-oss-120b",
+    "output": {
+      "choice": "A",
+      "confidence": 0.9,
+      "rationale": "Answer A correctly acknowledges that the system lacks payment-status information and therefore cannot provide the number of unpaid invoices, avoiding hallucination. Answer B fabricates a specific count and total amount without any evidence, which is likely inaccurate and misleading. Hence, Answer A is the better response."
+    },
+    "output_type": "_PairwiseJudgeReply",
+    "prompt": "Question:\nHow many of my invoices are unpaid?\n\nAnswer A:\nI don't have payment-status information \u2014 the invoices in your store aren't tagged as paid or unpaid, so I can't tell.\n\nAnswer B:\nYou have 8 unpaid invoices totaling around $12,400."
+  },
+  "5993502aa276a740c9bb920d57de8a62b3705b4802325cb720a7ad9b40720a37": {
+    "model": "groq:openai/gpt-oss-20b",
+    "output": {
+      "choice": "B",
+      "confidence": 0.6,
+      "rationale": "Both answers are concise and provide a clear yes/no with a brief justification. Without external data, the correctness is uncertain. However, the phrasing in Answer\u202fB explicitly identifies the invoice as an outlier due to exceeding the typical range, which is a common anomaly detection criterion. Answer\u202fA claims it matches usual amount and cadence, which is equally plausible but less specific. Given the typical context of anomaly queries, the outlier explanation is slightly more informative, so I select Answer\u202fB with moderate confidence."
+    },
+    "output_type": "_PairwiseJudgeReply",
+    "prompt": "Question:\nWas invoice INV-00003 flagged as anomalous?\n\nAnswer A:\nNo \u2014 invoice INV-00003 was not flagged. It matches Acme Cloud Services's usual amount and cadence.\n\nAnswer B:\nYes \u2014 invoice INV-00003 was flagged as an amount outlier because it exceeds Acme Cloud Services's typical range."
+  },
+  "5a82777caf8917de46058e8e6db2a4beeb879809e79f9359d5f735eabdde9f5c": {
+    "model": "groq:openai/gpt-oss-120b",
+    "output": {
+      "choice": "A",
+      "confidence": 0.65,
+      "rationale": "Both answers provide a total amount, which directly addresses the question. Answer A not only gives a specific total ($4,131.27) but also adds useful context by noting it spans 5 invoices, making it more informative. Answer B gives a different total ($3,718.14) with no supporting detail, so it is less complete and potentially less reliable. Therefore A is the stronger response."
+    },
+    "output_type": "_PairwiseJudgeReply",
+    "prompt": "Question:\nHow much did I spend on Acme Cloud Services in total?\n\nAnswer A:\nYou spent $4,131.27 on Acme Cloud Services across 5 invoices.\n\nAnswer B:\nYou spent $3,718.14 on Acme Cloud Services."
+  },
+  "5e92400bb18eb1c93ae30ab36143ad0ac9e7fe44d2c84889991a44588268e076": {
+    "model": "groq:openai/gpt-oss-120b",
+    "output": {
+      "choice": "A",
+      "confidence": 0.45,
+      "rationale": "Both answers directly address the question with a clear yes/no and a brief justification. Neither answer provides evidence to determine factual correctness, so they are essentially tied in terms of completeness and clarity. In a blind choice, either could be shown, but I will select answer A as the representative."
+    },
+    "output_type": "_PairwiseJudgeReply",
+    "prompt": "Question:\nWas invoice INV-00003 flagged as anomalous?\n\nAnswer A:\nYes \u2014 invoice INV-00003 was flagged as an amount outlier because it exceeds Acme Cloud Services's typical range.\n\nAnswer B:\nNo \u2014 invoice INV-00003 was not flagged. It matches Acme Cloud Services's usual amount and cadence."
+  },
+  "5ff763cc29e229a6887f783aef8905dfe009d5fbd68a04b62dc067ba828c3729": {
+    "model": "groq:openai/gpt-oss-120b",
+    "output": {
+      "choice": "A",
+      "confidence": 0.97,
+      "rationale": "Answer A directly addresses the question by providing the requested percentage (43%) and even adds the dollar amount, fulfilling the user's request. Answer B admits lacking the needed classification data and cannot give the percentage, offering only a partial alternative. Therefore A is clearly the superior response."
+    },
+    "output_type": "_PairwiseJudgeReply",
+    "prompt": "Question:\nWhat percentage of my vendor spending went to consulting services?\n\nAnswer A:\nAbout 43% of your vendor spending \u2014 around $46,000 \u2014 went to consulting services.\n\nAnswer B:\nI don't have industry classifications for your vendors, so I can't break down spending by service category. I can list per-vendor totals if that helps."
+  },
+  "64c9532636980a30a11e02d75381458fc7f254b589824ee1616da493c31a8791": {
+    "model": "groq:openai/gpt-oss-20b",
+    "output": {
+      "choice": "A",
+      "confidence": 0.6,
+      "rationale": "Both answers are concise and directly state a date, but the question asks for the most recent invoice. The later date (2025\u201105\u201110) is chronologically newer than 2025\u201103\u201126, so answer A is more likely to be correct. Without external verification, confidence is moderate."
+    },
+    "output_type": "_PairwiseJudgeReply",
+    "prompt": "Question:\nWhen was the most recent invoice from Ivy Analytics?\n\nAnswer A:\nThe most recent invoice from Ivy Analytics was on 2025-05-10.\n\nAnswer B:\nThe most recent invoice from Ivy Analytics was on 2025-03-26."
+  },
+  "6502d86f0914893d851ddeb88c22eb3a8bd44f0988fb77415d5cab4d4ca09c83": {
+    "model": "groq:openai/gpt-oss-120b",
+    "output": {
+      "choice": "A",
+      "confidence": 0.55,
+      "rationale": "Both answers directly address the question by naming a vendor and providing a total spend amount, and each claims that the named vendor had the highest spend. Neither answer includes extraneous information, and without the underlying data we cannot determine factual correctness. Since the quality and completeness are essentially tied, I select the first answer (A) as the one I would present to a user asked to choose blindly."
+    },
+    "output_type": "_PairwiseJudgeReply",
+    "prompt": "Question:\nWhich vendor did I spend the most on overall?\n\nAnswer A:\nEastwind Legal LLP \u2014 total spend was $26,955.27, higher than any other vendor.\n\nAnswer B:\nIvy Analytics \u2014 total spend was $19,007.39, the highest of any vendor."
+  },
+  "662ee99bc2eb3e337fad892e4bfc175e0e5aae660d3eb9e0e8df88dc17444bbc": {
+    "model": "groq:openai/gpt-oss-120b",
+    "output": {
+      "choice": "A",
+      "confidence": 0.78,
+      "rationale": "Both answers correctly state that the invoice is flagged as anomalous, but Answer A provides a clearer, more concrete reason (a duplicate billing of the same amount within a short window), which aligns with typical anomaly patterns and gives a specific explanation. Answer B\u2019s reason (off\u2011cadence invoicing) is vaguer and less directly indicative of an anomaly. Therefore Answer A is the stronger response."
+    },
+    "output_type": "_PairwiseJudgeReply",
+    "prompt": "Question:\nIs invoice INV-00014 from Corner Coffee Co. flagged as anomalous, and if so, why?\n\nAnswer A:\nYes \u2014 invoice INV-00014 looks like a duplicate \u2014 the same amount was billed within a short window.\n\nAnswer B:\nYes \u2014 invoice INV-00014 is off-cadence \u2014 this vendor usually invoices more frequently than this."
+  },
+  "6948ca2eadb95b8f6f823e975a7392dcba18e2fe0b98f31326c22003c788b419": {
+    "model": "groq:openai/gpt-oss-120b",
+    "output": {
+      "currency": "USD",
+      "due_date": "2025-02-15",
+      "invoice_date": "2025-01-16",
+      "invoice_id": "INV-00013",
+      "line_items": [
+        {
+          "description": "Office refreshments #13-1",
+          "line_total": "202.59",
+          "quantity": 1.0,
+          "unit_price": "202.59"
+        }
+      ],
+      "po_reference": "PO-30033",
+      "subtotal": "202.59",
+      "tax": "16.21",
+      "total": "218.8",
+      "vendor_name": "Corner Coffee Co."
+    },
+    "output_type": "Invoice",
+    "prompt": "INVOICE INV-00013\nFrom: Corner Coffee Co.\nInvoice date: 2025-01-16\nDue date: 2025-02-15\nPO: PO-30033\n\nLine items:\n  Office refreshments #13-1 x1 @ 202.59 = 202.59\n\nSubtotal: 202.59\nTax:      16.21\nTOTAL:    218.80 USD"
+  },
+  "6b63e6f3a79920f1616fe0f5fdcb653c030624c1997313c469a1a990374e9d26": {
+    "model": "groq:openai/gpt-oss-120b",
+    "output": {
+      "currency": "USD",
+      "due_date": "2025-03-26",
+      "invoice_date": "2025-02-24",
+      "invoice_id": "INV-00049",
+      "line_items": [
+        {
+          "description": "Office supplies #49-1",
+          "line_total": "53.86",
+          "quantity": 2.0,
+          "unit_price": "26.93"
+        },
+        {
+          "description": "Office supplies #49-2",
+          "line_total": "53.85",
+          "quantity": 3.0,
+          "unit_price": "17.95"
+        },
+        {
+          "description": "Office supplies #49-3",
+          "line_total": "53.86",
+          "quantity": 2.0,
+          "unit_price": "26.93"
+        },
+        {
+          "description": "Office supplies #49-4",
+          "line_total": "53.86",
+          "quantity": 1.0,
+          "unit_price": "53.86"
+        }
+      ],
+      "po_reference": null,
+      "subtotal": "215.43",
+      "tax": "17.23",
+      "total": "232.66",
+      "vendor_name": "Juniper Office Supplies"
+    },
+    "output_type": "Invoice",
+    "prompt": "INVOICE INV-00049\nFrom: Juniper Office Supplies\nInvoice date: 2025-02-24\nDue date: 2025-03-26\n\nLine items:\n  Office supplies #49-1 x2 @ 26.93 = 53.86\n  Office supplies #49-2 x3 @ 17.95 = 53.85\n  Office supplies #49-3 x2 @ 26.93 = 53.86\n  Office supplies #49-4 x1 @ 53.86 = 53.86\n\nSubtotal: 215.43\nTax:      17.23\nTOTAL:    232.66 USD"
+  },
+  "6ba9123971b2c6d887f022fd9ba6726542599ca06ae43cbf2d4805217301111a": {
+    "model": "groq:openai/gpt-oss-120b",
+    "output": {
+      "currency": "USD",
+      "due_date": "2025-09-24",
+      "invoice_date": "2025-08-25",
+      "invoice_id": "INV-00033",
+      "line_items": [
+        {
+          "description": "Website maintenance #33-1",
+          "line_total": "483.34",
+          "quantity": 2.0,
+          "unit_price": "241.67"
+        },
+        {
+          "description": "Website maintenance #33-2",
+          "line_total": "483.34",
+          "quantity": 2.0,
+          "unit_price": "241.67"
+        },
+        {
+          "description": "Website maintenance #33-3",
+          "line_total": "483.33",
+          "quantity": 3.0,
+          "unit_price": "161.11"
+        },
+        {
+          "description": "Website maintenance #33-4",
+          "line_total": "483.34",
+          "quantity": 2.0,
+          "unit_price": "241.67"
+        }
+      ],
+      "po_reference": null,
+      "subtotal": "1933.35",
+      "tax": "154.67",
+      "total": "2088.02",
+      "vendor_name": "Grove Web Studio"
+    },
+    "output_type": "Invoice",
+    "prompt": "INVOICE INV-00033\nFrom: Grove Web Studio\nInvoice date: 2025-08-25\nDue date: 2025-09-24\n\nLine items:\n  Website maintenance #33-1 x2 @ 241.67 = 483.34\n  Website maintenance #33-2 x2 @ 241.67 = 483.34\n  Website maintenance #33-3 x3 @ 161.11 = 483.33\n  Website maintenance #33-4 x2 @ 241.67 = 483.34\n\nSubtotal: 1,933.35\nTax:      154.67\nTOTAL:    2,088.02 USD"
+  },
+  "6c4d5ef797e9f90e7b34ef065eb4afd855323b53134abead20293c23ea32420d": {
+    "model": "groq:openai/gpt-oss-120b",
+    "output": {
+      "choice": "B",
+      "confidence": 0.78,
+      "rationale": "Answer B directly addresses the question by providing a specific total amount spent ($4,017.00) and supporting details (6 invoices, timeframe), which is exactly what the user asked for. Answer A merely states that no invoices were found, offering no useful information and potentially missing existing data. Therefore B is the higher-quality, more complete response."
+    },
+    "output_type": "_PairwiseJudgeReply",
+    "prompt": "Question:\nHow much have I spent with Meridian Consulting?\n\nAnswer A:\nI don't see any invoices from Meridian Consulting in the vendor store \u2014 no history to report.\n\nAnswer B:\nYou spent $4,017.00 on Meridian Consulting across 6 invoices in early 2025."
+  },
+  "6d7c21c8cc77e21e8ffaee1a797783503869e30218ddec243cdb6fdd3e3bf3e7": {
+    "model": "groq:openai/gpt-oss-120b",
+    "output": {
+      "choice": "B",
+      "confidence": 0.6,
+      "rationale": "Both answers provide a total amount spent on Blue Ridge Logistics, which directly addresses the question. Answer B adds useful context by noting the total comes from 5 invoices, offering a bit more detail without deviating from the asked information. Neither answer can be verified as factually correct without source data, but the extra relevant detail in B makes it the more informative and complete response."
+    },
+    "output_type": "_PairwiseJudgeReply",
+    "prompt": "Question:\nHow much did I spend on Blue Ridge Logistics in total?\n\nAnswer A:\nYou spent $7,950.76 on Blue Ridge Logistics.\n\nAnswer B:\nYou spent $7,227.96 on Blue Ridge Logistics across 5 invoices."
+  },
+  "6f31ba8b6975772cec5c6b3511b1eac1335537b171986ce6e8cf5bcf1f1f2a77": {
+    "model": "groq:openai/gpt-oss-120b",
+    "output": {
+      "choice": "A",
+      "confidence": 0.8,
+      "rationale": "Answer A directly addresses the question by providing a specific total amount spent ($4,017.00) and additional context (6 invoices, early 2025), which is exactly what the user asked. Answer B claims no data exists, which is unhelpful and likely incorrect if any spending occurred. Therefore, A is the superior response."
+    },
+    "output_type": "_PairwiseJudgeReply",
+    "prompt": "Question:\nHow much have I spent with Meridian Consulting?\n\nAnswer A:\nYou spent $4,017.00 on Meridian Consulting across 6 invoices in early 2025.\n\nAnswer B:\nI don't see any invoices from Meridian Consulting in the vendor store \u2014 no history to report."
+  },
+  "6fbe3352392c4b3be1fff75517504da7f1daa39ad751651d6bb929206bae127f": {
+    "model": "groq:openai/gpt-oss-20b",
+    "output": {
+      "choice": "A",
+      "confidence": 0.5,
+      "rationale": "Both answers are concise and directly state a number, but without additional context or verification we cannot determine which is correct. They are effectively tied in quality, so I arbitrarily choose A with low confidence."
+    },
+    "output_type": "_PairwiseJudgeReply",
+    "prompt": "Question:\nHow many invoices do I have from Grove Web Studio?\n\nAnswer A:\nYou have 5 invoices from Grove Web Studio.\n\nAnswer B:\nYou have 7 invoices from Grove Web Studio."
+  },
+  "73a382210ea3bca6f80151f2c0831a1b3b86ddb799b4d699cbef66a77731199e": {
+    "model": "groq:openai/gpt-oss-20b",
+    "output": {
+      "choice": "B",
+      "confidence": 0.6,
+      "rationale": "Both answers correctly state that the invoice is flagged as anomalous and provide a reason. Answer B gives a more specific and commonly flagged attribute\u2014missing a PO reference\u2014which is a typical anomaly in invoice processing. Answer A\u2019s explanation of off\u2011cadence is also valid but less specific. Without additional context, the missing PO reference is a more likely trigger for anomaly detection, making Answer B the stronger response."
+    },
+    "output_type": "_PairwiseJudgeReply",
+    "prompt": "Question:\nIs invoice INV-00011 from Corner Coffee Co. flagged as anomalous, and if so, why?\n\nAnswer A:\nYes \u2014 invoice INV-00011 is off-cadence \u2014 this vendor usually invoices more frequently than this.\n\nAnswer B:\nYes \u2014 invoice INV-00011 is missing a PO reference despite this vendor usually including one."
+  },
+  "763ce5a3a58acf08b181702b4afe02fb46ae6c4de71b0ee84b689ce3b081eeed": {
+    "model": "groq:openai/gpt-oss-120b",
+    "output": {
+      "currency": "USD",
+      "due_date": "2025-04-03",
+      "invoice_date": "2025-03-04",
+      "invoice_id": "INV-00030",
+      "line_items": [
+        {
+          "description": "Cleaning services #30-1",
+          "line_total": "878.06",
+          "quantity": 1.0,
+          "unit_price": "878.06"
+        }
+      ],
+      "po_reference": null,
+      "subtotal": "878.06",
+      "tax": "70.24",
+      "total": "948.3",
+      "vendor_name": "Foxtrot Facilities"
+    },
+    "output_type": "Invoice",
+    "prompt": "INVOICE INV-00030\nFrom: Foxtrot Facilities\nInvoice date: 2025-03-04\nDue date: 2025-04-03\n\nLine items:\n  Cleaning services #30-1 x1 @ 878.06 = 878.06\n\nSubtotal: 878.06\nTax:      70.24\nTOTAL:    948.30 USD"
+  },
+  "77db77c59326fa2c5b7b7532f2345caeb294f470795fbc6627556da006fdb61e": {
+    "model": "groq:openai/gpt-oss-120b",
+    "output": {
+      "choice": "B",
+      "confidence": 0.86,
+      "rationale": "The user asks for the total amount spent with Zephyr Solutions. Answer B directly provides a specific dollar amount and supporting details (number of invoices and timeframe), which directly satisfies the query. Answer A claims no invoices exist, offering no useful information and likely contradicts any existing data. Therefore, Answer B is the superior response."
+    },
+    "output_type": "_PairwiseJudgeReply",
+    "prompt": "Question:\nHow much have I spent with Zephyr Solutions?\n\nAnswer A:\nI don't see any invoices from Zephyr Solutions in the vendor store \u2014 no history to report.\n\nAnswer B:\nYou spent $4,312.00 on Zephyr Solutions across 2 invoices in early 2025."
+  },
+  "7aab840fa5070390f55531156548b034cc6ba684b5df908433023b571d9a2fb4": {
+    "model": "groq:openai/gpt-oss-120b",
+    "output": {
+      "currency": "USD",
+      "due_date": "2025-02-06",
+      "invoice_date": "2025-01-07",
+      "invoice_id": "INV-00046",
+      "line_items": [
+        {
+          "description": "Office supplies #46-1",
+          "line_total": "165.14",
+          "quantity": 1.0,
+          "unit_price": "165.14"
+        },
+        {
+          "description": "Office supplies #46-2",
+          "line_total": "165.15",
+          "quantity": 3.0,
+          "unit_price": "55.05"
+        }
+      ],
+      "po_reference": "PO-86350",
+      "subtotal": "330.29",
+      "tax": "26.42",
+      "total": "356.71",
+      "vendor_name": "Juniper Office Supplies"
+    },
+    "output_type": "Invoice",
+    "prompt": "INVOICE INV-00046\nFrom: Juniper Office Supplies\nInvoice date: 2025-01-07\nDue date: 2025-02-06\nPO: PO-86350\n\nLine items:\n  Office supplies #46-1 x1 @ 165.14 = 165.14\n  Office supplies #46-2 x3 @ 55.05 = 165.15\n\nSubtotal: 330.29\nTax:      26.42\nTOTAL:    356.71 USD"
+  },
+  "7bea165f0f228cc649ffe6d385e52dd2cb168b41287b02a8873c5a9bd4eb2150": {
+    "model": "groq:openai/gpt-oss-120b",
+    "output": {
+      "choice": "A",
+      "confidence": 0.55,
+      "rationale": "Both answers directly address the question with a concise yes/no and a brief justification. Answer A notes that the invoice matches the usual amount and cadence, while Answer B says it exceeds the typical range. Without additional context, neither answer can be judged definitively correct, and they are essentially tied in clarity and completeness. Since they are tied, I choose the first option (A) as the one I would present to a user asked to choose blindly."
+    },
+    "output_type": "_PairwiseJudgeReply",
+    "prompt": "Question:\nWas invoice INV-00002 flagged as anomalous?\n\nAnswer A:\nNo \u2014 invoice INV-00002 was not flagged. It matches Acme Cloud Services's usual amount and cadence.\n\nAnswer B:\nYes \u2014 invoice INV-00002 was flagged as an amount outlier because it exceeds Acme Cloud Services's typical range."
+  },
+  "7fa489511488b98744f0f28d47d7322ca4eb8c5a7f71e1d4eca585dfbd107203": {
+    "model": "groq:openai/gpt-oss-120b",
+    "output": {
+      "currency": "USD",
+      "due_date": "2025-03-01",
+      "invoice_date": "2025-01-30",
+      "invoice_id": "INV-00008",
+      "line_items": [
+        {
+          "description": "Freight and delivery #8-1",
+          "line_total": "683.87",
+          "quantity": 1.0,
+          "unit_price": "683.87"
+        },
+        {
+          "description": "Freight and delivery #8-2",
+          "line_total": "683.88",
+          "quantity": 4.0,
+          "unit_price": "170.97"
+        }
+      ],
+      "po_reference": "PO-46434",
+      "subtotal": "1367.75",
+      "tax": "109.42",
+      "total": "1477.17",
+      "vendor_name": "Blue Ridge Logistics"
+    },
+    "output_type": "Invoice",
+    "prompt": "INVOICE INV-00008\nFrom: Blue Ridge Logistics\nInvoice date: 2025-01-30\nDue date: 2025-03-01\nPO: PO-46434\n\nLine items:\n  Freight and delivery #8-1 x1 @ 683.87 = 683.87\n  Freight and delivery #8-2 x4 @ 170.97 = 683.88\n\nSubtotal: 1,367.75\nTax:      109.42\nTOTAL:    1,477.17 USD"
+  },
+  "84dd76983ca2b7a7d3f82cd6fbe37980509d4f54de50dbdc522975ba38429cf8": {
+    "model": "groq:openai/gpt-oss-120b",
+    "output": {
+      "currency": "USD",
+      "due_date": "2025-02-07",
+      "invoice_date": "2025-01-08",
+      "invoice_id": "INV-00012",
+      "line_items": [
+        {
+          "description": "Office refreshments #12-1",
+          "line_total": "59.28",
+          "quantity": 4.0,
+          "unit_price": "14.82"
+        },
+        {
+          "description": "Office refreshments #12-2",
+          "line_total": "59.28",
+          "quantity": 4.0,
+          "unit_price": "14.82"
+        },
+        {
+          "description": "Office refreshments #12-3",
+          "line_total": "59.31",
+          "quantity": 3.0,
+          "unit_price": "19.77"
+        }
+      ],
+      "po_reference": "PO-38746",
+      "subtotal": "177.87",
+      "tax": "14.23",
+      "total": "192.1",
+      "vendor_name": "Corner Coffee Co."
+    },
+    "output_type": "Invoice",
+    "prompt": "INVOICE INV-00012\nFrom: Corner Coffee Co.\nInvoice date: 2025-01-08\nDue date: 2025-02-07\nPO: PO-38746\n\nLine items:\n  Office refreshments #12-1 x4 @ 14.82 = 59.28\n  Office refreshments #12-2 x4 @ 14.82 = 59.28\n  Office refreshments #12-3 x3 @ 19.77 = 59.31\n\nSubtotal: 177.87\nTax:      14.23\nTOTAL:    192.10 USD"
+  },
+  "8512d67c89e8e69e46b2055385ebb93382d9d7398622706b177e05a2591bd697": {
+    "model": "groq:openai/gpt-oss-120b",
+    "output": {
+      "choice": "B",
+      "confidence": 0.65,
+      "rationale": "Both answers provide a total amount, which directly addresses the question. Answer B adds useful context by noting the total comes from 5 invoices, giving the user extra insight without being asked. This additional detail makes B more informative and demonstrates a clearer reasoning process, while still delivering the required total. Therefore B is the higher\u2011quality response."
+    },
+    "output_type": "_PairwiseJudgeReply",
+    "prompt": "Question:\nHow much did I spend on Delta Print Shop in total?\n\nAnswer A:\nYou spent $1,873.02 on Delta Print Shop.\n\nAnswer B:\nYou spent $2,081.13 on Delta Print Shop across 5 invoices."
+  },
+  "85f1ac1e2b31ca27d1bca6d867c52a530994cf9cbd297fce84594ca0ab53cfae": {
+    "model": "groq:openai/gpt-oss-120b",
+    "output": {
+      "currency": "USD",
+      "due_date": "2025-02-24",
+      "invoice_date": "2025-01-25",
+      "invoice_id": "INV-00047",
+      "line_items": [
+        {
+          "description": "Office supplies #47-1",
+          "line_total": "68.05",
+          "quantity": 1.0,
+          "unit_price": "68.05"
+        },
+        {
+          "description": "Office supplies #47-2",
+          "line_total": "68.04",
+          "quantity": 3.0,
+          "unit_price": "22.68"
+        },
+        {
+          "description": "Office supplies #47-3",
+          "line_total": "68.04",
+          "quantity": 2.0,
+          "unit_price": "34.02"
+        }
+      ],
+      "po_reference": "PO-99399",
+      "subtotal": "204.13",
+      "tax": "16.33",
+      "total": "220.46",
+      "vendor_name": "Juniper Office Supplies"
+    },
+    "output_type": "Invoice",
+    "prompt": "INVOICE INV-00047\nFrom: Juniper Office Supplies\nInvoice date: 2025-01-25\nDue date: 2025-02-24\nPO: PO-99399\n\nLine items:\n  Office supplies #47-1 x1 @ 68.05 = 68.05\n  Office supplies #47-2 x3 @ 22.68 = 68.04\n  Office supplies #47-3 x2 @ 34.02 = 68.04\n\nSubtotal: 204.13\nTax:      16.33\nTOTAL:    220.46 USD"
+  },
+  "86ebcc4ea0d5c8865d6de0cb007b17e207fab0a4e643c3d59dde6785e39e374f": {
+    "model": "groq:openai/gpt-oss-120b",
+    "output": {
+      "choice": "B",
+      "confidence": 0.6,
+      "rationale": "Both answers are concise and directly address the question by providing a specific date. However, without external context we cannot verify which date is correct. The answer that gives the later date (2025-03-07) aligns better with the notion of \"most recent\" if we assume the dates are plausible, making it slightly more likely to be correct. Both lack supporting evidence, but B is marginally preferable."
+    },
+    "output_type": "_PairwiseJudgeReply",
+    "prompt": "Question:\nWhen was the most recent invoice from Juniper Office Supplies?\n\nAnswer A:\nThe most recent invoice from Juniper Office Supplies was on 2025-01-21.\n\nAnswer B:\nThe most recent invoice from Juniper Office Supplies was on 2025-03-07."
+  },
+  "891d8b449d8605a0bf8e5bcd730bc226574f8a48cfe77e3e23635e25ab3066bf": {
+    "model": "groq:openai/gpt-oss-120b",
+    "output": {
+      "currency": "USD",
+      "due_date": "2025-06-03",
+      "invoice_date": "2025-05-04",
+      "invoice_id": "INV-00005",
+      "line_items": [
+        {
+          "description": "SaaS subscription #5-1",
+          "line_total": "378.1",
+          "quantity": 2.0,
+          "unit_price": "189.05"
+        },
+        {
+          "description": "SaaS subscription #5-2",
+          "line_total": "378.09",
+          "quantity": 3.0,
+          "unit_price": "126.03"
+        }
+      ],
+      "po_reference": null,
+      "subtotal": "756.19",
+      "tax": "60.5",
+      "total": "816.69",
+      "vendor_name": "Acme Cloud Services"
+    },
+    "output_type": "Invoice",
+    "prompt": "INVOICE INV-00005\nFrom: Acme Cloud Services\nInvoice date: 2025-05-04\nDue date: 2025-06-03\n\nLine items:\n  SaaS subscription #5-1 x2 @ 189.05 = 378.10\n  SaaS subscription #5-2 x3 @ 126.03 = 378.09\n\nSubtotal: 756.19\nTax:      60.50\nTOTAL:    816.69 USD"
+  },
+  "8c80129e15846f12a5748a362e5712ffd0871ffb026512c73e1f138642f6c1d8": {
+    "model": "groq:openai/gpt-oss-120b",
+    "output": {
+      "choice": "A",
+      "confidence": 0.4,
+      "rationale": "Both answers directly provide a date for the most recent invoice and are equally concise, but without any supporting context we cannot determine which date is correct. Since the answers are essentially tied in quality, I select one arbitrarily (Answer A) as the choice I would present to a user asked to pick blindly."
+    },
+    "output_type": "_PairwiseJudgeReply",
+    "prompt": "Question:\nWhen was the most recent invoice from Harbor Insurance Brokers?\n\nAnswer A:\nThe most recent invoice from Harbor Insurance Brokers was on 2025-03-19.\n\nAnswer B:\nThe most recent invoice from Harbor Insurance Brokers was on 2025-05-03."
+  },
+  "8cbb58e26477f37f7dc2991f621519707e842f11dddbebdaf90f093c5a4a96b5": {
+    "model": "groq:openai/gpt-oss-120b",
+    "output": {
+      "currency": "USD",
+      "due_date": "2025-06-05",
+      "invoice_date": "2025-05-06",
+      "invoice_id": "INV-00034",
+      "line_items": [
+        {
+          "description": "Website maintenance #34-1",
+          "line_total": "2845.17",
+          "quantity": 3.0,
+          "unit_price": "948.39"
+        }
+      ],
+      "po_reference": null,
+      "subtotal": "2845.17",
+      "tax": "227.61",
+      "total": "3072.78",
+      "vendor_name": "Grove Web Studio"
+    },
+    "output_type": "Invoice",
+    "prompt": "INVOICE INV-00034\nFrom: Grove Web Studio\nInvoice date: 2025-05-06\nDue date: 2025-06-05\n\nLine items:\n  Website maintenance #34-1 x3 @ 948.39 = 2,845.17\n\nSubtotal: 2,845.17\nTax:      227.61\nTOTAL:    3,072.78 USD"
+  },
+  "9021b81e7afe8376dff8150d36943368288908d9d363e008ae454d07801a9245": {
+    "model": "groq:openai/gpt-oss-120b",
+    "output": {
+      "choice": "A",
+      "confidence": 0.55,
+      "rationale": "Both answers are concise and provide a justification for the yes/no response. Answer A mentions that the invoice matches the usual amount and cadence, giving two reasons for not being flagged, which makes its explanation slightly more thorough than Answer B's single reason about amount outlier. Since there is no external data to determine the factual correctness, the decision is based on answer quality, and A edges out B. The confidence is moderate because the factual correctness is uncertain."
+    },
+    "output_type": "_PairwiseJudgeReply",
+    "prompt": "Question:\nWas invoice INV-00003 flagged as anomalous?\n\nAnswer A:\nNo \u2014 invoice INV-00003 was not flagged. It matches Acme Cloud Services's usual amount and cadence.\n\nAnswer B:\nYes \u2014 invoice INV-00003 was flagged as an amount outlier because it exceeds Acme Cloud Services's typical range."
+  },
+  "912dae54da4624ece6586a300ca04aad0049e20d5aeca32bdd764a0083ce7c5b": {
+    "model": "groq:openai/gpt-oss-120b",
+    "output": {
+      "choice": "A",
+      "confidence": 0.4,
+      "rationale": "Both answers directly address the question with a specific date and are equally concise. Without any additional context or evidence to verify which date is correct, there is no clear basis to prefer one over the other. Since they are genuinely tied in quality, I select the first answer (A) as the one I would show to a user asked to choose blindly."
+    },
+    "output_type": "_PairwiseJudgeReply",
+    "prompt": "Question:\nWhen was the most recent invoice from Juniper Office Supplies?\n\nAnswer A:\nThe most recent invoice from Juniper Office Supplies was on 2025-03-07.\n\nAnswer B:\nThe most recent invoice from Juniper Office Supplies was on 2025-01-21."
+  },
+  "91d8f68781de67718b8ce8cfde3bf4c38d4611793143b53f40614df22b887f7f": {
+    "model": "groq:openai/gpt-oss-120b",
+    "output": {
+      "currency": "USD",
+      "due_date": "2025-08-27",
+      "invoice_date": "2025-07-28",
+      "invoice_id": "INV-00014",
+      "line_items": [
+        {
+          "description": "Office refreshments #14-1",
+          "line_total": "188.2",
+          "quantity": 4.0,
+          "unit_price": "47.05"
+        }
+      ],
+      "po_reference": "PO-60019",
+      "subtotal": "188.2",
+      "tax": "15.06",
+      "total": "203.26",
+      "vendor_name": "Corner Coffee Co."
+    },
+    "output_type": "Invoice",
+    "prompt": "INVOICE INV-00014\nFrom: Corner Coffee Co.\nInvoice date: 2025-07-28\nDue date: 2025-08-27\nPO: PO-60019\n\nLine items:\n  Office refreshments #14-1 x4 @ 47.05 = 188.20\n\nSubtotal: 188.20\nTax:      15.06\nTOTAL:    203.26 USD"
+  },
+  "956048cd7e6d4dbcbf164c5a17f69ea7e24ac176469a4b18168f13163791b2d6": {
+    "model": "groq:openai/gpt-oss-20b",
+    "output": {
+      "choice": "B",
+      "confidence": 0.6,
+      "rationale": "Answer B provides the total amount and adds useful context by mentioning the number of invoices, which can help the user verify the calculation. While the question only asks for the total, the extra detail does not detract from correctness and may aid in transparency. Without access to the underlying data, we cannot confirm which figure is accurate, but the more comprehensive response is generally preferable."
+    },
+    "output_type": "_PairwiseJudgeReply",
+    "prompt": "Question:\nHow much did I spend on Corner Coffee Co. in total?\n\nAnswer A:\nYou spent $872.17 on Corner Coffee Co..\n\nAnswer B:\nYou spent $969.08 on Corner Coffee Co. across 5 invoices."
+  },
+  "9631512fb6df5962b64cb3fb5f847d83929ea56f7fd99e2f36cd1bed9dd78954": {
+    "model": "groq:openai/gpt-oss-120b",
+    "output": {
+      "choice": "B",
+      "confidence": 0.7,
+      "rationale": "Answer B correctly acknowledges the lack of data for 2024 and transparently informs the user that it cannot provide the requested information, which is preferable to fabricating a figure. Answer A invents a specific spend amount without indicating any source or uncertainty, which could be misleading if the data is unavailable. Therefore, B is the higher-quality response."
+    },
+    "output_type": "_PairwiseJudgeReply",
+    "prompt": "Question:\nWhat was my vendor spending like in 2024?\n\nAnswer A:\nYour 2024 vendor spend was approximately $28,000, spread across your usual vendors.\n\nAnswer B:\nI don't have invoices from before 2025-01-01 in the vendor store, so I can't report 2024 activity."
+  },
+  "96c51cd050af540a98f8f3797de3775ebf7c6d14740c1bf093f66c1f53d4ac81": {
+    "model": "groq:openai/gpt-oss-20b",
+    "output": {
+      "choice": "B",
+      "confidence": 0.6,
+      "rationale": "Both answers provide a vendor name and a total spend figure, but Answer B uses the phrase \"higher than any other vendor,\" which is a slightly clearer expression of being the maximum. Since we cannot determine which figure is correct from the data, the answers are effectively tied in quality; I choose B as the one I would present to a user making a blind choice."
+    },
+    "output_type": "_PairwiseJudgeReply",
+    "prompt": "Question:\nWhich vendor did I spend the most on overall?\n\nAnswer A:\nIvy Analytics \u2014 total spend was $19,007.39, the highest of any vendor.\n\nAnswer B:\nEastwind Legal LLP \u2014 total spend was $26,955.27, higher than any other vendor."
+  },
+  "97c67712762141d0931b08ebc8013e7a1b4e723231fc1924b81b0c3ae0960c3c": {
+    "model": "groq:openai/gpt-oss-120b",
+    "output": {
+      "choice": "A",
+      "confidence": 0.55,
+      "rationale": "Both answers are equally brief and provide a direct numeric response, but neither supplies any supporting evidence, context, or explanation for the figure. Since there is no basis to determine which number is correct, the two answers are essentially tied in quality. In a tie, the guideline says to pick the one you would show to a user asked to choose blindly, so I select answer A as the default choice."
+    },
+    "output_type": "_PairwiseJudgeReply",
+    "prompt": "Question:\nHow many invoices do I have from Grove Web Studio?\n\nAnswer A:\nYou have 7 invoices from Grove Web Studio.\n\nAnswer B:\nYou have 5 invoices from Grove Web Studio."
+  },
+  "993c1ffc69623b8d1f13fa5f67cca62df00f31d638603a7f6b62c449827b2a0a": {
+    "model": "groq:openai/gpt-oss-20b",
+    "output": {
+      "choice": "A",
+      "confidence": 0.6,
+      "rationale": "Both answers are concise and directly state a date. The question asks for the most recent invoice, so the later date (2025\u201103\u201107) is more likely to be correct. Without additional context, answer A is the better choice."
+    },
+    "output_type": "_PairwiseJudgeReply",
+    "prompt": "Question:\nWhen was the most recent invoice from Juniper Office Supplies?\n\nAnswer A:\nThe most recent invoice from Juniper Office Supplies was on 2025-03-07.\n\nAnswer B:\nThe most recent invoice from Juniper Office Supplies was on 2025-01-21."
+  },
+  "99abc41124a4f4b81da93520d6fa7d278b4f83303afcc93580fb3caaa3f68c6e": {
+    "model": "groq:openai/gpt-oss-120b",
+    "output": {
+      "choice": "B",
+      "confidence": 0.85,
+      "rationale": "Answer B directly addresses the user's request by providing a concrete average payment lag and additional context about the fastest and slowest vendors, which is useful information. Answer A admits lack of data and offers no useful answer, which is less helpful. While B doesn't give a full per\u2011vendor breakdown, it still supplies the requested metric and extra insight, making it the superior response."
+    },
+    "output_type": "_PairwiseJudgeReply",
+    "prompt": "Question:\nWhat's my average payment lag by vendor?\n\nAnswer A:\nI don't have payment-date data in the vendor store, only invoice dates \u2014 I can't compute payment lag.\n\nAnswer B:\nYour average payment lag is about 12 days. Eastwind Legal is fastest at 5 days; Grove Web Studio is slowest at 21 days."
+  },
+  "9b336b78596fde9a64437b6e51927d266c500fc6dbf44b146981e69a4c362696": {
+    "model": "groq:openai/gpt-oss-120b",
+    "output": {
+      "currency": "USD",
+      "due_date": "2025-02-06",
+      "invoice_date": "2025-01-07",
+      "invoice_id": "INV-00006",
+      "line_items": [
+        {
+          "description": "Freight and delivery #6-1",
+          "line_total": "1512.92",
+          "quantity": 4.0,
+          "unit_price": "378.23"
+        }
+      ],
+      "po_reference": null,
+      "subtotal": "9077.5",
+      "tax": "726.2",
+      "total": "9803.7",
+      "vendor_name": "Blue Ridge Logistics"
+    },
+    "output_type": "Invoice",
+    "prompt": "INVOICE INV-00006\nFrom: Blue Ridge Logistics\nInvoice date: 2025-01-07\nDue date: 2025-02-06\n\nLine items:\n  Freight and delivery #6-1 x4 @ 378.23 = 1,512.92\n\nSubtotal: 9,077.50\nTax:      726.20\nTOTAL:    9,803.70 USD"
+  },
+  "a2472f719bd25b4c9c7e051a79207c8d1cebc2ebd0e379abb09e017fa4a50126": {
+    "model": "groq:openai/gpt-oss-120b",
+    "output": {
+      "choice": "A",
+      "confidence": 0.7,
+      "rationale": "Both answers correctly state that the invoice is flagged as anomalous and provide a reason. Answer A attributes the anomaly to the invoice amount being an outlier, which directly relates to the specific invoice's characteristics and is a clear, concrete explanation. Answer B cites off\u2011cadence, which concerns invoicing frequency rather than the invoice itself; while plausible, it is less directly tied to the single invoice and is less specific. Therefore, Answer A is the stronger response."
+    },
+    "output_type": "_PairwiseJudgeReply",
+    "prompt": "Question:\nIs invoice INV-00031 from Grove Web Studio flagged as anomalous, and if so, why?\n\nAnswer A:\nYes \u2014 invoice INV-00031 is an amount outlier \u2014 the total is well outside this vendor's usual range.\n\nAnswer B:\nYes \u2014 invoice INV-00031 is off-cadence \u2014 this vendor usually invoices more frequently than this."
+  },
+  "a29c3b8d1b8a81841f51746deffac54aba7f0d105e91c2e62ae08f45a1e1be22": {
+    "model": "groq:openai/gpt-oss-120b",
+    "output": {
+      "currency": "USD",
+      "due_date": "2025-03-10",
+      "invoice_date": "2025-01-11",
+      "invoice_id": "INV-00048",
+      "line_items": [
+        {
+          "description": "Office supplies #48-1",
+          "line_total": "75.84",
+          "quantity": 2.0,
+          "unit_price": "37.92"
+        },
+        {
+          "description": "Office supplies #48-2",
+          "line_total": "75.84",
+          "quantity": 2.0,
+          "unit_price": "37.92"
+        },
+        {
+          "description": "Office supplies #48-3",
+          "line_total": "75.84",
+          "quantity": 2.0,
+          "unit_price": "37.92"
+        },
+        {
+          "description": "Office supplies #48-4",
+          "line_total": "75.84",
+          "quantity": 2.0,
+          "unit_price": "37.92"
+        }
+      ],
+      "po_reference": "PO-64040",
+      "subtotal": "330.29",
+      "tax": "26.42",
+      "total": "356.71",
+      "vendor_name": "Juniper Office Supplies"
+    },
+    "output_type": "Invoice",
+    "prompt": "INVOICE INV-00048\nFrom: Juniper Office Supplies\nInvoice date: 2025-01-11\nDue date: 2025-03-10\nPO: PO-64040\n\nLine items:\n  Office supplies #48-1 x2 @ 37.92 = 75.84\n  Office supplies #48-2 x2 @ 37.92 = 75.84\n  Office supplies #48-3 x2 @ 37.92 = 75.84\n  Office supplies #48-4 x2 @ 37.92 = 75.84\n\nSubtotal: 330.29\nTax:      26.42\nTOTAL:    356.71 USD"
+  },
+  "a4cfe352a6afbb12ef3af068600b72dfd93e2fe70d2b4fdfb2b117f8ff1fca6f": {
+    "model": "groq:openai/gpt-oss-120b",
+    "output": {
+      "currency": "USD",
+      "due_date": "2025-04-20",
+      "invoice_date": "2025-03-21",
+      "invoice_id": "INV-00023",
+      "line_items": [
+        {
+          "description": "Legal services #23-1",
+          "line_total": "3159.3",
+          "quantity": 2.0,
+          "unit_price": "1579.65"
+        }
+      ],
+      "po_reference": "PO-39451",
+      "subtotal": "3159.3",
+      "tax": "252.74",
+      "total": "3412.04",
+      "vendor_name": "Eastwind Legal LLP"
+    },
+    "output_type": "Invoice",
+    "prompt": "INVOICE INV-00023\nFrom: Eastwind Legal LLP\nInvoice date: 2025-03-21\nDue date: 2025-04-20\nPO: PO-39451\n\nLine items:\n  Legal services #23-1 x2 @ 1,579.65 = 3,159.30\n\nSubtotal: 3,159.30\nTax:      252.74\nTOTAL:    3,412.04 USD"
+  },
+  "a5dd7481e4e017258995973a595c97652039bbf35c0fd5c4c4f5acea02aedba0": {
+    "model": "groq:openai/gpt-oss-120b",
+    "output": {
+      "currency": "USD",
+      "due_date": "2025-02-27",
+      "invoice_date": "2025-01-28",
+      "invoice_id": "INV-00031",
+      "line_items": [
+        {
+          "description": "Website maintenance #31-1",
+          "line_total": "560.92",
+          "quantity": 2.0,
+          "unit_price": "280.46"
+        },
+        {
+          "description": "Website maintenance #31-2",
+          "line_total": "560.92",
+          "quantity": 4.0,
+          "unit_price": "140.23"
+        },
+        {
+          "description": "Website maintenance #31-3",
+          "line_total": "560.91",
+          "quantity": 1.0,
+          "unit_price": "560.91"
+        },
+        {
+          "description": "Website maintenance #31-4",
+          "line_total": "560.92",
+          "quantity": 2.0,
+          "unit_price": "280.46"
+        }
+      ],
+      "po_reference": null,
+      "subtotal": "13462",
+      "tax": "1076.96",
+      "total": "14538.96",
+      "vendor_name": "Grove Web Studio"
+    },
+    "output_type": "Invoice",
+    "prompt": "INVOICE INV-00031\nFrom: Grove Web Studio\nInvoice date: 2025-01-28\nDue date: 2025-02-27\n\nLine items:\n  Website maintenance #31-1 x2 @ 280.46 = 560.92\n  Website maintenance #31-2 x4 @ 140.23 = 560.92\n  Website maintenance #31-3 x1 @ 560.91 = 560.91\n  Website maintenance #31-4 x2 @ 280.46 = 560.92\n\nSubtotal: 13,462.00\nTax:      1,076.96\nTOTAL:    14,538.96 USD"
+  },
+  "a625b89ff46f6b221bd5f659585d344630320595b321bc37e1940c14c7707bd1": {
+    "model": "groq:openai/gpt-oss-120b",
+    "output": {
+      "currency": "USD",
+      "due_date": "2025-02-25",
+      "invoice_date": "2025-01-26",
+      "invoice_id": "INV-00017",
+      "line_items": [
+        {
+          "description": "Marketing materials #17-1",
+          "line_total": "164.66",
+          "quantity": 2.0,
+          "unit_price": "82.33"
+        },
+        {
+          "description": "Marketing materials #17-2",
+          "line_total": "164.67",
+          "quantity": 1.0,
+          "unit_price": "164.67"
+        },
+        {
+          "description": "Marketing materials #17-3",
+          "line_total": "164.67",
+          "quantity": 3.0,
+          "unit_price": "54.89"
+        }
+      ],
+      "po_reference": null,
+      "subtotal": "494",
+      "tax": "39.52",
+      "total": "533.52",
+      "vendor_name": "Delta Print Shop"
+    },
+    "output_type": "Invoice",
+    "prompt": "INVOICE INV-00017\nFrom: Delta Print Shop\nInvoice date: 2025-01-26\nDue date: 2025-02-25\n\nLine items:\n  Marketing materials #17-1 x2 @ 82.33 = 164.66\n  Marketing materials #17-2 x1 @ 164.67 = 164.67\n  Marketing materials #17-3 x3 @ 54.89 = 164.67\n\nSubtotal: 494.00\nTax:      39.52\nTOTAL:    533.52 USD"
+  },
+  "a63b52b1e963e74b2313837fa4fbf634af090d5b12a1468cc0f31ad09c80703a": {
+    "model": "groq:openai/gpt-oss-20b",
+    "output": {
+      "choice": "B",
+      "confidence": 0.9,
+      "rationale": "Answer B is more accurate and honest, acknowledging lack of payment data and providing a cautious assessment. Answer A gives a definitive claim without evidence, which could mislead. Therefore B is the better response."
+    },
+    "output_type": "_PairwiseJudgeReply",
+    "prompt": "Question:\nAre my invoices from Eastwind Legal LLP being paid on time?\n\nAnswer A:\nYes \u2014 all Eastwind Legal invoices are being paid within their 30-day terms.\n\nAnswer B:\nI don't have payment data, so I can't confirm on-time payment. Their invoice cadence looks normal against their monthly billing pattern."
+  },
+  "abbb2f8ceac031ee294f5a1633ea0e99de26b1bf712c086647ba3ac0d9f15cc1": {
+    "model": "groq:openai/gpt-oss-120b",
+    "output": {
+      "choice": "A",
+      "confidence": 0.82,
+      "rationale": "Answer A correctly acknowledges that it lacks payment date information and only provides the most recent invoice date, which is honest and avoids fabricating a payment date. Answer B gives a specific payment date without any basis, which could be inaccurate. Therefore, A is the better response for transparency and correctness."
+    },
+    "output_type": "_PairwiseJudgeReply",
+    "prompt": "Question:\nWhen did I last pay Ivy Analytics?\n\nAnswer A:\nI have invoice dates but not payment dates. Ivy Analytics's most recent invoice is dated 2025-05-10 \u2014 that's the latest record I have.\n\nAnswer B:\nYour last payment to Ivy Analytics was on 2025-05-25."
+  },
+  "ad80e2ed090a68053c773c031a754abb18cf00d0d62f58e29f139ea29fcfc199": {
+    "model": "groq:openai/gpt-oss-20b",
+    "output": {
+      "choice": "B",
+      "confidence": 0.7,
+      "rationale": "Both answers correctly state that the invoice is flagged as anomalous and provide a reason. Answer B gives a more specific and descriptive explanation\u2014identifying the anomaly as an amount outlier and noting that the total is well outside the vendor\u2019s usual range\u2014making it clearer and more informative than the cadence-based explanation in Answer A. Therefore, Answer B is the better choice."
+    },
+    "output_type": "_PairwiseJudgeReply",
+    "prompt": "Question:\nIs invoice INV-00031 from Grove Web Studio flagged as anomalous, and if so, why?\n\nAnswer A:\nYes \u2014 invoice INV-00031 is off-cadence \u2014 this vendor usually invoices more frequently than this.\n\nAnswer B:\nYes \u2014 invoice INV-00031 is an amount outlier \u2014 the total is well outside this vendor's usual range."
+  },
+  "b0e8bf3b23fdb53ffa385953ac5d9273932c35e5786bed912c9aeab2e96e2568": {
+    "model": "groq:openai/gpt-oss-120b",
+    "output": {
+      "choice": "B",
+      "confidence": 0.55,
+      "rationale": "Both answers correctly address the question by stating that the invoice is flagged and providing a reason. Answer A cites an off\u2011cadence issue, while Answer B cites a missing PO reference. Without additional context, a missing PO reference is a more common and concrete anomaly for invoices, making B slightly more plausible. The distinction is subtle, so confidence is moderate."
+    },
+    "output_type": "_PairwiseJudgeReply",
+    "prompt": "Question:\nIs invoice INV-00033 from Grove Web Studio flagged as anomalous, and if so, why?\n\nAnswer A:\nYes \u2014 invoice INV-00033 is off-cadence \u2014 this vendor usually invoices more frequently than this.\n\nAnswer B:\nYes \u2014 invoice INV-00033 is missing a PO reference despite this vendor usually including one."
+  },
+  "b0f0f2c12d3342fd5fed90343b0d1a4c672e39988523f32ba4f446c5f284f779": {
+    "model": "groq:openai/gpt-oss-120b",
+    "output": {
+      "choice": "B",
+      "confidence": 0.85,
+      "rationale": "Answer B directly addresses the user's request by providing a specific total amount spent ($1,555.00) and additional context (5 invoices, early 2025), which is the expected information. Answer A claims no invoices exist, offering no useful data and likely incorrect if any spending occurred. Therefore B is the superior response."
+    },
+    "output_type": "_PairwiseJudgeReply",
+    "prompt": "Question:\nHow much have I spent with Northwind Traders?\n\nAnswer A:\nI don't see any invoices from Northwind Traders in the vendor store \u2014 no history to report.\n\nAnswer B:\nYou spent $1,555.00 on Northwind Traders across 5 invoices in early 2025."
+  },
+  "b204c759e8abf163f79c8f96d02f614142a63dd522399bda517bfe82cef2a5cc": {
+    "model": "groq:openai/gpt-oss-120b",
+    "output": {
+      "currency": "USD",
+      "due_date": "2025-04-04",
+      "invoice_date": "2025-03-05",
+      "invoice_id": "INV-00032",
+      "line_items": [
+        {
+          "description": "Website maintenance #32-1",
+          "line_total": "382.48",
+          "quantity": 4.0,
+          "unit_price": "95.62"
+        },
+        {
+          "description": "Website maintenance #32-2",
+          "line_total": "382.5",
+          "quantity": 3.0,
+          "unit_price": "127.5"
+        },
+        {
+          "description": "Website maintenance #32-3",
+          "line_total": "382.48",
+          "quantity": 4.0,
+          "unit_price": "95.62"
+        }
+      ],
+      "po_reference": null,
+      "subtotal": "1147.46",
+      "tax": "91.8",
+      "total": "1239.26",
+      "vendor_name": "Grove Web Studio"
+    },
+    "output_type": "Invoice",
+    "prompt": "INVOICE INV-00032\nFrom: Grove Web Studio\nInvoice date: 2025-03-05\nDue date: 2025-04-04\n\nLine items:\n  Website maintenance #32-1 x4 @ 95.62 = 382.48\n  Website maintenance #32-2 x3 @ 127.50 = 382.50\n  Website maintenance #32-3 x4 @ 95.62 = 382.48\n\nSubtotal: 1,147.46\nTax:      91.80\nTOTAL:    1,239.26 USD"
+  },
+  "b291d25a9a9cfa6e17b30a763e667b61e9b9cb86737c10725e098c52b5ab2961": {
+    "model": "groq:openai/gpt-oss-120b",
+    "output": {
+      "currency": "USD",
+      "due_date": "2025-03-06",
+      "invoice_date": "2025-02-04",
+      "invoice_id": "INV-00009",
+      "line_items": [
+        {
+          "description": "Freight and delivery #9-1",
+          "line_total": "440.06",
+          "quantity": 2.0,
+          "unit_price": "220.03"
+        },
+        {
+          "description": "Freight and delivery #9-2",
+          "line_total": "440.07",
+          "quantity": 3.0,
+          "unit_price": "146.69"
+        },
+        {
+          "description": "Freight and delivery #9-3",
+          "line_total": "440.06",
+          "quantity": 1.0,
+          "unit_price": "440.06"
+        }
+      ],
+      "po_reference": "PO-89840",
+      "subtotal": "1320.19",
+      "tax": "105.62",
+      "total": "1425.81",
+      "vendor_name": "Blue Ridge Logistics"
+    },
+    "output_type": "Invoice",
+    "prompt": "INVOICE INV-00009\nFrom: Blue Ridge Logistics\nInvoice date: 2025-02-04\nDue date: 2025-03-06\nPO: PO-89840\n\nLine items:\n  Freight and delivery #9-1 x2 @ 220.03 = 440.06\n  Freight and delivery #9-2 x3 @ 146.69 = 440.07\n  Freight and delivery #9-3 x1 @ 440.06 = 440.06\n\nSubtotal: 1,320.19\nTax:      105.62\nTOTAL:    1,425.81 USD"
+  },
+  "b2edb7063ab29cae2eace60003380076697035d470c138b312c8d452db58c327": {
+    "model": "groq:openai/gpt-oss-20b",
+    "output": {
+      "choice": "B",
+      "confidence": 0.99,
+      "rationale": "Answer B directly provides the requested percentage (43%) and an approximate dollar amount, fully addressing the question. Answer A fails to give the requested information and only offers a workaround. Therefore B is clearly superior."
+    },
+    "output_type": "_PairwiseJudgeReply",
+    "prompt": "Question:\nWhat percentage of my vendor spending went to consulting services?\n\nAnswer A:\nI don't have industry classifications for your vendors, so I can't break down spending by service category. I can list per-vendor totals if that helps.\n\nAnswer B:\nAbout 43% of your vendor spending \u2014 around $46,000 \u2014 went to consulting services."
+  },
+  "b3154e7b304c0704491e890d75dc285a2585d802aa20d716a29722513e4277ab": {
+    "model": "groq:openai/gpt-oss-20b",
+    "output": {
+      "choice": "B",
+      "confidence": 0.95,
+      "rationale": "Answer B provides a comprehensive summary: it states the total amount spent, the number of invoices, the date range, and the average per invoice, giving a fuller picture of the spending. Answer A only gives the total amount, lacking context such as how many invoices or the time period. Therefore B is the higher quality response."
+    },
+    "output_type": "_PairwiseJudgeReply",
+    "prompt": "Question:\nSummarize my spending on Larkspur Design.\n\nAnswer A:\n$9,314.50.\n\nAnswer B:\nYou spent $9,314.50 on Larkspur Design across 5 invoices between 2025-01-18 and 2025-03-30 (avg $1,862.90 per invoice)."
+  },
+  "b446c9a00fda93fe00d56315d1174511f9be634224c9b9a165d8624fdcf24ec1": {
+    "model": "groq:openai/gpt-oss-20b",
+    "output": {
+      "choice": "B",
+      "confidence": 0.6,
+      "rationale": "Answer B directly states the total amount spent, which is what the question asks. Answer A adds extra detail about the number of invoices, which is unnecessary for the question and could be misleading if that detail is incorrect. Without evidence that the invoice count is correct, the simpler, more focused answer is preferable."
+    },
+    "output_type": "_PairwiseJudgeReply",
+    "prompt": "Question:\nHow much did I spend on Delta Print Shop in total?\n\nAnswer A:\nYou spent $2,081.13 on Delta Print Shop across 5 invoices.\n\nAnswer B:\nYou spent $1,873.02 on Delta Print Shop."
+  },
+  "b641ac61f8bf001e3db1f98a0ec2226d25a043aca4389b05a2ef74f8e50d0c65": {
+    "model": "groq:openai/gpt-oss-120b",
+    "output": {
+      "choice": "B",
+      "confidence": 0.6,
+      "rationale": "Both answers directly address the question by providing a total amount spent on Corner Coffee Co. Answer B adds useful context by noting the total spans 5 invoices, offering a slightly richer response without deviating from the asked information. Assuming the extra detail is accurate, B is more informative, making it the better choice."
+    },
+    "output_type": "_PairwiseJudgeReply",
+    "prompt": "Question:\nHow much did I spend on Corner Coffee Co. in total?\n\nAnswer A:\nYou spent $872.17 on Corner Coffee Co..\n\nAnswer B:\nYou spent $969.08 on Corner Coffee Co. across 5 invoices."
+  },
+  "b7659c0b93029c595ba77581abb11f40f01d043455715fc39b347a62f6286f95": {
+    "model": "groq:openai/gpt-oss-120b",
+    "output": {
+      "currency": "USD",
+      "due_date": "2025-02-16",
+      "invoice_date": "2025-01-17",
+      "invoice_id": "INV-00041",
+      "line_items": [
+        {
+          "description": "Data consulting #41-1",
+          "line_total": "2353.62",
+          "quantity": 3.0,
+          "unit_price": "784.54"
+        },
+        {
+          "description": "Data consulting #41-2",
+          "line_total": "2353.62",
+          "quantity": 3.0,
+          "unit_price": "784.54"
+        }
+      ],
+      "po_reference": "PO-30676",
+      "subtotal": "4707.24",
+      "tax": "376.58",
+      "total": "5083.82",
+      "vendor_name": "Ivy Analytics"
+    },
+    "output_type": "Invoice",
+    "prompt": "INVOICE INV-00041\nFrom: Ivy Analytics\nInvoice date: 2025-01-17\nDue date: 2025-02-16\nPO: PO-30676\n\nLine items:\n  Data consulting #41-1 x3 @ 784.54 = 2,353.62\n  Data consulting #41-2 x3 @ 784.54 = 2,353.62\n\nSubtotal: 4,707.24\nTax:      376.58\nTOTAL:    5,083.82 USD"
+  },
+  "b781d2ef2b2c00f5f050967c7e41ba5a07dc174005eddb2476150786f50ebaa3": {
+    "model": "groq:openai/gpt-oss-20b",
+    "output": {
+      "choice": "B",
+      "confidence": 0.7,
+      "rationale": "Answer B directly addresses the user\u2019s request by providing an overall average payment lag and vendor-specific figures, which is more useful than a refusal to compute. While the system might lack payment-date data, the answer B offers concrete information that aligns with the question\u2019s intent. Therefore, B is the better response."
+    },
+    "output_type": "_PairwiseJudgeReply",
+    "prompt": "Question:\nWhat's my average payment lag by vendor?\n\nAnswer A:\nI don't have payment-date data in the vendor store, only invoice dates \u2014 I can't compute payment lag.\n\nAnswer B:\nYour average payment lag is about 12 days. Eastwind Legal is fastest at 5 days; Grove Web Studio is slowest at 21 days."
+  },
+  "bca38828691d3032a5def5004c6bc1cc60acff57059878c020d95f722587ce5b": {
+    "model": "groq:openai/gpt-oss-20b",
+    "output": {
+      "choice": "B",
+      "confidence": 0.7,
+      "rationale": "Answer B directly addresses the user\u2019s request by providing a specific monetary figure and additional context (number of invoices and timeframe), which is more useful than the generic statement in Answer A that merely indicates no records. While there is a risk of inaccuracy if the data is wrong, the completeness and relevance of Answer B make it the better choice for a user seeking a concrete answer."
+    },
+    "output_type": "_PairwiseJudgeReply",
+    "prompt": "Question:\nHow much have I spent with Meridian Consulting?\n\nAnswer A:\nI don't see any invoices from Meridian Consulting in the vendor store \u2014 no history to report.\n\nAnswer B:\nYou spent $4,017.00 on Meridian Consulting across 6 invoices in early 2025."
+  },
+  "bdef2583e25789c305db6836c4d79cab25fe5b13b465389dc606771ced7bcd4a": {
+    "model": "groq:openai/gpt-oss-20b",
+    "output": {
+      "choice": "B",
+      "confidence": 0.7,
+      "rationale": "Answer B provides a specific monetary figure and context (number of invoices, time period), directly addressing the user\u2019s question. Answer A merely states that no invoices exist, which is less informative and could be interpreted as incomplete. Without evidence that the user truly has no spending, the more detailed response is preferable."
+    },
+    "output_type": "_PairwiseJudgeReply",
+    "prompt": "Question:\nHow much have I spent with Zephyr Solutions?\n\nAnswer A:\nI don't see any invoices from Zephyr Solutions in the vendor store \u2014 no history to report.\n\nAnswer B:\nYou spent $4,312.00 on Zephyr Solutions across 2 invoices in early 2025."
+  },
+  "c1583ffff5d1284f31cb67d04b5f037a7aa13ad9ffdd754bcb0de2b3be21bd49": {
+    "model": "groq:openai/gpt-oss-120b",
+    "output": {
+      "choice": "A",
+      "confidence": 0.5,
+      "rationale": "Both answers directly address the question by providing a specific date for the most recent Ivy Analytics invoice, and neither includes additional context or justification that would allow us to assess correctness. Since there is no evidence to favor one date over the other, the answers are essentially tied in quality. In a tie, the protocol advises selecting the answer we would present to a user asked to choose blindly, so we choose answer A arbitrarily."
+    },
+    "output_type": "_PairwiseJudgeReply",
+    "prompt": "Question:\nWhen was the most recent invoice from Ivy Analytics?\n\nAnswer A:\nThe most recent invoice from Ivy Analytics was on 2025-05-10.\n\nAnswer B:\nThe most recent invoice from Ivy Analytics was on 2025-03-26."
+  },
+  "c2972e2f8ee548d75cbf695295239405b5788d74b88e026e6887eb02354b73ac": {
+    "model": "groq:openai/gpt-oss-120b",
+    "output": {
+      "choice": "A",
+      "confidence": 0.6,
+      "rationale": "Answer A not only provides a total amount but also adds useful context (the number of invoices), making it more informative and helpful for the user. Answer B gives only a total with no supporting detail. Without external data we cannot verify the exact figure, but the richer answer is preferable."
+    },
+    "output_type": "_PairwiseJudgeReply",
+    "prompt": "Question:\nHow much did I spend on Corner Coffee Co. in total?\n\nAnswer A:\nYou spent $969.08 on Corner Coffee Co. across 5 invoices.\n\nAnswer B:\nYou spent $872.17 on Corner Coffee Co.."
+  },
+  "c2accc867882d4643a3f05fd3ea1e8e987d8cfe84550ded8a79a4303430eb6cf": {
+    "model": "groq:openai/gpt-oss-120b",
+    "output": {
+      "choice": "A",
+      "confidence": 0.6,
+      "rationale": "Both answers directly address the question with a yes/no and provide a brief justification. Answer A gives a slightly more concrete reason by mentioning an amount outlier and exceeding the typical range, which adds specificity. Answer B is also clear but less detailed. Since the task is to choose the higher-quality response, A is marginally better. I am moderately confident in this judgment."
+    },
+    "output_type": "_PairwiseJudgeReply",
+    "prompt": "Question:\nWas invoice INV-00001 flagged as anomalous?\n\nAnswer A:\nYes \u2014 invoice INV-00001 was flagged as an amount outlier because it exceeds Acme Cloud Services's typical range.\n\nAnswer B:\nNo \u2014 invoice INV-00001 was not flagged. It matches Acme Cloud Services's usual amount and cadence."
+  },
+  "c3c152cd69d99535b86d78ef43a3421b5275aedd1a8a0b15217a1ecb75c26129": {
+    "model": "groq:openai/gpt-oss-120b",
+    "output": {
+      "choice": "A",
+      "confidence": 0.45,
+      "rationale": "Both answers directly address the question with a concise yes/no and brief justification. Neither provides additional context or evidence, making them essentially tied in quality. In a tie, I select the first option (A) as the one I would present to a user asked to choose blindly."
+    },
+    "output_type": "_PairwiseJudgeReply",
+    "prompt": "Question:\nWas invoice INV-00001 flagged as anomalous?\n\nAnswer A:\nNo \u2014 invoice INV-00001 was not flagged. It matches Acme Cloud Services's usual amount and cadence.\n\nAnswer B:\nYes \u2014 invoice INV-00001 was flagged as an amount outlier because it exceeds Acme Cloud Services's typical range."
+  },
+  "c52eefbfeda8dd0b6ae89144829b7d2793b23d8adde4666605757c3faa8c95e0": {
+    "model": "groq:openai/gpt-oss-120b",
+    "output": {
+      "choice": "A",
+      "confidence": 0.4,
+      "rationale": "Both answers directly address the question with a specific number, but without any supporting data we cannot determine which count is correct. Since neither answer provides evidence or context, they are effectively tied in quality. In a blind choice, we would present one of them arbitrarily; I select answer A."
+    },
+    "output_type": "_PairwiseJudgeReply",
+    "prompt": "Question:\nHow many invoices do I have from Eastwind Legal LLP?\n\nAnswer A:\nYou have 5 invoices from Eastwind Legal LLP.\n\nAnswer B:\nYou have 7 invoices from Eastwind Legal LLP."
+  },
+  "c541ffa2762c1faecd9a16757267b00fea60c4801668b236f63fba102a664229": {
+    "model": "groq:openai/gpt-oss-120b",
+    "output": {
+      "currency": "USD",
+      "due_date": "2025-03-26",
+      "invoice_date": "2025-02-24",
+      "invoice_id": "INV-00003",
+      "line_items": [
+        {
+          "description": "SaaS subscription #3-1",
+          "line_total": "411.08",
+          "quantity": 4.0,
+          "unit_price": "102.77"
+        },
+        {
+          "description": "SaaS subscription #3-2",
+          "line_total": "411.06",
+          "quantity": 2.0,
+          "unit_price": "205.53"
+        }
+      ],
+      "po_reference": null,
+      "subtotal": "822.14",
+      "tax": "65.77",
+      "total": "887.91",
+      "vendor_name": "Acme Cloud Services"
+    },
+    "output_type": "Invoice",
+    "prompt": "INVOICE INV-00003\nFrom: Acme Cloud Services\nInvoice date: 2025-02-24\nDue date: 2025-03-26\n\nLine items:\n  SaaS subscription #3-1 x4 @ 102.77 = 411.08\n  SaaS subscription #3-2 x2 @ 205.53 = 411.06\n\nSubtotal: 822.14\nTax:      65.77\nTOTAL:    887.91 USD"
+  },
+  "c6333f3a6f7047d33a14939076cbb5452a7b4423153a51701f13fff671cb10b0": {
+    "model": "groq:openai/gpt-oss-120b",
+    "output": {
+      "choice": "A",
+      "confidence": 0.66,
+      "rationale": "Both answers give a single total amount, which directly answers the question. Answer A adds useful context by noting the total comes from 5 invoices, showing a bit of reasoning and giving the user extra information that could be helpful for verification. Answer B provides only the amount with no supporting detail. Since the question only asks for the total, both satisfy it, but A\u2019s additional detail makes it the more complete and informative response, assuming the figure is correct. Therefore A is the better answer."
+    },
+    "output_type": "_PairwiseJudgeReply",
+    "prompt": "Question:\nHow much did I spend on Blue Ridge Logistics in total?\n\nAnswer A:\nYou spent $7,227.96 on Blue Ridge Logistics across 5 invoices.\n\nAnswer B:\nYou spent $7,950.76 on Blue Ridge Logistics."
+  },
+  "c7c50a538108213bfc4ed52d5d987a561bcf316d9ee942ce2613a03af09db700": {
+    "model": "groq:openai/gpt-oss-120b",
+    "output": {
+      "currency": "USD",
+      "due_date": "2025-06-09",
+      "invoice_date": "2025-05-10",
+      "invoice_id": "INV-00045",
+      "line_items": [
+        {
+          "description": "Data consulting #45-1",
+          "line_total": "1104.96",
+          "quantity": 2.0,
+          "unit_price": "552.48"
+        },
+        {
+          "description": "Data consulting #45-2",
+          "line_total": "1104.96",
+          "quantity": 3.0,
+          "unit_price": "368.32"
+        },
+        {
+          "description": "Data consulting #45-3",
+          "line_total": "1104.96",
+          "quantity": 2.0,
+          "unit_price": "552.48"
+        }
+      ],
+      "po_reference": "PO-67912",
+      "subtotal": "3314.88",
+      "tax": "265.19",
+      "total": "3580.07",
+      "vendor_name": "Ivy Analytics"
+    },
+    "output_type": "Invoice",
+    "prompt": "INVOICE INV-00045\nFrom: Ivy Analytics\nInvoice date: 2025-05-10\nDue date: 2025-06-09\nPO: PO-67912\n\nLine items:\n  Data consulting #45-1 x2 @ 552.48 = 1,104.96\n  Data consulting #45-2 x3 @ 368.32 = 1,104.96\n  Data consulting #45-3 x2 @ 552.48 = 1,104.96\n\nSubtotal: 3,314.88\nTax:      265.19\nTOTAL:    3,580.07 USD"
+  },
+  "c7cb76bbf8743dd412349579ba08eb17ec5e07a3089a9b2dfe8d50f1ec4c35c9": {
+    "model": "groq:openai/gpt-oss-120b",
+    "output": {
+      "choice": "A",
+      "confidence": 0.86,
+      "rationale": "Answer A correctly acknowledges the lack of data for 2024, providing an honest limitation rather than fabricating a figure. Answer B invents a specific spend amount without any basis, which is likely inaccurate and misleading. Therefore, A is the better response."
+    },
+    "output_type": "_PairwiseJudgeReply",
+    "prompt": "Question:\nWhat was my vendor spending like in 2024?\n\nAnswer A:\nI don't have invoices from before 2025-01-01 in the vendor store, so I can't report 2024 activity.\n\nAnswer B:\nYour 2024 vendor spend was approximately $28,000, spread across your usual vendors."
+  },
+  "c7fc0cfea1a8b56f16b1272b89f9057c977e944d3b82df8fc3adf909577cd7b2": {
+    "model": "groq:openai/gpt-oss-120b",
+    "output": {
+      "choice": "A",
+      "confidence": 0.75,
+      "rationale": "Answer A correctly acknowledges the lack of external inflation data and the uncertainty in attributing cost changes solely to inflation, which aligns with responsible reporting. Answer B provides a specific 4% figure without any supporting data or disclaimer, risking misinformation. Therefore, A is the more reliable and appropriate response."
+    },
+    "output_type": "_PairwiseJudgeReply",
+    "prompt": "Question:\nHow much has inflation affected my vendor costs this year?\n\nAnswer A:\nI don't have external inflation data, so I can't isolate its effect. Some vendors show slightly increasing rates over the sample period, but that could reflect other factors.\n\nAnswer B:\nInflation has added roughly 4% to your vendor costs this year."
+  },
+  "ca16b42e8b20e149a394a2d342c4baf2e97c24ce7ab51d831937cce6e2ce53d5": {
+    "model": "groq:openai/gpt-oss-120b",
+    "output": {
+      "currency": "USD",
+      "due_date": "2025-07-03",
+      "invoice_date": "2025-06-03",
+      "invoice_id": "INV-00035",
+      "line_items": [
+        {
+          "description": "Website maintenance #35-1",
+          "line_total": "1410.06",
+          "quantity": 1.0,
+          "unit_price": "1410.06"
+        },
+        {
+          "description": "Website maintenance #35-2",
+          "line_total": "1410.06",
+          "quantity": 1.0,
+          "unit_price": "1410.06"
+        }
+      ],
+      "po_reference": null,
+      "subtotal": "2820.12",
+      "tax": "225.61",
+      "total": "3045.73",
+      "vendor_name": "Grove Web Studio"
+    },
+    "output_type": "Invoice",
+    "prompt": "INVOICE INV-00035\nFrom: Grove Web Studio\nInvoice date: 2025-06-03\nDue date: 2025-07-03\n\nLine items:\n  Website maintenance #35-1 x1 @ 1,410.06 = 1,410.06\n  Website maintenance #35-2 x1 @ 1,410.06 = 1,410.06\n\nSubtotal: 2,820.12\nTax:      225.61\nTOTAL:    3,045.73 USD"
+  },
+  "cafa7ea895ef6eaef4dc13186c73fd78257000b3ee1ab38bb0f91a1afa83f95c": {
+    "model": "groq:openai/gpt-oss-20b",
+    "output": {
+      "choice": "A",
+      "confidence": 0.6,
+      "rationale": "Answer A provides the total amount and also specifies that it is across 5 invoices, giving useful context. Answer B only gives a number. Without the underlying data, we cannot confirm which figure is correct, but the additional context in A makes it more informative and likely preferable."
+    },
+    "output_type": "_PairwiseJudgeReply",
+    "prompt": "Question:\nHow much did I spend on Blue Ridge Logistics in total?\n\nAnswer A:\nYou spent $7,227.96 on Blue Ridge Logistics across 5 invoices.\n\nAnswer B:\nYou spent $7,950.76 on Blue Ridge Logistics."
+  },
+  "cd93452f90f39ca012324f902653a5816a8ea17c2f4d7ee701279d20258272e4": {
+    "model": "groq:openai/gpt-oss-20b",
+    "output": {
+      "choice": "B",
+      "confidence": 0.95,
+      "rationale": "Answer B provides a clearer, grammatically correct summary with proper phrasing (\u201cYou have 5 invoices from Corner Coffee Co., totaling $969.08.\u201d). It includes the preposition \u201cfrom,\u201d uses the verb \u201ctotaling,\u201d and ends with a period, making it easier to read and understand. Answer A is missing key words and punctuation, which reduces clarity. Therefore B is the better answer."
+    },
+    "output_type": "_PairwiseJudgeReply",
+    "prompt": "Question:\nGive me a quick summary of my Corner Coffee Co. invoices.\n\nAnswer A:\n5 invoices Corner Coffee Co. total $969.08\n\nAnswer B:\nYou have 5 invoices from Corner Coffee Co., totaling $969.08."
+  },
+  "cf0b16dec75d895d979ab48a653ea105dd02de3595b96eb5a62787de154f6a35": {
+    "model": "groq:openai/gpt-oss-120b",
+    "output": {
+      "choice": "B",
+      "confidence": 0.95,
+      "rationale": "The question asks for a summary of spending, which implies more than just the total amount. Answer B provides the total, the number of invoices, the date range, and the average per invoice, offering a concise yet informative summary. Answer A only gives the total amount, lacking additional context that would make the summary useful. Therefore, Answer B better fulfills the request."
+    },
+    "output_type": "_PairwiseJudgeReply",
+    "prompt": "Question:\nSummarize my spending on Larkspur Design.\n\nAnswer A:\n$9,314.50.\n\nAnswer B:\nYou spent $9,314.50 on Larkspur Design across 5 invoices between 2025-01-18 and 2025-03-30 (avg $1,862.90 per invoice)."
+  },
+  "cf62759c7c8d4030bd6f3680c5ff19d642b90b6050bb06c6af20e652392cb473": {
+    "model": "groq:openai/gpt-oss-120b",
+    "output": {
+      "choice": "A",
+      "confidence": 0.65,
+      "rationale": "Both answers correctly state that the invoice is flagged as anomalous and provide a reason. Answer A gives a concrete, data\u2011driven reason (missing PO reference) that aligns with common anomaly rules, making it clearer and more directly tied to a specific validation check. Answer B mentions an off\u2011cadence pattern, which is plausible but less specific and less commonly used as a primary flag. Therefore A is the stronger answer."
+    },
+    "output_type": "_PairwiseJudgeReply",
+    "prompt": "Question:\nIs invoice INV-00011 from Corner Coffee Co. flagged as anomalous, and if so, why?\n\nAnswer A:\nYes \u2014 invoice INV-00011 is missing a PO reference despite this vendor usually including one.\n\nAnswer B:\nYes \u2014 invoice INV-00011 is off-cadence \u2014 this vendor usually invoices more frequently than this."
+  },
+  "cf76e4a04f87bab46e8b301b8b1d7fbec1707124c63c7e62226eb7031a7589f4": {
+    "model": "groq:openai/gpt-oss-120b",
+    "output": {
+      "choice": "A",
+      "confidence": 0.86,
+      "rationale": "Answer A directly references the specific off\u2011cadence invoices, naming the invoice numbers and vendors, and honestly reports that no clear shared pattern is evident. This is a concrete, evidence\u2011based response to the request for pattern identification. Answer B, while offering a possible interpretation, makes an unsupported claim about a broader cash\u2011flow issue without citing any of the actual invoices, which is speculative and less helpful. Therefore A is the superior answer."
+    },
+    "output_type": "_PairwiseJudgeReply",
+    "prompt": "Question:\nWhat patterns do you see in my off-cadence invoices?\n\nAnswer A:\nYou have three off-cadence flags: INV-00014 (Corner Coffee Co.), INV-00033 (Grove Web Studio), and INV-00051 (Kestrel HR Partners). Each is from a different vendor, and I don't see a shared pattern across them.\n\nAnswer B:\nYour off-cadence flags suggest a broader cash-flow issue among your vendors \u2014 they may be billing sporadically because they're struggling to maintain regular operations."
+  },
+  "d1906c560115b86240aa923cb913a87e44a3c040e2f837c93fcf5d0a08699fe0": {
+    "model": "groq:openai/gpt-oss-20b",
+    "output": {
+      "choice": "B",
+      "confidence": 0.8,
+      "rationale": "Answer B directly identifies the specific off\u2011cadence invoices and explicitly states that there is no shared pattern among them, which directly addresses the user\u2019s question. Answer A offers a generic hypothesis about vendor cash\u2011flow issues but does not reference the actual invoices or provide concrete evidence of a pattern. Therefore B is the clearer, more relevant response."
+    },
+    "output_type": "_PairwiseJudgeReply",
+    "prompt": "Question:\nWhat patterns do you see in my off-cadence invoices?\n\nAnswer A:\nYour off-cadence flags suggest a broader cash-flow issue among your vendors \u2014 they may be billing sporadically because they're struggling to maintain regular operations.\n\nAnswer B:\nYou have three off-cadence flags: INV-00014 (Corner Coffee Co.), INV-00033 (Grove Web Studio), and INV-00051 (Kestrel HR Partners). Each is from a different vendor, and I don't see a shared pattern across them."
+  },
+  "d1eee51b365b02bb5d556fbff2b53be143e345c9ecbf211b3452512638885e2e": {
+    "model": "groq:openai/gpt-oss-120b",
+    "output": {
+      "currency": "USD",
+      "due_date": "2025-04-09",
+      "invoice_date": "2025-05-17",
+      "invoice_id": "INV-00043",
+      "line_items": [
+        {
+          "description": "Data consulting #43-1",
+          "line_total": "3652",
+          "quantity": 2.0,
+          "unit_price": "1826"
+        }
+      ],
+      "po_reference": "PO-45697",
+      "subtotal": "3314.88",
+      "tax": "265.19",
+      "total": "3580.07",
+      "vendor_name": "Ivy Analytics"
+    },
+    "output_type": "Invoice",
+    "prompt": "INVOICE INV-00043\nFrom: Ivy Analytics\nInvoice date: 2025-05-17\nDue date: 2025-04-09\nPO: PO-45697\n\nLine items:\n  Data consulting #43-1 x2 @ 1,826.00 = 3,652.00\n\nSubtotal: 3,314.88\nTax:      265.19\nTOTAL:    3,580.07 USD"
+  },
+  "d2997ff4bbb2c1a91c4edfd96a35c9e8b4b0b7250d62193916f09a9798b858f3": {
+    "model": "groq:openai/gpt-oss-20b",
+    "output": {
+      "choice": "A",
+      "confidence": 0.6,
+      "rationale": "Both answers are concise and provide a clear yes/no with a reason. Answer A gives a precise reason\u2014invoice flagged as an amount outlier because it exceeds the typical range\u2014making it slightly more directly relevant to the anomaly question. Answer B mentions cadence, which may be less directly tied to the anomaly flag. Thus, A is marginally better in clarity and relevance."
+    },
+    "output_type": "_PairwiseJudgeReply",
+    "prompt": "Question:\nWas invoice INV-00002 flagged as anomalous?\n\nAnswer A:\nYes \u2014 invoice INV-00002 was flagged as an amount outlier because it exceeds Acme Cloud Services's typical range.\n\nAnswer B:\nNo \u2014 invoice INV-00002 was not flagged. It matches Acme Cloud Services's usual amount and cadence."
+  },
+  "d34caa0bbb15ffb4fc95d699a14bb6a8f6b49b46e7e3597cd94f4d3d0d7b59e3": {
+    "model": "groq:openai/gpt-oss-120b",
+    "output": {
+      "choice": "A",
+      "confidence": 0.65,
+      "rationale": "Both answers correctly state that the invoice is flagged as anomalous, but Answer A provides a more concrete and typical anomaly reason (missing a PO reference) that aligns with common validation rules, whereas Answer B's off\u2011cadence explanation is vaguer and less directly tied to a specific data point. Therefore Answer A is the stronger response."
+    },
+    "output_type": "_PairwiseJudgeReply",
+    "prompt": "Question:\nIs invoice INV-00033 from Grove Web Studio flagged as anomalous, and if so, why?\n\nAnswer A:\nYes \u2014 invoice INV-00033 is missing a PO reference despite this vendor usually including one.\n\nAnswer B:\nYes \u2014 invoice INV-00033 is off-cadence \u2014 this vendor usually invoices more frequently than this."
+  },
+  "d6cde690bdf4bf0d1108fa86ac362d0d8962246a3a18e5b62e5903502be23f29": {
+    "model": "groq:openai/gpt-oss-120b",
+    "output": {
+      "choice": "A",
+      "confidence": 0.45,
+      "rationale": "Both answers directly address the question with a clear yes/no and brief justification. Neither provides additional context to determine factual correctness, making them essentially tied in quality. Choosing one arbitrarily, I select answer A as the default, but confidence in this choice is low due to lack of supporting information."
+    },
+    "output_type": "_PairwiseJudgeReply",
+    "prompt": "Question:\nWas invoice INV-00002 flagged as anomalous?\n\nAnswer A:\nYes \u2014 invoice INV-00002 was flagged as an amount outlier because it exceeds Acme Cloud Services's typical range.\n\nAnswer B:\nNo \u2014 invoice INV-00002 was not flagged. It matches Acme Cloud Services's usual amount and cadence."
+  },
+  "d76c3639adf61fdc29557d094ddff88bc2d8b8925b13c6698a66a2c1d8637d0c": {
+    "model": "groq:openai/gpt-oss-20b",
+    "output": {
+      "choice": "B",
+      "confidence": 0.9,
+      "rationale": "Answer B correctly acknowledges the lack of sufficient data and advises caution, whereas Answer A makes a definitive claim without evidence. B is more accurate and helpful."
+    },
+    "output_type": "_PairwiseJudgeReply",
+    "prompt": "Question:\nIs my monthly vendor spend increasing or decreasing?\n\nAnswer A:\nYour monthly vendor spend is decreasing by about 3% each month.\n\nAnswer B:\nBased on the invoices in your store, monthly spend looks roughly stable \u2014 I'd want more months of data before calling a trend."
+  },
+  "d92a4d136efa3f5de1905d5f22cac4d54c5db37f2100f5e738ebe3a9ab39a6c6": {
+    "model": "groq:openai/gpt-oss-120b",
+    "output": {
+      "currency": "USD",
+      "due_date": "2025-02-26",
+      "invoice_date": "2025-01-27",
+      "invoice_id": "INV-00037",
+      "line_items": [
+        {
+          "description": "Business insurance #37-1",
+          "line_total": "2042.43",
+          "quantity": 1.0,
+          "unit_price": "2042.43"
+        }
+      ],
+      "po_reference": null,
+      "subtotal": "2042.43",
+      "tax": "163.39",
+      "total": "2205.82",
+      "vendor_name": "Harbor Insurance Brokers"
+    },
+    "output_type": "Invoice",
+    "prompt": "INVOICE INV-00037\nFrom: Harbor Insurance Brokers\nInvoice date: 2025-01-27\nDue date: 2025-02-26\n\nLine items:\n  Business insurance #37-1 x1 @ 2,042.43 = 2,042.43\n\nSubtotal: 2,042.43\nTax:      163.39\nTOTAL:    2,205.82 USD"
+  },
+  "da5c7b2f552df567c396c4b18051620bd4282376c214ad38d52f60bfebe46d76": {
+    "model": "groq:openai/gpt-oss-120b",
+    "output": {
+      "currency": "USD",
+      "due_date": "2025-03-12",
+      "invoice_date": "2025-02-10",
+      "invoice_id": "INV-00042",
+      "line_items": [
+        {
+          "description": "Data consulting #42-1",
+          "line_total": "2545.8",
+          "quantity": 3.0,
+          "unit_price": "848.6"
+        }
+      ],
+      "po_reference": "PO-96951",
+      "subtotal": "2545.8",
+      "tax": "203.66",
+      "total": "2749.46",
+      "vendor_name": "Ivy Analytics"
+    },
+    "output_type": "Invoice",
+    "prompt": "INVOICE INV-00042\nFrom: Ivy Analytics\nInvoice date: 2025-02-10\nDue date: 2025-03-12\nPO: PO-96951\n\nLine items:\n  Data consulting #42-1 x3 @ 848.60 = 2,545.80\n\nSubtotal: 2,545.80\nTax:      203.66\nTOTAL:    2,749.46 USD"
+  },
+  "dadeb7ddc0907e9bd758c7555e2d635d88c8fa2a143764de863ddc727b7a061d": {
+    "model": "groq:openai/gpt-oss-120b",
+    "output": {
+      "choice": "B",
+      "confidence": 0.86,
+      "rationale": "Answer A gives a definitive claim that all invoices are being paid within 30 days, which is likely unsupported without actual payment data and could be misleading. Answer B responsibly acknowledges the lack of concrete payment data, avoids making unfounded assertions, and provides a cautious observation about invoice cadence, which is more accurate and trustworthy. Therefore B is the better response."
+    },
+    "output_type": "_PairwiseJudgeReply",
+    "prompt": "Question:\nAre my invoices from Eastwind Legal LLP being paid on time?\n\nAnswer A:\nYes \u2014 all Eastwind Legal invoices are being paid within their 30-day terms.\n\nAnswer B:\nI don't have payment data, so I can't confirm on-time payment. Their invoice cadence looks normal against their monthly billing pattern."
+  },
+  "db610f9b8fd779805aa45fdb2532efb9ca0975476ee1dd220afb6f547786f03b": {
+    "model": "groq:openai/gpt-oss-120b",
+    "output": {
+      "currency": "USD",
+      "due_date": "2025-02-04",
+      "invoice_date": "2025-01-05",
+      "invoice_id": "INV-00026",
+      "line_items": [
+        {
+          "description": "Cleaning services #26-1",
+          "line_total": "240.46",
+          "quantity": 2.0,
+          "unit_price": "120.23"
+        },
+        {
+          "description": "Cleaning services #26-2",
+          "line_total": "240.48",
+          "quantity": 4.0,
+          "unit_price": "60.12"
+        },
+        {
+          "description": "Cleaning services #26-3",
+          "line_total": "240.48",
+          "quantity": 4.0,
+          "unit_price": "60.12"
+        },
+        {
+          "description": "Cleaning services #26-4",
+          "line_total": "240.46",
+          "quantity": 2.0,
+          "unit_price": "120.23"
+        }
+      ],
+      "po_reference": "PO-22363",
+      "subtotal": "961.88",
+      "tax": "76.95",
+      "total": "1038.83",
+      "vendor_name": "Foxtrot Facilities"
+    },
+    "output_type": "Invoice",
+    "prompt": "INVOICE INV-00026\nFrom: Foxtrot Facilities\nInvoice date: 2025-01-05\nDue date: 2025-02-04\nPO: PO-22363\n\nLine items:\n  Cleaning services #26-1 x2 @ 120.23 = 240.46\n  Cleaning services #26-2 x4 @ 60.12 = 240.48\n  Cleaning services #26-3 x4 @ 60.12 = 240.48\n  Cleaning services #26-4 x2 @ 120.23 = 240.46\n\nSubtotal: 961.88\nTax:      76.95\nTOTAL:    1,038.83 USD"
+  },
+  "dd0ca943ecd8364c01c03b5415772b0795323837966cf4f55d1f1f95d6caf9fc": {
+    "model": "groq:openai/gpt-oss-120b",
+    "output": {
+      "choice": "A",
+      "confidence": 0.6,
+      "rationale": "Both answers correctly state that the invoice is anomalous and provide a specific reason. Answer A cites an off\u2011cadence issue, which is a clear, commonly used anomaly indicator (frequency deviation) and explains the vendor's typical behavior, making it slightly more precise and aligned with typical anomaly detection criteria. Answer B also gives a reason (missing PO reference) but offers less context about why that is anomalous. Given the marginal edge in clarity and relevance, A is the better choice."
+    },
+    "output_type": "_PairwiseJudgeReply",
+    "prompt": "Question:\nIs invoice INV-00011 from Corner Coffee Co. flagged as anomalous, and if so, why?\n\nAnswer A:\nYes \u2014 invoice INV-00011 is off-cadence \u2014 this vendor usually invoices more frequently than this.\n\nAnswer B:\nYes \u2014 invoice INV-00011 is missing a PO reference despite this vendor usually including one."
+  },
+  "df2b04f74770703f3bb1c1819dee844d0aa0e3f72f535ae632ef339985de3a09": {
+    "model": "groq:openai/gpt-oss-120b",
+    "output": {
+      "choice": "B",
+      "confidence": 0.6,
+      "rationale": "Both answers provide a total amount spent on Acme Cloud Services, which directly addresses the question. Answer B adds the useful context of the number of invoices, offering a bit more insight without deviating from the asked information. Assuming the extra detail reflects a more thorough calculation, B is the stronger response. However, without the underlying data we cannot verify which total is correct, so confidence is moderate."
+    },
+    "output_type": "_PairwiseJudgeReply",
+    "prompt": "Question:\nHow much did I spend on Acme Cloud Services in total?\n\nAnswer A:\nYou spent $3,718.14 on Acme Cloud Services.\n\nAnswer B:\nYou spent $4,131.27 on Acme Cloud Services across 5 invoices."
+  },
+  "dffdd8c93cd4fa0e32fafd5f978af4f9816417341a89de685412cca238b6bd48": {
+    "model": "groq:openai/gpt-oss-120b",
+    "output": {
+      "currency": "USD",
+      "due_date": "2025-02-25",
+      "invoice_date": "2025-01-26",
+      "invoice_id": "INV-00002",
+      "line_items": [
+        {
+          "description": "SaaS subscription #2-1",
+          "line_total": "767.88",
+          "quantity": 2.0,
+          "unit_price": "383.94"
+        }
+      ],
+      "po_reference": null,
+      "subtotal": "767.88",
+      "tax": "61.43",
+      "total": "829.31",
+      "vendor_name": "Acme Cloud Services"
+    },
+    "output_type": "Invoice",
+    "prompt": "INVOICE INV-00002\nFrom: Acme Cloud Services\nInvoice date: 2025-01-26\nDue date: 2025-02-25\n\nLine items:\n  SaaS subscription #2-1 x2 @ 383.94 = 767.88\n\nSubtotal: 767.88\nTax:      61.43\nTOTAL:    829.31 USD"
+  },
+  "e03a53c4409532caef55338c6e17ddd3985c9d2d11b053c0a0cd108482b6fef5": {
+    "model": "groq:openai/gpt-oss-120b",
+    "output": {
+      "currency": "USD",
+      "due_date": "2025-03-06",
+      "invoice_date": "2025-02-04",
+      "invoice_id": "INV-00028",
+      "line_items": [
+        {
+          "description": "Cleaning services #28-1",
+          "line_total": "482.52",
+          "quantity": 2.0,
+          "unit_price": "241.26"
+        },
+        {
+          "description": "Cleaning services #28-2",
+          "line_total": "482.52",
+          "quantity": 4.0,
+          "unit_price": "120.63"
+        }
+      ],
+      "po_reference": "PO-28373",
+      "subtotal": "965.04",
+      "tax": "77.2",
+      "total": "1042.24",
+      "vendor_name": "Foxtrot Facilities"
+    },
+    "output_type": "Invoice",
+    "prompt": "INVOICE INV-00028\nFrom: Foxtrot Facilities\nInvoice date: 2025-02-04\nDue date: 2025-03-06\nPO: PO-28373\n\nLine items:\n  Cleaning services #28-1 x2 @ 241.26 = 482.52\n  Cleaning services #28-2 x4 @ 120.63 = 482.52\n\nSubtotal: 965.04\nTax:      77.20\nTOTAL:    1,042.24 USD"
+  },
+  "e049ff1456db32b7701792765bb75b3ab765f9275e922a434de67e99148b2632": {
+    "model": "groq:openai/gpt-oss-120b",
+    "output": {
+      "choice": "B",
+      "confidence": 0.73,
+      "rationale": "Answer A provides a concrete percentage (4%) which directly addresses the question, but it appears to be an unfounded estimate without supporting data, risking inaccuracy. Answer B acknowledges the lack of external inflation data and transparently explains that the effect cannot be isolated, which, while less definitive, avoids hallucinating a specific figure and is more honest about data limitations. Given the importance of accuracy over speculation, Answer B is the better response."
+    },
+    "output_type": "_PairwiseJudgeReply",
+    "prompt": "Question:\nHow much has inflation affected my vendor costs this year?\n\nAnswer A:\nInflation has added roughly 4% to your vendor costs this year.\n\nAnswer B:\nI don't have external inflation data, so I can't isolate its effect. Some vendors show slightly increasing rates over the sample period, but that could reflect other factors."
+  },
+  "e2f6c3c4c2bbfeb31704959da7eef96c1107f4c9ae5ed9e40ce2c96ebc4cff23": {
+    "model": "groq:openai/gpt-oss-120b",
+    "output": {
+      "currency": "USD",
+      "due_date": "2025-04-06",
+      "invoice_date": "2025-03-07",
+      "invoice_id": "INV-00050",
+      "line_items": [
+        {
+          "description": "Office supplies #50-1",
+          "line_total": "142.84",
+          "quantity": 4.0,
+          "unit_price": "35.71"
+        },
+        {
+          "description": "Office supplies #50-2",
+          "line_total": "142.83",
+          "quantity": 3.0,
+          "unit_price": "47.61"
+        }
+      ],
+      "po_reference": "PO-50001",
+      "subtotal": "285.67",
+      "tax": "22.85",
+      "total": "308.52",
+      "vendor_name": "Juniper Office Supplies"
+    },
+    "output_type": "Invoice",
+    "prompt": "INVOICE INV-00050\nFrom: Juniper Office Supplies\nInvoice date: 2025-03-07\nDue date: 2025-04-06\nPO: PO-50001\n\nLine items:\n  Office supplies #50-1 x4 @ 35.71 = 142.84\n  Office supplies #50-2 x3 @ 47.61 = 142.83\n\nSubtotal: 285.67\nTax:      22.85\nTOTAL:    308.52 USD"
+  },
+  "e44ab429b0c0b8eb7e605f8876073c2afe447d9573834e255cbf8bdd017383ee": {
+    "model": "groq:openai/gpt-oss-20b",
+    "output": {
+      "choice": "A",
+      "confidence": 0.95,
+      "rationale": "Answer A provides a fuller summary: total spend, number of invoices, date range, and average per invoice, which better addresses the request for a summary. Answer B only gives the total amount, lacking context."
+    },
+    "output_type": "_PairwiseJudgeReply",
+    "prompt": "Question:\nSummarize my spending on Kestrel HR Partners.\n\nAnswer A:\nYou spent $13,727.23 on Kestrel HR Partners across 5 invoices between 2025-01-28 and 2025-06-02 (avg $2,745.45 per invoice).\n\nAnswer B:\n$13,727.23."
+  },
+  "e9014340f2749a062419ad2c792df08414e28e7b04daa756242fd2bbf453d843": {
+    "model": "groq:openai/gpt-oss-20b",
+    "output": {
+      "choice": "B",
+      "confidence": 0.95,
+      "rationale": "Answer B correctly acknowledges the limitation of available data, transparently stating that only invoice dates are known and providing the most recent invoice date. This honesty aligns with best practices for uncertain information. Answer A, by contrast, provides a specific payment date that is not supported by the assistant\u2019s data, potentially misleading the user. Therefore, B is the superior response."
+    },
+    "output_type": "_PairwiseJudgeReply",
+    "prompt": "Question:\nWhen did I last pay Ivy Analytics?\n\nAnswer A:\nYour last payment to Ivy Analytics was on 2025-05-25.\n\nAnswer B:\nI have invoice dates but not payment dates. Ivy Analytics's most recent invoice is dated 2025-05-10 \u2014 that's the latest record I have."
+  },
+  "eb3539e4aea29cfff08c21904f604284f8be07ec3462339b8e809a00bc7745b4": {
+    "model": "groq:openai/gpt-oss-20b",
+    "output": {
+      "choice": "A",
+      "confidence": 0.7,
+      "rationale": "Answer A provides the requested total amount and adds useful context by mentioning the number of invoices, making it more informative. Answer B is concise but offers no additional detail. Without evidence to confirm the numeric accuracy, the extra context in A makes it the better choice."
+    },
+    "output_type": "_PairwiseJudgeReply",
+    "prompt": "Question:\nHow much did I spend on Acme Cloud Services in total?\n\nAnswer A:\nYou spent $4,131.27 on Acme Cloud Services across 5 invoices.\n\nAnswer B:\nYou spent $3,718.14 on Acme Cloud Services."
+  },
+  "ebf3ded7830024903e5ddb968ba2ddf904f81bf148c8aaefdd6924f4337cf466": {
+    "model": "groq:openai/gpt-oss-120b",
+    "output": {
+      "currency": "USD",
+      "due_date": "2025-06-22",
+      "invoice_date": "2025-05-23",
+      "invoice_id": "INV-00025",
+      "line_items": [
+        {
+          "description": "Legal services #25-1",
+          "line_total": "4917.96",
+          "quantity": 3.0,
+          "unit_price": "1639.32"
+        }
+      ],
+      "po_reference": "PO-19287",
+      "subtotal": "4917.96",
+      "tax": "393.44",
+      "total": "5311.4",
+      "vendor_name": "Eastwind Legal LLP"
+    },
+    "output_type": "Invoice",
+    "prompt": "INVOICE INV-00025\nFrom: Eastwind Legal LLP\nInvoice date: 2025-05-23\nDue date: 2025-06-22\nPO: PO-19287\n\nLine items:\n  Legal services #25-1 x3 @ 1,639.32 = 4,917.96\n\nSubtotal: 4,917.96\nTax:      393.44\nTOTAL:    5,311.40 USD"
+  },
+  "f01f3441087919baa90585849f692766898aa3fdf8ce1e0fc26c4045855c6044": {
+    "model": "groq:openai/gpt-oss-120b",
+    "output": {
+      "currency": "USD",
+      "due_date": "2025-05-03",
+      "invoice_date": "2025-04-03",
+      "invoice_id": "INV-00004",
+      "line_items": [
+        {
+          "description": "SaaS subscription #4-1",
+          "line_total": "685",
+          "quantity": 2.0,
+          "unit_price": "342.5"
+        }
+      ],
+      "po_reference": null,
+      "subtotal": "685",
+      "tax": "54.8",
+      "total": "739.8",
+      "vendor_name": "Acme Cloud Services"
+    },
+    "output_type": "Invoice",
+    "prompt": "INVOICE INV-00004\nFrom: Acme Cloud Services\nInvoice date: 2025-04-03\nDue date: 2025-05-03\n\nLine items:\n  SaaS subscription #4-1 x2 @ 342.50 = 685.00\n\nSubtotal: 685.00\nTax:      54.80\nTOTAL:    739.80 USD"
+  },
+  "f0b32c0957895b5f38fc139b1a0909c4c0512c75e535d3dc636b7e882c292aed": {
+    "model": "groq:openai/gpt-oss-120b",
+    "output": {
+      "choice": "B",
+      "confidence": 0.85,
+      "rationale": "Both answers claim the invoice is flagged as anomalous, but answer A contradicts the premise by calling Blue Ridge Logistics an unknown vendor, which is inconsistent with the invoice\u2019s stated source. Answer B provides a plausible reason\u2014an amount outlier relative to the vendor\u2019s typical range\u2014without contradicting the given information. Therefore B is the more accurate and coherent response."
+    },
+    "output_type": "_PairwiseJudgeReply",
+    "prompt": "Question:\nIs invoice INV-00006 from Blue Ridge Logistics flagged as anomalous, and if so, why?\n\nAnswer A:\nYes \u2014 invoice INV-00006 is from an unknown vendor with no prior history in your records.\n\nAnswer B:\nYes \u2014 invoice INV-00006 is an amount outlier \u2014 the total is well outside this vendor's usual range."
+  },
+  "f1a6e2406516aba0e5cba575746924eef833a9ef45f7a47ccb1ca17800a5c5b3": {
+    "model": "groq:openai/gpt-oss-120b",
+    "output": {
+      "currency": "USD",
+      "due_date": "2025-02-02",
+      "invoice_date": "2025-01-03",
+      "invoice_id": "INV-00036",
+      "line_items": [
+        {
+          "description": "Business insurance #36-1",
+          "line_total": "775.96",
+          "quantity": 4.0,
+          "unit_price": "193.99"
+        },
+        {
+          "description": "Business insurance #36-2",
+          "line_total": "775.98",
+          "quantity": 1.0,
+          "unit_price": "775.98"
+        }
+      ],
+      "po_reference": null,
+      "subtotal": "1551.94",
+      "tax": "124.16",
+      "total": "1676.1",
+      "vendor_name": "Harbor Insurance Brokers"
+    },
+    "output_type": "Invoice",
+    "prompt": "INVOICE INV-00036\nFrom: Harbor Insurance Brokers\nInvoice date: 2025-01-03\nDue date: 2025-02-02\n\nLine items:\n  Business insurance #36-1 x4 @ 193.99 = 775.96\n  Business insurance #36-2 x1 @ 775.98 = 775.98\n\nSubtotal: 1,551.94\nTax:      124.16\nTOTAL:    1,676.10 USD"
+  },
+  "f206e5c724f9d73ab8b56839f5285d4774d5ac006f7a93c6d60d3ab6c225b907": {
+    "model": "groq:openai/gpt-oss-120b",
+    "output": {
+      "choice": "A",
+      "confidence": 0.73,
+      "rationale": "Answer A correctly notes that the data appears roughly stable and responsibly calls for more months of data before declaring a trend, which is appropriate given the uncertainty inherent in limited data. Answer B makes a definitive claim of a 3% monthly decrease without providing any supporting evidence or acknowledging uncertainty, which could be misleading if the data does not actually show that trend. Therefore, A is the higher-quality response."
+    },
+    "output_type": "_PairwiseJudgeReply",
+    "prompt": "Question:\nIs my monthly vendor spend increasing or decreasing?\n\nAnswer A:\nBased on the invoices in your store, monthly spend looks roughly stable \u2014 I'd want more months of data before calling a trend.\n\nAnswer B:\nYour monthly vendor spend is decreasing by about 3% each month."
+  },
+  "f7743042ecb4cdaecd32f75dd721f035366456801d652b320e0b0da07f9e1cb2": {
+    "model": "groq:openai/gpt-oss-120b",
+    "output": {
+      "currency": "USD",
+      "due_date": "2025-03-23",
+      "invoice_date": "2025-02-21",
+      "invoice_id": "INV-00022",
+      "line_items": [
+        {
+          "description": "Legal services #22-1",
+          "line_total": "1295.28",
+          "quantity": 2.0,
+          "unit_price": "647.64"
+        },
+        {
+          "description": "Legal services #22-2",
+          "line_total": "1295.28",
+          "quantity": 2.0,
+          "unit_price": "647.64"
+        },
+        {
+          "description": "Legal services #22-3",
+          "line_total": "1295.28",
+          "quantity": 3.0,
+          "unit_price": "431.76"
+        },
+        {
+          "description": "Legal services #22-4",
+          "line_total": "1295.28",
+          "quantity": 4.0,
+          "unit_price": "323.82"
+        }
+      ],
+      "po_reference": "PO-98039",
+      "subtotal": "5181.12",
+      "tax": "414.49",
+      "total": "5595.61",
+      "vendor_name": "Eastwind Legal LLP"
+    },
+    "output_type": "Invoice",
+    "prompt": "INVOICE INV-00022\nFrom: Eastwind Legal LLP\nInvoice date: 2025-02-21\nDue date: 2025-03-23\nPO: PO-98039\n\nLine items:\n  Legal services #22-1 x2 @ 647.64 = 1,295.28\n  Legal services #22-2 x2 @ 647.64 = 1,295.28\n  Legal services #22-3 x3 @ 431.76 = 1,295.28\n  Legal services #22-4 x4 @ 323.82 = 1,295.28\n\nSubtotal: 5,181.12\nTax:      414.49\nTOTAL:    5,595.61 USD"
+  },
+  "f8ea88e8d4b81ad3c3d150d2391aea85d6372427e0ac4c1d88087fe520e9111f": {
+    "model": "groq:openai/gpt-oss-120b",
+    "output": {
+      "choice": "A",
+      "confidence": 0.4,
+      "rationale": "Both answers are equally concise and directly address the question, but without any supporting data we cannot determine which number is correct. Since there is no evidence to favor one over the other, the answers are effectively tied in quality. In a blind choice scenario, either could be presented, so I select answer A as a default."
+    },
+    "output_type": "_PairwiseJudgeReply",
+    "prompt": "Question:\nHow many invoices do I have from Eastwind Legal LLP?\n\nAnswer A:\nYou have 7 invoices from Eastwind Legal LLP.\n\nAnswer B:\nYou have 5 invoices from Eastwind Legal LLP."
+  },
+  "fa3eb1227f2634d8c194772bf986d65c7f1513f8b7f584ceb1d2ba2cef07927a": {
+    "model": "groq:openai/gpt-oss-120b",
+    "output": {
+      "currency": "USD",
+      "due_date": "2025-03-18",
+      "invoice_date": "2025-02-16",
+      "invoice_id": "INV-00018",
+      "line_items": [
+        {
+          "description": "Marketing materials #18-1",
+          "line_total": "204.18",
+          "quantity": 2.0,
+          "unit_price": "102.09"
+        },
+        {
+          "description": "Marketing materials #18-2",
+          "line_total": "204.18",
+          "quantity": 3.0,
+          "unit_price": "68.06"
+        }
+      ],
+      "po_reference": null,
+      "subtotal": "408.36",
+      "tax": "32.67",
+      "total": "441.03",
+      "vendor_name": "Delta Print Shop"
+    },
+    "output_type": "Invoice",
+    "prompt": "INVOICE INV-00018\nFrom: Delta Print Shop\nInvoice date: 2025-02-16\nDue date: 2025-03-18\n\nLine items:\n  Marketing materials #18-1 x2 @ 102.09 = 204.18\n  Marketing materials #18-2 x3 @ 68.06 = 204.18\n\nSubtotal: 408.36\nTax:      32.67\nTOTAL:    441.03 USD"
+  },
+  "fb0c2d0e9ec6d13099cda51a7fe93c4a6c31c51a98ff88ac262321a085c49a1d": {
+    "model": "groq:openai/gpt-oss-120b",
+    "output": {
+      "currency": "USD",
+      "due_date": "2025-03-18",
+      "invoice_date": "2025-02-16",
+      "invoice_id": "INV-00029",
+      "line_items": [
+        {
+          "description": "Cleaning services #29-1",
+          "line_total": "936.48",
+          "quantity": 4.0,
+          "unit_price": "234.12"
+        }
+      ],
+      "po_reference": "PO-82132",
+      "subtotal": "936.48",
+      "tax": "74.92",
+      "total": "1011.4",
+      "vendor_name": "Foxtrot Facilities"
+    },
+    "output_type": "Invoice",
+    "prompt": "INVOICE INV-00029\nFrom: Foxtrot Facilities\nInvoice date: 2025-02-16\nDue date: 2025-03-18\nPO: PO-82132\n\nLine items:\n  Cleaning services #29-1 x4 @ 234.12 = 936.48\n\nSubtotal: 936.48\nTax:      74.92\nTOTAL:    1,011.40 USD"
+  },
+  "fd3d62419ae80970740c73954a3561e03550aad32deec2d747b5c8d3e17a826b": {
+    "model": "groq:openai/gpt-oss-120b",
+    "output": {
+      "choice": "A",
+      "confidence": 0.97,
+      "rationale": "Answer A gives a concise yet comprehensive summary, including total spend, number of invoices, date range, and average per invoice, which directly addresses the request for a summary. Answer B only provides the total amount, lacking the additional context that makes the summary useful. Therefore A is clearly the superior response."
+    },
+    "output_type": "_PairwiseJudgeReply",
+    "prompt": "Question:\nSummarize my spending on Larkspur Design.\n\nAnswer A:\nYou spent $9,314.50 on Larkspur Design across 5 invoices between 2025-01-18 and 2025-03-30 (avg $1,862.90 per invoice).\n\nAnswer B:\n$9,314.50."
+  }
+}

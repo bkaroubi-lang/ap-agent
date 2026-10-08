@@ -5,7 +5,7 @@ from __future__ import annotations
 import pytest
 from pydantic import BaseModel
 
-from eval.llm_cache import LLMCache
+from eval.llm_cache import CacheMiss, LLMCache
 
 
 class _Out(BaseModel):
@@ -53,7 +53,7 @@ def test_replay_miss_raises(tmp_path):
     LLMCache(path, mode="record").save()  # empty cache on disk
 
     rep = LLMCache(path, mode="replay")
-    with pytest.raises(SystemExit):
+    with pytest.raises(CacheMiss):
         rep.run(_FakeAgent(), "not-recorded", model="m", output_type=_Out)
 
 

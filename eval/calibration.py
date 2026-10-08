@@ -55,6 +55,8 @@ def fleiss_kappa(ratings: np.ndarray) -> float:
     if ratings.ndim != 2:
         raise ValueError("fleiss_kappa: ratings must be 2-D (items x categories).")
     n_items = ratings.shape[0]
+    if n_items == 0:
+        raise ValueError("fleiss_kappa: no items to score (ratings matrix is empty).")
     n_raters_per_item = ratings.sum(axis=1)
     if not np.allclose(n_raters_per_item, n_raters_per_item[0]):
         raise ValueError("fleiss_kappa: number of raters per item must be constant.")
