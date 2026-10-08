@@ -368,13 +368,19 @@ def main() -> None:
         "google-vertex": "GOOGLE_APPLICATION_CREDENTIALS",
         "cohere": "COHERE_API_KEY",
     }
-    if cache.mode != "replay":
-        needed_env: set[str] = set()
-        for model in [cfg["agent"]["model"], *cfg["eval"]["judge"]["models"]]:
-            provider = model.split(":", 1)[0]
-            env_var = _PROVIDER_ENV.get(provider)
-            if env_var:
-                needed_env.add(env_var)
+    needed_env: set[str] = set()
+    for model in [cfg["agent"]["model"], *cfg["eval"]["judge"]["models"]]:
+        env_var = _PROVIDER_ENV.get(model.split(":", 1)[0])
+        if env_var:
+            needed_env.add(env_var)
+
+    if cache.mode == "replay":
+        # Replay never calls the provider, but pydantic-ai builds (and
+        # key-checks) the provider when the Agent is constructed. Supply a
+        # placeholder for any missing key so construction succeeds offline.
+        for var in needed_env:
+            os.environ.setdefault(var, "replay-no-api-call")
+    else:
         missing = [v for v in needed_env if not os.getenv(v)]
         if missing:
             raise SystemExit(
