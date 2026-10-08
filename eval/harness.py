@@ -39,6 +39,7 @@ from eval.calibration import (
     verbosity_bias_correlation,
 )
 from eval.extraction import aggregate, score_invoice
+from eval.llm_cache import LLMCache
 from src.schemas import (
     AnomalyEvalItem,
     ExtractionEvalItem,
@@ -84,20 +85,23 @@ def run_anomaly_eval() -> dict:
     return scored
 
 
-def run_extraction_eval(cfg: dict) -> dict:
+def run_extraction_eval(cfg: dict, cache: LLMCache) -> dict:
     import time as _time
 
-    print("Running extraction eval (LLM calls; may take a few minutes) ...")
+    replaying = cache.mode == "replay"
+    note = "from cache (no API)" if replaying else "LLM calls; may take a few minutes"
+    print(f"Running extraction eval ({note}) ...")
     ext, _ = _load_gt()
     ext = ext[: cfg["eval"]["max_invoices"]]
 
-    agent = build_extraction_agent(cfg["agent"]["model"], cfg["agent"]["temperature"])
-    delay = float(cfg["eval"].get("rate_limit_delay_s", 0.0))
+    model = cfg["agent"]["model"]
+    agent = build_extraction_agent(model, cfg["agent"]["temperature"])
+    delay = 0.0 if replaying else float(cfg["eval"].get("rate_limit_delay_s", 0.0))
 
     scores = []
     for i, item in enumerate(ext):
         try:
-            result = agent.run_sync(item.invoice_text)
+            result = cache.run(agent, item.invoice_text, model=model, output_type=Invoice)
             pred: Invoice = result.output
         except Exception as e:
             print(f"  {item.invoice_id}: extraction failed ({type(e).__name__}: {e!s:.200})")
@@ -119,7 +123,7 @@ def run_extraction_eval(cfg: dict) -> dict:
     return agg
 
 
-def run_judge_calibration(cfg: dict) -> dict:
+def run_judge_calibration(cfg: dict, cache: LLMCache) -> dict:
     """Skeleton judge run: needs a hand-labeled QA gold set to be a real
     calibration exercise. On Day 1 we surface the plumbing (agreement, kappa,
     position-bias hooks) and warn if the gold set is not populated yet."""
@@ -153,7 +157,7 @@ def run_judge_calibration(cfg: dict) -> dict:
 
     import time as _time
 
-    delay = float(cfg["eval"].get("rate_limit_delay_s", 0.0))
+    delay = 0.0 if cache.mode == "replay" else float(cfg["eval"].get("rate_limit_delay_s", 0.0))
 
     # Store per-judge results keyed by item index so unequal success rates
     # (some judges failing on some items) don't misalign the kappa arrays.
@@ -177,6 +181,7 @@ def run_judge_calibration(cfg: dict) -> dict:
                         item_id=f"{i}-ab", question=ex["question"], answer_a=a, answer_b=b
                     ),
                     judge_id=m,
+                    cache=cache,
                 )
             except Exception as e:
                 print(f"  [{m}] item {i}: judge call failed ({type(e).__name__}: {e!s:.200})")
@@ -204,6 +209,7 @@ def run_judge_calibration(cfg: dict) -> dict:
                             item_id=f"{i}-ba", question=ex["question"], answer_a=b, answer_b=a
                         ),
                         judge_id=m,
+                        cache=cache,
                     )
                 except Exception as e:
                     print(f"  [{m}] item {i} swap: failed ({type(e).__name__}: {e!s:.200})")
@@ -314,7 +320,23 @@ def main() -> None:
     parser.add_argument("--config", type=Path, default=CONFIG_PATH)
     parser.add_argument("--no-llm", action="store_true", help="skip LLM-billed legs")
     parser.add_argument("--only", choices=["anomaly", "extraction", "judge"], default=None)
+    parser.add_argument(
+        "--record",
+        action="store_true",
+        help="run the LLM legs live AND save responses to the cache for offline replay",
+    )
+    parser.add_argument(
+        "--replay",
+        action="store_true",
+        help="reproduce the LLM legs from the cached responses — no API key, no cost",
+    )
+    parser.add_argument("--cache", type=Path, default=RESULTS_DIR / "llm_cache.json")
     args = parser.parse_args()
+
+    if args.record and args.replay:
+        raise SystemExit("--record and --replay are mutually exclusive.")
+    cache_mode = "record" if args.record else "replay" if args.replay else "off"
+    cache = LLMCache(args.cache, mode=cache_mode)
 
     cfg = yaml.safe_load(args.config.read_text())
 
@@ -328,6 +350,7 @@ def main() -> None:
         print("--no-llm set: skipping LLM-billed legs.")
         return
 
+    # Replay reconstructs the LLM legs from cache, so no API key is needed.
     # Provider-agnostic key check: model strings are "provider:model_id".
     # Map provider prefixes to the env var pydantic-ai expects.
     _PROVIDER_ENV = {
@@ -339,24 +362,30 @@ def main() -> None:
         "google-vertex": "GOOGLE_APPLICATION_CREDENTIALS",
         "cohere": "COHERE_API_KEY",
     }
-    needed_env: set[str] = set()
-    for model in [cfg["agent"]["model"], *cfg["eval"]["judge"]["models"]]:
-        provider = model.split(":", 1)[0]
-        env_var = _PROVIDER_ENV.get(provider)
-        if env_var:
-            needed_env.add(env_var)
-    missing = [v for v in needed_env if not os.getenv(v)]
-    if missing:
-        raise SystemExit(
-            f"Missing API key env var(s): {', '.join(missing)}. "
-            "Populate .env or export them, or run with --no-llm."
-        )
+    if cache.mode != "replay":
+        needed_env: set[str] = set()
+        for model in [cfg["agent"]["model"], *cfg["eval"]["judge"]["models"]]:
+            provider = model.split(":", 1)[0]
+            env_var = _PROVIDER_ENV.get(provider)
+            if env_var:
+                needed_env.add(env_var)
+        missing = [v for v in needed_env if not os.getenv(v)]
+        if missing:
+            raise SystemExit(
+                f"Missing API key env var(s): {', '.join(missing)}. "
+                "Populate .env or export them, run with --no-llm, or --replay from cache."
+            )
 
     if args.only in (None, "extraction"):
-        run_extraction_eval(cfg)
+        run_extraction_eval(cfg, cache)
 
     if args.only in (None, "judge"):
-        run_judge_calibration(cfg)
+        run_judge_calibration(cfg, cache)
+
+    cache.save()
+    if cache.mode == "record":
+        print(f"\nRecorded {len(cache)} LLM responses -> {args.cache}")
+        print("Reproduce offline with:  python -m eval.harness --replay")
 
 
 if __name__ == "__main__":

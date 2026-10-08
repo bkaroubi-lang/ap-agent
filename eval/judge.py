@@ -106,13 +106,16 @@ def build_pairwise_judge(model: str):
     )
 
 
-def judge_single(agent, item: JudgeSingleItem, judge_id: str) -> JudgeVerdict:
+def judge_single(agent, item: JudgeSingleItem, judge_id: str, *, cache=None) -> JudgeVerdict:
     prompt = (
         f"Question:\n{item.question}\n\n"
         f"Reference answer:\n{item.reference}\n\n"
         f"Candidate answer:\n{item.candidate}"
     )
-    reply: _SingleJudgeReply = agent.run_sync(prompt).output
+    if cache is not None:
+        reply = cache.run(agent, prompt, model=judge_id, output_type=_SingleJudgeReply).output
+    else:
+        reply = agent.run_sync(prompt).output
     return JudgeVerdict(
         item_id=item.item_id,
         judge_id=judge_id,
@@ -122,11 +125,14 @@ def judge_single(agent, item: JudgeSingleItem, judge_id: str) -> JudgeVerdict:
     )
 
 
-def judge_pairwise(agent, item: JudgePairwiseItem, judge_id: str) -> JudgeVerdict:
+def judge_pairwise(agent, item: JudgePairwiseItem, judge_id: str, *, cache=None) -> JudgeVerdict:
     prompt = (
         f"Question:\n{item.question}\n\nAnswer A:\n{item.answer_a}\n\nAnswer B:\n{item.answer_b}"
     )
-    reply: _PairwiseJudgeReply = agent.run_sync(prompt).output
+    if cache is not None:
+        reply = cache.run(agent, prompt, model=judge_id, output_type=_PairwiseJudgeReply).output
+    else:
+        reply = agent.run_sync(prompt).output
     # Encode A->5, B->1 so we can reuse Likert-oriented calibration downstream.
     score = 5 if reply.choice == "A" else 1
     return JudgeVerdict(
