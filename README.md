@@ -7,18 +7,18 @@
 **A Pydantic-AI accounts-payable agent + a statistically grounded eval harness that treats LLM-as-judge agreement as an inter-rater reliability problem.**
 
 The agent itself is standard: extract structured fields from invoices, flag
-anomalies against vendor history, answer Q&A. What makes this a portfolio piece
-is the evaluation layer.
+anomalies against vendor history, answer Q&A. The substance is the evaluation
+layer.
 
 ## Headline: a finding that failed to replicate — and the infra that caught it
 
 In **July 2026** two Groq judges (`llama-3.3-70b-versatile` and `gpt-oss-20b`)
-produced a striking result: inter-judge κ "collapsed" from 0.92 to 0.61 when I
-added subtle epistemic-honesty items, and the **larger** model was far worse on
-them (llama 20% vs gpt-oss-20b 70%) — it preferred confident fabrications over
-an honest "I don't have that data."
+produced a striking result: inter-judge κ "collapsed" from 0.92 to 0.61 when
+subtle epistemic-honesty items were added, and the **larger** model was far
+worse on them (llama 20% vs gpt-oss-20b 70%) — it preferred confident
+fabrications over an honest "I don't have that data."
 
-In **October 2026** I re-ran the exact same gold set to cache it for offline
+In **October 2026** the same gold set was re-run to cache it for offline
 reproduction. Two things happened:
 
 1. **`llama-3.3-70b-versatile` had been retired by Groq** — every call now 404s.
@@ -41,7 +41,7 @@ both runs is the durable thesis — *inter-judge agreement is not evidence of
 judge quality, and judge quality on hard items is model-specific and must be
 measured per model, not inferred from size or a prior run.*
 
-This repo now ships a **record/replay cache**, so the October numbers are
+The repo ships a **record/replay cache**, so the October numbers are
 reproducible by anyone with zero API keys and zero cost — the exact thing the
 July run lacked when its model disappeared:
 
@@ -51,62 +51,56 @@ uv sync && uv run python -m eval.harness --replay   # reproduces the report offl
 
 Also in the harness: deterministic anomaly detection (invoice-flag F1 = 0.842,
 no model dependency), and LLM extraction at per-field / line-item F1 = 1.000 on
-returned invoices — *after* I found and fixed an eval-strictness bug that had
-inflated the error rate. Full method, both runs, position-bias and calibration
+returned invoices — *after* an eval-strictness bug that had inflated the error
+rate was found and fixed. Full method, both runs, position-bias and calibration
 tests, and honest caveats:
 
 **→ [results/report.md](results/report.md)**
 
-**Companion project on tabular ML rigor**:
-[credit-bench](https://github.com/bkaroubi-lang/credit-bench) — GBMs vs FT-Transformer on
-IEEE-CIS Fraud Detection with DeLong CIs on pairwise AUC deltas. Headline: all
-three tuned GBMs beat default FT-Transformer by 6.4–7.1 AUC points (p ≈ 0);
-CatBoost vs XGBoost is a statistical tie.
+**Related:** [credit-bench](https://github.com/bkaroubi-lang/credit-bench) —
+GBMs vs FT-Transformer on IEEE-CIS Fraud Detection with DeLong CIs on pairwise
+AUC deltas (all three tuned GBMs beat the default FT-Transformer by 6.4–7.1 AUC
+points, p ≈ 0).
 
 ---
 
-## Longer form
+## What the harness covers
 
-The differentiator is not the agent — it's the evaluation layer. Any
-Pydantic-AI tutorial gets you an agent-that-runs. What's rare, and what makes
-this a portfolio piece rather than a demo:
+The agent is standard Pydantic-AI; the evaluation layer is the substance.
 
 - **LLM-as-judge calibration as an inter-rater reliability problem**: Cohen's
   and Fleiss' kappa on judge–human agreement, bootstrapped CIs on kappa,
   position-bias tests (A/B swap), verbosity-bias correlation, reliability
   curves for judge confidence.
-- **Task-level metrics** on the concrete deliverables: per-field F1 on
-  extraction, precision/recall per anomaly category, tool-use correctness on
-  the Q&A leg.
+- **Task-level metrics** on the concrete deliverables: per-field accuracy and
+  line-item F1 on extraction, precision/recall per anomaly category.
 - **Deterministic + LLM hybrid** where appropriate: duplicate detection is
   rules; subtler anomalies use the LLM. The eval treats the hybrid as a single
   system but reports where each branch contributed.
+- **Record/replay** of every LLM call, so the billed legs reproduce offline
+  with no API key (see below).
 
-## Phased plan
+## Scope
 
-**Phase 1 (this scaffold).** Synthetic invoices (deterministic, seeded),
-schema-first agent + tools, extraction/anomaly/judge evals with calibration.
-Runs end-to-end without an API key for the deterministic pieces
-(extraction eval, anomaly detection rules, kappa/bias/reliability
-computations); LLM calls gated behind explicit `--llm` flag.
+**Built.** Deterministic seeded synthetic invoices; a schema-first agent with
+tools; extraction, anomaly, and judge-calibration evals (Cohen's/Fleiss' kappa
+with bootstrapped CIs, position-bias and verbosity tests, reliability curves);
+two Groq judges run pairwise; and a record/replay cache so the LLM legs
+reproduce offline. The deterministic pieces and `--replay` run with no API key.
 
-**Phase 2.** Add DeepEval integration for agentic metrics (task completion,
-tool correctness, plan adherence). Add a second judge model for cross-model
-kappa. Wire RAGAS for the retrieval leg once vendor history grows large enough
-to justify RAG.
-
-**Phase 3 (optional).** Swap synthetic invoices for a public receipts corpus
-(SROIE or RVL-CDIP invoice subset) and re-run the same eval harness — proves
-the harness generalizes.
+**Not done.** A cross-provider judge (e.g. a Claude judge via Anthropic) to test
+the "contingent across labs" point; a larger gold set (n=36 → ≥100, balanced
+trivial:subtle); a strict paired verbosity-bias test; and a real receipts corpus
+(SROIE / RVL-CDIP) in place of synthetic invoices.
 
 ## Framework choice
 
 Agent core is **Pydantic AI**. Chosen for:
-- Typed I/O via Pydantic v2 (matches an econometrics-adjacent instinct to type
-  everything at the boundary).
-- Multi-provider support (Anthropic / OpenAI / Google) with a single Agent API.
-- Small surface area — no LangGraph state-machine ceremony unless the workflow
-  actually needs it.
+- Typed I/O via Pydantic v2 — structured inputs and outputs validated at the
+  boundary.
+- Multi-provider support (Groq / Anthropic / OpenAI / Google) behind a single
+  Agent API.
+- Small surface area — no state-machine ceremony unless the workflow needs it.
 
 ## Setup
 
@@ -118,6 +112,7 @@ cp .env.example .env      # then put GROQ_API_KEY=gsk_... in .env
 uv run pytest -q                        # verify eval math + schema round-trip
 uv run python scripts/generate_invoices.py   # deterministic synthetic set
 uv run python -m eval.harness --no-llm        # deterministic evals, ~0 cost, no key
+uv run python -m eval.harness --replay        # full report from the cached responses, no key
 ```
 
 **Alternative — original Windows + Miniconda path:**
@@ -135,34 +130,34 @@ python -m eval.harness --no-llm             # runs deterministic evals only, ~0 
 python -m eval.harness                      # full run incl. LLM extraction + judge (billed)
 ```
 
-Every command that will make paid API calls is gated behind an explicit flag
-(`--llm` or the default of `harness.py`). `--no-llm` runs only the offline
-eval math and requires no API key.
+The LLM legs are billed; `--no-llm` runs only the offline eval math and needs no
+API key, and `--replay` reproduces the full report from the committed cache
+(also no key).
 
 ## Layout
 
 ```
 ap-agent/
-  environment.yml           conda env
-  .env.example              template for ANTHROPIC_API_KEY
+  pyproject.toml            uv project (deps + lockfile); environment.yml kept as a conda fallback
+  .env.example              template for GROQ_API_KEY (default provider)
   configs/defaults.yaml     model IDs, cost caps, judge protocol settings
   scripts/
     generate_invoices.py    deterministic synthetic invoice + label generator
   src/
     schemas.py              Pydantic types: Invoice, LineItem, Anomaly, ...
     store.py                vendor history store (in-memory + JSON snapshot)
-    tools.py                extract_invoice_fields, flag_anomaly,
-                            retrieve_vendor_history
+    tools.py                build_extraction_agent, flag_anomaly_rules,
+                            retrieve_vendor_history, spend_in_window
     agent.py                Pydantic AI agent wiring
-    runners.py              batch runner over a task set
   eval/
-    extraction.py           per-field F1 + error taxonomy
-    anomaly.py              precision/recall/F1 per category + confusion matrix
+    extraction.py           per-field accuracy + line-item F1
+    anomaly.py              precision/recall/F1 per category
     calibration.py          Cohen's/Fleiss' kappa, bias tests, reliability
     judge.py                LLM-as-judge (single + pairwise with CoT)
-    harness.py              driver: runs everything and writes results/report
+    llm_cache.py            record/replay cache for offline reproduction
+    harness.py              driver: runs every leg and writes results/
   data/invoices/            gitignored generated invoices + ground_truth.json
-  results/                  eval outputs (csv + json)
+  results/                  eval outputs (csv + json) + llm_cache.json
   tests/
 ```
 
@@ -173,7 +168,7 @@ The eval harness has three cost dials in `configs/defaults.yaml`:
 - `eval.judge.max_items` — cap on how many items the judge scores
 - `eval.judge.models` — list of judge models (adding more increases cost linearly)
 
-Full Phase-1 run at defaults (~50 invoices, 2 judges): expect **~$3-5** on
-Claude Sonnet 5 pricing. The `--no-llm` path costs nothing and still exercises
-the extraction eval math, anomaly rule engine, and calibration/kappa/bias
-plumbing.
+The default models are Groq-hosted, so a full run (~50 invoices, 2 judges) is
+free on Groq's free tier (roughly $1 on paid pricing). The `--no-llm` and
+`--replay` paths cost nothing and need no API key — `--replay` reproduces the
+full report from the committed cache.
